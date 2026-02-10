@@ -2,8 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import NewReleaseBadge from '../../../components/NewReleaseDiv'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import styles from '../SlideShowContent.module.css'
-import LeftArrow from '../../../../public/images/LeftArrow.svg'
-import RightArrow from '../../../../public/images/RightArrow.svg'
+import LeftArrow from '../../../images/LeftArrow.svg'
+import RightArrow from '../../../images/RightArrow.svg'
 import { watchCollection } from '../../../data'
 
 const SlideShowInfo = ({data}) => {
