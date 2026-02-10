@@ -1,0 +1,29 @@
+.video-element {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 3;
+  color: white;
+  font-family: 'Moela', sans-serif;
+}
+
+.content-overlay div div h1 {
+  font-family: 'Moela', sans-serif;
+  font-size: 4rem;
+}
+
+.slide-description {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.3rem;
+  letter-spacing: -0.02rem;
+}

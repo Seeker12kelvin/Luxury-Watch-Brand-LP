@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+.video-background-container {
+  position: relative;
+  width: 90rem;
+  height: fit-content;
+  overflow: hidden;
+  background-color: black;
+}
+
+.video-element {
+  position: absolute;
+  inset: 0;
+  width: 90rem;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: 'Moela', sans-serif;
+  background-image: radial-gradient(#0c0c0c00, #0C0C0C);
+}
+
+.Hero-Section-product {
+  box-sizing: border-box;
+  max-height: 50rem;
+  width: 75rem;
+  position: absolute;
+  bottom: 12%;
+  right: 12%;
+  z-index: 2;
+  margin-inline: auto;
+}
+
+.animated-block {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-weight: 300;
+  letter-spacing: -0.02rem;
+  max-width: 37.52rem;
+  align-self: stretch;
+}
+
+.animated-block-h1 {
+  letter-spacing: -0.05rem;
+  line-height: normal;
+}
+
+.animated-block-h1,
+.animated-block {
+  font-style: normal;
+}
+
+.Hero-Section-product div p,
+.Hero-Section-product h3,
+.animated-block {
+  font-family: 'Inter Tight', sans-serif;
+}
+
+.Hero-Section-product h3 {
+  opacity: 0.5;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.Hero-Section-product .product-price {
+  font-family: 'Moela', sans-serif;
+  font-size: 4rem;
+}

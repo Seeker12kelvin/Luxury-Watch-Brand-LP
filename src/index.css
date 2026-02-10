@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Moela';
+  src: url('./fonts/MOELA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.inter-tight {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+button {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
