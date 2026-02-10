@@ -1,53 +1,55 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { watchCollection } from '../../../data'
 
-const Slider = ({data}) => {
+const SLIDE_WIDTH = 400
+const VIEWPORT_WIDTH = 1440 // same role as wrapper.clientWidth
 
+const Slider = ({ data }) => {
   const { activeIndex } = data
-  const buttonWidth = 400
-  const divWidth =  watchCollection.length * buttonWidth
 
-  function widthOfDiv() {
-    const offset = activeIndex * buttonWidth; // Calculate the offset based on the active index
-    const finalOffset = Math.min(1440, offset)
+  const totalWidth = watchCollection.length * SLIDE_WIDTH
+  const maxTranslateX = Math.max(totalWidth - VIEWPORT_WIDTH, 0)
 
-    
-
-    return `-${finalOffset}px`; // Return the negative finalOffset to move the div left
-  }
+  // Clamp movement exactly like GSAP
+  const translateX = Math.min(activeIndex * SLIDE_WIDTH, maxTranslateX)
 
   return (
-    <motion.div
-      initial={{opacity: 0, x: '100%' }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 2, ease: 'easeOut' }}
-      className='flex items-center relative h-fit overflow-hidden'
-      style={{
-        width: divWidth
-      }}>
-      
+    /* WRAPPER (viewport) */
+    <div
+      className="relative overflow-hidden h-100"
+      style={{ width: VIEWPORT_WIDTH }}
+    >
+      {/* TRACK */}
       <motion.div
-        animate={{  }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className={`border-[0.875rem] border-[#FFFFFF1A] w-100 h-full z-10 absolute`}>
+        className="relative flex"
+        style={{ width: totalWidth }}
+        animate={{ x: -translateX }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        {/* BORDER INDICATOR */}
+        <motion.div
+          className="absolute top-0 left-0 z-10 border-[0.875rem] border-[#FFFFFF1A]"
+          style={{ width: SLIDE_WIDTH, height: '100%' }}
+          animate={{ x: activeIndex * SLIDE_WIDTH }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        />
 
+        {/* SLIDES */}
+        {watchCollection.map(item => (
+          <div
+            key={item.id}
+            className="h-100 w-100 shrink-0"
+            style={{ width: SLIDE_WIDTH }}
+          >
+            <img
+              src={item.img}
+              alt={item.title}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        ))}
       </motion.div>
-
-
-      {watchCollection.map(data => (
-        <motion.button
-          animate={{ x: widthOfDiv() }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          key={data.id}
-          className='h-100 w-100'>
-          <img
-            src={data.img}
-            alt={`A picture of ${data.title}`}
-            className='h-full w-full object-cover' />
-        </motion.button>
-      ))}
-    </motion.div>
+    </div>
   )
 }
 
