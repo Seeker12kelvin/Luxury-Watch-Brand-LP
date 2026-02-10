@@ -8,7 +8,7 @@ import { watchCollection } from '../../../data'
 
 const SlideShowInfo = ({data}) => {
   
-  const { bg, nextSlide, setActiveIndex, activeIndex} = data
+  const { bg, nextSlide, prevSlide, setActiveIndex, activeIndex} = data
 
   const textVariants = {
     initial: {
@@ -135,6 +135,7 @@ const SlideShowInfo = ({data}) => {
           <div className='flex items-start gap-2 '>
             <button
               onClick={() => {
+                prevSlide()
               }}
               className='w-9 h-2 opacity-50'>
               <img src={LeftArrow} alt='Left arrow' />

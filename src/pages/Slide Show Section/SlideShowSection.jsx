@@ -12,17 +12,16 @@ const SlideShowSection = () => {
   const [activeIndex, setActiveIndex] = useState(-1)
 
   const nextSlide = () => {
-    setActiveIndex(prev => prev > watchCollection.length - 1 ? 0 : prev + 1)
+    setActiveIndex(prev => prev < 0 ? 0 : (prev + 1) % watchCollection.length)
   }
 
   const prevSlide = () => {
-    setActiveIndex(prev =>  prev - 1 < 0 ? watchCollection.length - 1 : prev - 1)
-    setBg(watchCollection[activeIndex - 1] || watchCollection[watchCollection.length - 1])
+    setActiveIndex(prev =>  prev <= 0 ? watchCollection.length - 1 : prev - 1)
   }
 
   useEffect(() => {
     function setData() {
-      setBg(watchCollection[activeIndex] || watchCollection[0])
+      setBg(watchCollection[activeIndex] ? watchCollection[activeIndex] : null)
     }
     return setData()
   }, [activeIndex])
