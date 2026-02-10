@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Login.module.css'
-import Comp_Logo from '../../images/Comp_Logo.svg'
+import Comp_Logo from '../../../public/images/Comp_Logo.svg'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { MdClose } from 'react-icons/md'
 import { motion } from 'framer-motion'

@@ -1,10 +1,10 @@
-import Watch from './images/HeroSection-product-Image.png'
-import Emeraude from './images/Émeraude-Impériale.jpg'
-import Nocturne from './images/Nocturne-Azur.jpg'
-import Rubis from './images/Rubis-Souverain.jpg'
-import Argent from './images/Argent-Héritage.jpg'
-import Bleu from './images/Bleu-Atelier.jpg'
-import Teal from './images/Teal-Sovereign.jpg'
+import Watch from '../public/images/HeroSection-product-Image.png'
+import Emeraude from '../public/images/Émeraude-Impériale.jpg'
+import Nocturne from '../public/images/Nocturne-Azur.jpg'
+import Rubis from '../public/images/Rubis-Souverain.jpg'
+import Argent from '../public/images/Argent-Héritage.jpg'
+import Bleu from '../public/images/Bleu-Atelier.jpg'
+import Teal from '../public/images/Teal-Sovereign.jpg'
 
 export const aleteir = {
   img: Watch,
