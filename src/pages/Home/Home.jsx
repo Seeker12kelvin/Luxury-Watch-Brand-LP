@@ -5,7 +5,7 @@ import NewestWatchSection from '../Newest Watch Section/NewestWatchSection'
 
 const Home = () => {
   return (
-    <main className='h-245 max-w-360 scroll-smooth overscroll-y-contain'>
+    <main className='h-screen max-w-screen scroll-smooth overflow-x-hidden overscroll-y-contain'>
       <HeroSection />
       <SlideShowSection />
       <NewestWatchSection />

@@ -13,8 +13,8 @@ const Header = () => {
       className='flex w-full py-3 justify-between items-center'>
         <div className='flex justify-center items-center gap-2 text-sm'>
           <img 
-            className='h-5' 
-            src={Logo_Icon} 
+            className='h-5'
+            src={Logo_Icon}
             alt='Logo'
           />
           <span className={`${styles['nav-logo']}`}>BRANTIUM</span>
