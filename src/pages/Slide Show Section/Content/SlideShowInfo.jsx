@@ -96,7 +96,7 @@ const SlideShowInfo = ({data}) => {
                   animate="animate"
                   exit="exit"
                   className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
-                    JOIN THE WAITLIST
+                    ADD TO WATCHLIST
                 </motion.button>
 
 
