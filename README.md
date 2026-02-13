@@ -1,16 +1,86 @@
-# React + Vite
+# ⌚ Brantium — Luxury Watch E-Commerce Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium luxury watch website built with React and Framer Motion, focused on cinematic product storytelling and smooth high-end UI animations.
 
-Currently, two official plugins are available:
+This project showcases advanced animation sequencing, layered UI design, and immersive scroll-based transitions inspired by luxury brand experiences.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌐 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Brantium is a modern luxury watch web experience designed to:
 
-## Expanding the ESLint configuration
+- Showcase exclusive timepieces
+- Deliver cinematic product reveals
+- Provide smooth interactive browsing
+- Maintain premium design consistency
+- Demonstrate advanced frontend animation architecture
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Live Demo
+
+(Add deployed link here)
+
+---
+
+## 🛠 Tech Stack
+
+- **React**
+- **Framer Motion**
+- **Tailwind CSS**
+- **React Icons**
+- **Vite / CRA** (whichever you used)
+
+---
+
+## ✨ Key Features
+
+### 🎬 Cinematic Product Sections
+- Scroll-triggered reveals
+- Expanding hero background animations
+- Layered background crossfades
+- Watch scale & fade transitions
+- Smooth text color interpolation
+
+### 🧭 Navigation
+- Responsive navbar
+- Smooth scroll behavior
+- Animated transitions between sections
+
+### 🛍 Product Showcase
+- Featured collection slider
+- Interactive hover states
+- Dynamic price display
+- Watchlist interaction UI
+
+### 🎨 Premium UI Design
+- High contrast luxury styling
+- Clean typography
+- Subtle motion microinteractions
+- Responsive layout
+
+---
+
+## 🧠 Animation Architecture
+
+Animations are structured using:
+
+- `useAnimationControls()` for controlled sequencing
+- `useInView()` for scroll detection
+- Variants for state-based animation logic
+- Layered opacity transitions for background fades
+- GPU-optimized transforms (`scale`, `opacity`, `translate`)
+
+Phased animation states include:
+- `hidden`
+- `show`
+- `visible`
+- `expanded`
+- `fadeOut`
+- `fadeInBackground`
+
+---
+
+## 📂 Project Structure
+
