@@ -31,7 +31,7 @@ const NewestWatchSection = () => {
 
 
   return (
-    <section ref={ref} className='relative px-50 py-25 overflow-hidden'>
+    <section ref={ref} className='h-full w-full bg-white relative px-50 py-25 overflow-hidden'>
       <AnimatedBackground controls={controls} />
       
       <NewestInfo controls={controls} />
