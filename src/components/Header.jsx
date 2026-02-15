@@ -26,9 +26,6 @@ const Header = () => {
             JOIN THE WAITLIST
         </button>
         <button
-          initial={{ clipPath: "inset(0 0 100% 0)" }}
-          animate={{ clipPath: "inset(0 0 0% 0)" }}
-          transition={{ duration: 2, ease: 'easeIn' }}
           className='bg-[#FEFEFE] flex items-center h-full w-fit text-[#111111] text-sm py-3 px-3.5'>
           <IoIosArrowRoundForward className='h-full w-full scale-150' />
         </button>
