@@ -1,13 +1,19 @@
 import React, { useEffect, useRef } from 'react'
 import './ShowCaseSection.module.css'
 import ShowCaseInfo from './Content/ShowCaseInfo'
-import { useAnimationControls, useInView } from 'framer-motion';
+import { useAnimationControls, useInView, useScroll } from 'framer-motion';
+import AnimatedBackground from './Content/AnimatedBackground';
 
 const ShowCaseSection = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimationControls();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end end']
+  })
 
   useEffect(() => {
     if (!isInView) return;
@@ -32,8 +38,9 @@ const ShowCaseSection = () => {
   }, [isInView]);
 
   return (
-    <section ref={ref} className='h-320.25 w-full relative'>
+    <section ref={ref} className='h-320.25 w-full relative mix-blend-difference bg-black overflow-hidden'>
       <ShowCaseInfo controls={controls} />
+      <AnimatedBackground controls={controls} />
     </section>
   )
 }
