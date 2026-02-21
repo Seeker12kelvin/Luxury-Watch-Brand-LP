@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../Footer.module.css'
+import { motion } from 'framer-motion';
 
 const Clock = () => {
+
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -25,7 +27,11 @@ const Clock = () => {
   const hourDegrees = (hours % 12) * 30 + minutes * 0.5;
 
   return (
-      <div className={`${styles['clock-background']} relative w-84 h-84 text-white text-[32px]`}>
+      <motion.div
+        initial={{opacity: 0}}
+        whileInView={{opacity: 1, transition: { delay: 1.6, duration: 1.6, ease: 'easeIn' }}}
+        viewport={{once: true}}
+        className={`${styles['clock-background']} relative w-84 h-84 text-white text-[32px]`}>
         
         {/* Center dot */}
         <div className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#D9D9D9] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
@@ -54,7 +60,7 @@ const Clock = () => {
           style={{ transform: `translateX(-50%) rotate(${minuteDegrees}deg)` }}
         ></div>
 
-      </div>
+      </motion.div>
   );
 };
 

@@ -1,12 +1,22 @@
 import React from 'react'
 import NewReleaseBadge from '../../../components/NewReleaseDiv'
-import bg from '../../../images/Footer-Background-Img.png'
 import BlackCards from './BlackCards'
 import Comp_Logo from '../../../images/Footer-Logo-Container.svg'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import Clock from './Clock'
+import { motion } from 'framer-motion'
 
 const FooterInfo = () => {
+
+  const clipPath = {
+    hidden: {
+      clipPath: "inset(0 0 100% 0)"
+    },
+    show: {
+      clipPath: "inset(0 0 0% 0)",
+      transition: { duration: 1.6, ease: 'easeIn' }
+    }
+  }
 
   return (
     <div className={`z-10 w-full h-full flex flex-col justify-between py-25 px-50`}>
@@ -18,21 +28,48 @@ const FooterInfo = () => {
           <div className='flex flex-col gap-8'>
 
             <div className='text-white w-full flex flex-col gap-2.5'>
+              
+              <motion.div
+                variants={clipPath}
+                initial="hidden"
+                whileInView="show"
+                viewport={{once: true}}
+                className='h-fit w-fit'>
 
-              <NewReleaseBadge text={'FOOTER'} textColor={'white'} borderColor={'white'} />
+                <NewReleaseBadge text={'FOOTER'} textColor={'white'} borderColor={'white'} />
 
-              <h1 className='text-[64px] font-semibold leading-16 tracking-[-0.64px]'>
+              </motion.div>
+
+              <motion.h1
+                variants={clipPath}
+                initial="hidden"
+                whileInView="show"
+                viewport={{once: true}}
+                className='text-[64px] font-semibold leading-16 tracking-[-0.64px]'>
+                
                 STAY IN TIME
-              </h1>
 
-              <p 
+              </motion.h1>
+
+              <motion.p
+                variants={clipPath}
+                initial="hidden"
+                whileInView="show"
+                viewport={{once: true}}
                 className='text-[1rem] font-light max-w-105 self-stretch tracking-[-0.32px] leading-[20.8px]'>
+
                 Be the first to receive private previews, new releases, and early access to upcoming collections.
-              </p>
+
+              </motion.p>
 
             </div>
 
-            <div className='flex items-start gap-2.5 w-full'>
+            <motion.div
+              variants={clipPath}
+              initial="hidden"
+              whileInView="show"
+              viewport={{once: true}}
+              className='flex items-start gap-2.5 w-full'>
 
               <div className="relative h-12 max-w-[320px] w-full inline-block">
 
@@ -63,11 +100,16 @@ const FooterInfo = () => {
                 SUBSCRIBE
               </button>
 
-            </div>
+            </motion.div>
 
           </div>
 
-          <div className='text-white flex items-center justify-between'>
+          <motion.div
+            variants={clipPath}
+            initial="hidden"
+            whileInView="show"
+            viewport={{once: true}}
+            className='text-white flex items-center justify-between'>
 
             <ul className='flex gap-2 items-center'>
 
@@ -89,14 +131,14 @@ const FooterInfo = () => {
               © 2026 Brantium. All rights reserved.
             </p>
 
-          </div>
+          </motion.div>
 
         </div>
-        
+
         <Clock />
       </div>
 
-      <BlackCards />
+      <BlackCards clipPath={clipPath} />
 
       <div className='w-full h-fit flex flex-col gap-10 items-center'>
 
