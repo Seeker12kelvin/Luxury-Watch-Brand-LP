@@ -1,0 +1,10 @@
+.footer-black-cards {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.clock-background {
+  border-radius: 336px;
+  border: 0.75px solid rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+}

@@ -4,6 +4,7 @@ import SlideShowSection from '../Slide Show Section/SlideShowSection'
 import NewestWatchSection from '../Newest Watch Section/NewestWatchSection'
 import BestSellerSection from '../Best Seller Section/BestSellerSection'
 import ShowCaseSection from '../Show Case Section/ShowCaseSection'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
@@ -17,6 +18,8 @@ const Home = () => {
       <BestSellerSection />
       
       <ShowCaseSection />
+
+      <Footer />
     </main>
   )
 }
