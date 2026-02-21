@@ -27,7 +27,7 @@ const BestSellerSection = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={ref} className='h-245 w-full flex justify-center items-center py-25 px-50 bg-[#0C0C0C]'>
+    <section ref={ref} className='h-[200vh] w-full flex justify-center items-center py-25 px-50 bg-[#0C0C0C]'>
       <div className={`${styles['seller-ul']} sticky top-0 flex flex-col items-center`}>
         <motion.div
           className='w-52.5 h-27.5 text-center' 

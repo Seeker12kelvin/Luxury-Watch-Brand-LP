@@ -2,156 +2,90 @@ import Watch from '../../../images/NewestInfo-Watch.png'
 import { motion } from 'framer-motion'
 import Bg from '../../../images/NewestBg.jpg'
 import { IoIosArrowRoundForward } from 'react-icons/io'
+import { useTransform } from 'framer-motion'
 
-const AnimatedBackground = ({controls}) => {
 
-  const bgVariants = {
-    hidden: {
-      opacity: 0,
-      height: 460,
-      width: 1040,
-      y: 300,
-      borderRadius: 20,
-    },
+const WIDTH_OF_DIV = 1440
+const HEIGHT_OF_DIV = 1115
 
-    visible: {
-      opacity: 1,
-      height: 460,
-      width: 1040,
-      y: 300,
-      borderRadius: 20,
-      transition: { duration: 1.6 },
-    },
+const AnimatedBackground = ({scrollYProgress}) => {
 
-    expanded: {
-      height: "100%",
-      width: "100%",
-      x: -200,
-      y: -100,
-      paddingTop: '5.81rem',
-      paddingLeft: '1rem',
-      borderRadius: 0,
-      transition: {
-        duration: 2,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
+  // const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
+  // const screenWidth = typeof window !== "undefined" ? window.innerWidth : 1000;
 
-    fadeInBackground: {
-      backgroundImage: `url(${Bg})`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      transition: {
-        duration: 2,
-        ease: [0.16, 1, 0.3, 1]
-      },
-    },
+  const height = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [460, HEIGHT_OF_DIV]
+  )
+  
+  const width = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [1040, WIDTH_OF_DIV]
+  )
+  
+  const divOpacity = useTransform(
+    scrollYProgress,
+    [0.2, 0.3],
+    [0, 1]
+  )
 
-    fadeBackground: {
-      opacity: 1,
-      backgroundImage: `url(${Bg})`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      transition: {
-        duration: 5,
-        ease: [0.16, 1, 0.3, 1]
-      },
-    },
-  };
+  const watchOpacity = useTransform(
+    scrollYProgress,
+    [0.4, 0.5],
+    [0, 1]
+  )
 
-  const imgVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.85,
-    },
+  const paddingBlock = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [62.08, 93]
+  )
 
-    visible: {
-      opacity: 1,
-      width: "11.625rem",
-      height: "21rem",
-      scale: 1,
-      transition: { duration: 1.2 },
-    },
+  const y = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [0, 0]
+  )
 
-    expanded: {
-      width: "32.75rem",
-      height: "59.3125rem",
-      scale: 1,
-      transition: { duration: 2 },
-    },
+  const borderRadius = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [20, 0]
+  );
 
-    fadeOut: {
-      opacity: 0,
-      scale: 0.97,
-      transition: { duration: 1.2 },
-    },
-  };
+  const bottom = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [180, 0]
+  )
 
-  const priceAnim = {
-    hidden: {
-      clipPath: "inset(0 0 100% 0)",
-      color: "#000",
-    },
-    visible: {
-      clipPath: "inset(0 0 0% 0)",
-      color: "#000",
-      transition: {
-        delay: 7.5,
-        duration: 1.2,
-        ease: "easeInOut",
-      },
-    }
-  }
+  const x = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [0, -200]
+  )
 
+  const watchWidth = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [186, 524]
+  )
+
+  const watchHeight = useTransform(
+    scrollYProgress,
+    [0.5, 0.9],
+    [336, 949]
+  )
 
   return (
-   <motion.div
-    variants={bgVariants}
-    initial="hidden"
-    animate={controls}
-    className="bg-[#0C0C0C] absolute z-10 rounded-[1.25rem] bg-center flex justify-center items-center self-stretch overflow-hidden">
+    <motion.div
+      style={{opacity: divOpacity, height, width, translateY: y, translateX: x, bottom, borderRadius, paddingTop: paddingBlock}}
+      className="bg-white mix-blend-difference -z-[1] absolute bg-center flex justify-center items-center self-stretch">
       
-      <motion.div
-        variants={imgVariants}
-        initial="hidden"
-        animate={controls}
-        onAnimationComplete={(variants) => {
-          if(variants === 'expanded') {
-            controls.start('fadeOut').then(() => {
-              controls.start('fadeInBackground').then(() => {
-                controls.start('fadeBackground')
-              })
-            })
-          }
-        }}
-        className='object-cover'
-        style={{
-          backgroundImage: `url(${Watch})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}></motion.div>
+      <motion.img style={{opacity: watchOpacity, height: watchHeight, width: watchWidth}} className='object-cover mix-blend-difference' src={Watch} alt='A picture of a brantium watch'/>
 
-        <motion.div
-          variants={priceAnim}
-          initial="hidden"
-          animate='visible'
-          className='flex flex-col absolute top-[79.7%] right-50 items-end'>
-          <div className='flex gap-1 items-center'>
-            <button
-              className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
-                ADD TO WATCHLIST
-            </button>
-  
-            <button
-              className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
-              <IoIosArrowRoundForward className='text-2xl' />
-            </button>
-          </div>
-  
-          <h1 className='text-[4rem] text-white'>
-            $145,999.99
-          </h1>
-        </motion.div>
     </motion.div>
   )
 }

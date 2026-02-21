@@ -7,7 +7,7 @@ import ShowCaseSection from '../Show Case Section/ShowCaseSection'
 
 const Home = () => {
   return (
-    <main className='h-full flex flex-col items-center w-full scroll-smooth overflow-x-hidden'>
+    <main className='h-full flex flex-col items-center w-full scroll-smooth'>
       <HeroSection />
       
       <SlideShowSection />
