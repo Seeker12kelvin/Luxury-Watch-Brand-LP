@@ -14,7 +14,7 @@ const ShowCaseSection = () => {
   })
 
   return (
-    <section ref={ref} className='h-[300vh] w-full relative bg-white'>
+    <section ref={ref} className='h-[300vh] w-360 relative bg-white'>
       <div className='sticky top-0 px-50 py-25 mix-blend-difference'>
         <ShowCaseInfo scrollYProgress={scrollYProgress} />
         <AnimatedBackground scrollYProgress={scrollYProgress} />

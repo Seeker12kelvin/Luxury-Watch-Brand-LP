@@ -5,6 +5,7 @@ import NewestWatchSection from '../Newest Watch Section/NewestWatchSection'
 import BestSellerSection from '../Best Seller Section/BestSellerSection'
 import ShowCaseSection from '../Show Case Section/ShowCaseSection'
 import Footer from '../Footer/Footer'
+import ImageGallery from '../Image Gallery/ImageGallery'
 
 const Home = () => {
   return (
@@ -18,6 +19,8 @@ const Home = () => {
       <BestSellerSection />
       
       <ShowCaseSection />
+
+      <ImageGallery />
 
       <Footer />
     </main>

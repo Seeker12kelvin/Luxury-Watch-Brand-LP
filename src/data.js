@@ -6,6 +6,13 @@ import Argent from './images/Argent-Heritage.jpg'
 import Bleu from './images/Bleu-Atelier.jpg'
 import Teal from './images/Teal-Sovereign.jpg'
 
+import bg_green_brantium from './images/Second-Slider-Background-Green-Brantium.png'
+import bg_blue_brantium from './images/Second-Slider-Blue-Brantium.png'
+import bg_bright_brantium from './images/Second-Slider-Bright-Background-Brantium.png'
+import bg_brown_brantium from './images/Second-Slider-Brown-Brantium.png'
+import bg_dark_blue_brantium from './images/Second-Slider-Dark-Blue.png'
+import bg_insider_green_brantium from './images/Second-Slider-Insider-Green-Brantium.png'
+
 export const aleteir = {
   img: Watch,
   title: 'BR. ATELIER 26',
@@ -64,4 +71,50 @@ export const watchCollection = [
     description: 'A modern collector’s expression combining brushed silver architecture with a striking teal dial, delivering bold individuality while maintaining timeless luxury restraint.',
     price: '$299,999.99'
   }
+]
+
+
+export const imageGalleryInfo = [
+  {
+    color: '#1C6030',
+    backgroundImage: bg_green_brantium,
+    header: 'CLASSIC',
+    description: 'A precision-engineered steel chronograph that combines bold style with modern sport-luxury. Featuring robust Swiss movements and brushed steel design, it is perfect for making a confident statement.',
+    price: '$6,849.99'
+  },
+  {
+    color: '#13386F',
+    backgroundImage: bg_blue_brantium,
+    header: 'CLASSIC',
+    description: 'A classic leather-strap collection designed for daily elegance. With Swiss automatic movements, slim cases, and premium leather, it iss perfect for executives and collectors.',
+    price: '$6,499.99'
+  },
+  {
+    color: '#000',
+    backgroundImage: bg_bright_brantium,
+    header: 'CHRONOGRAPH',
+    description: 'A precision-engineered steel chronograph that combines bold style with modern sport-luxury. Featuring robust Swiss movements and brushed steel design, it is perfect for making a confident statement.',
+    price: '$6,849.99'
+  },
+  {
+    color: '#8A3946',
+    backgroundImage: bg_brown_brantium,
+    header: 'CLASSIC',
+    description: 'A classic leather-strap collection designed for daily elegance. With Swiss automatic movements, slim cases, and premium leather, it iss perfect for executives and collectors.',
+    price: '$6,499.99'
+  },
+  {
+    color: '#285F97',
+    backgroundImage: bg_dark_blue_brantium,
+    header: 'CHRONOGRAPH',
+    description: 'A precision-engineered steel chronograph that combines bold style with modern sport-luxury. Featuring robust Swiss movements and brushed steel design, it is perfect for making a confident statement.',
+    price: '$6,849.99'
+  },
+  {
+    color: '#146B40',
+    backgroundImage: bg_insider_green_brantium,
+    header: 'CHRONOGRAPH',
+    description: 'A classic leather-strap collection designed for daily elegance. With Swiss automatic movements, slim cases, and premium leather, it iss perfect for executives and collectors.',
+    price: '$6,499.99'
+  },
 ]

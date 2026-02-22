@@ -27,7 +27,7 @@ const SlideShowSection = () => {
   }, [activeIndex])
 
   return (
-    <section className='h-245 w-full border bg-black relative'>
+    <section className='h-245 w-360 border bg-black relative'>
       
       <Background bg={bg} />
 
