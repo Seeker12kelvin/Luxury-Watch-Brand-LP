@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './ShowCaseSection.module.css'
 import ShowCaseInfo from './Content/ShowCaseInfo'
-import { useScroll } from 'framer-motion';
+import { useScroll, useSpring } from 'framer-motion';
 import AnimatedBackground from './Content/AnimatedBackground';
 
 const ShowCaseSection = () => {
@@ -13,11 +13,17 @@ const ShowCaseSection = () => {
     offset: ['start start', 'end end']
   })
 
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 60,
+    damping: 25,
+    mass: 0.8
+  })
+
   return (
-    <section ref={ref} className='h-[300vh] w-360 relative bg-white'>
+    <section ref={ref} className='h-[500vh] w-360 relative bg-white'>
       <div className='sticky top-0 px-50 py-25 mix-blend-difference'>
-        <ShowCaseInfo scrollYProgress={scrollYProgress} />
-        <AnimatedBackground scrollYProgress={scrollYProgress} />
+        <ShowCaseInfo scrollYProgress={smoothScroll} />
+        <AnimatedBackground scrollYProgress={smoothScroll} />
       </div>
     </section>
   )
