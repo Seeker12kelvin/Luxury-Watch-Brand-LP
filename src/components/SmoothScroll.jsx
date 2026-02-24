@@ -7,7 +7,7 @@ function SmoothScroll({ children }) {
     const lenis = new Lenis({
       duration: 1.4,
       smooth: true,
-      wheelMultiplier: 0.4,
+      wheelMultiplier: 0.8,
     })
 
     function raf(time) {
