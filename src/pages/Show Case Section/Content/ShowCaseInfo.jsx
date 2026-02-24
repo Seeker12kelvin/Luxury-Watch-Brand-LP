@@ -3,18 +3,55 @@ import Dark_Watch from '../../../images/Dark-Watch.png'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { motion, scale, useTransform } from 'framer-motion'
 
-const ShowCaseInfo = ({scrollYProgress}) => {
+const ShowCaseInfo = ({scrollYProgress, setBg}) => {
   
-  const clipPath = useTransform(
+  const firstTextClip = useTransform(
     scrollYProgress,
-    [0, 0.2],
-    ["inset(0 0 100% 0)", "inset(0 0 0% 0)"]
+    [0, 0.25, 0.35, 0.45],
+    [
+      "inset(0 0 100% 0)", // hidden
+      "inset(0 0 0% 0)",   // visible
+      "inset(0 0 0% 0)",   // stay
+      "inset(100% 0 0 0)"  // hide upward
+    ]
+  )
+
+  const secondTextClip = useTransform(
+    scrollYProgress,
+    [0.45, 0.65, 0.7],
+    [
+      "inset(0 0 100% 0)", // hidden
+      "inset(0 0 0% 0)",   // reveal
+      "inset(100% 0 0 0)"    // stay
+    ]
+  )
+
+  const thirdTextClip = useTransform(
+    scrollYProgress,
+    [0.7, 0.8, 1],
+    [
+      "inset(0 0 100% 0)", // hidden
+      "inset(0 0 0% 0)",   // reveal
+      "inset(0 0 0% 0)"    // stay
+    ]
   )
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.2],
-    [100, 0]
+    [0, 0.35, 0.45],
+    [100, 0, -280]
+  )
+
+  const secondY = useTransform(
+    scrollYProgress,
+    [0.1, 0.45, 0.55],
+    [100, 0, -280]
+  )
+
+  const thirdY = useTransform(
+    scrollYProgress,
+    [0.2, 0.55, 0.65],
+    [100, 0, -280]
   )
 
   const watchScale = useTransform(
@@ -28,18 +65,41 @@ const ShowCaseInfo = ({scrollYProgress}) => {
 
       <div className='h-237.5 w-full relative'>
 
-        <div className='w-full uppercase text-[8.75rem] text-center font-semibold leading-35 tracking-[-0.0875rem]'>
+        <div className='w-full overflow-hidden uppercase text-[8.75rem] text-center font-semibold leading-35 tracking-[-0.0875rem]'>
           <motion.h1
-            style={{clipPath, y}}
+            style={{clipPath: firstTextClip}}
             className='mix-blend-difference text-white'>
             Crafted with
           </motion.h1>
           
           <motion.h1
-            style={{clipPath, y}}
+            style={{clipPath: firstTextClip}}
             className='mix-blend-difference text-white'>
             precision
           </motion.h1>
+          
+          <motion.div
+            style={{ clipPath: firstTextClip }}
+            className="absolute inset-0"
+          >
+            <h1>Crafted with</h1>
+            <h1>precision</h1>
+          </motion.div>
+          
+          <motion.div
+            style={{ clipPath: secondTextClip }}
+            className="absolute inset-0"
+          >
+            <h1>Brantium</h1>
+            <h1>Argent Prime</h1>
+          </motion.div>
+
+          <motion.div
+            style={{ clipPath: thirdTextClip }}
+            className="absolute inset-0"
+          >
+            <h1>$94,499.99</h1>
+          </motion.div>
         </div>
 
         <motion.img
@@ -51,6 +111,10 @@ const ShowCaseInfo = ({scrollYProgress}) => {
       
       </div>
 
+      <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>
+        <button onClick={() => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
+        <button onClick={() => setBg("black")} className='h-6 w-6 bg-black rounded-full'></button>
+      </div>
       <div
         className='flex items-center gap-1 mix-blend-difference text-black'>
 
