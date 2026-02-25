@@ -22,12 +22,14 @@ const Header = () => {
 
       <div className='flex gap-1 items-center'>
         <button 
-          className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
+          className='uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5'>
             JOIN THE WAITLIST
         </button>
         <button
-          className='bg-[#FEFEFE] flex items-center h-full w-fit text-[#111111] text-sm py-3 px-3.5'>
-          <IoIosArrowRoundForward className='h-full w-full scale-150' />
+          className='bg-white flex items-center text-[#111111] justify-center h-9.5 w-10.5'>
+          <IoIosArrowRoundForward
+            className='w-6 h-6 shrink-0'
+          />
         </button>
       </div>
     </motion.nav>

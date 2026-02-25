@@ -9,10 +9,10 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
     scrollYProgress,
     [0, 0.25, 0.35, 0.45],
     [
-      "inset(0 0 100% 0)", // hidden
-      "inset(0 0 0% 0)",   // visible
-      "inset(0 0 0% 0)",   // stay
-      "inset(100% 0 0 0)"  // hide upward
+      "inset(0 0 100% 0)", 
+      "inset(0 0 0% 0)",   
+      "inset(0 0 0% 0)",   
+      "inset(100% 0 0 0)" 
     ]
   )
 
@@ -20,9 +20,9 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
     scrollYProgress,
     [0.45, 0.65, 0.7],
     [
-      "inset(0 0 100% 0)", // hidden
-      "inset(0 0 0% 0)",   // reveal
-      "inset(100% 0 0 0)"    // stay
+      "inset(0 0 100% 0)", 
+      "inset(0 0 0% 0)", 
+      "inset(100% 0 0 0)"    
     ]
   )
 
@@ -30,9 +30,9 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
     scrollYProgress,
     [0.7, 0.8, 1],
     [
-      "inset(0 0 100% 0)", // hidden
-      "inset(0 0 0% 0)",   // reveal
-      "inset(0 0 0% 0)"    // stay
+      "inset(0 0 100% 0)", 
+      "inset(0 0 0% 0)", 
+      "inset(0 0 0% 0)"    
     ]
   )
 
