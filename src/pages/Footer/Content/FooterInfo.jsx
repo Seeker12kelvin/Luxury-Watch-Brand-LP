@@ -19,7 +19,7 @@ const FooterInfo = () => {
   }
 
   return (
-    <div className={`z-10 w-full h-full flex flex-col justify-between py-25 px-50`}>
+    <div className={`z-10 w-full h-full flex flex-col justify-between pt-25 px-50 overflow-hidden`}>
 
       <div className='flex justify-between items-start w-full'>
 
@@ -71,9 +71,9 @@ const FooterInfo = () => {
               viewport={{once: true}}
               className='flex items-start gap-2.5 w-full'>
 
-              <div className="relative h-12 max-w-[320px] w-full inline-block">
+              <div className="relative h-full max-w-[320px] w-full inline-block">
 
-                <div className={`relative py-4 px-6.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-sm`}>
+                <div className={`relative py-4 px-6.5 bg-[#FFFFFF0D] rounded-sm`}>
           
                   <input
                     className='text-[#FFF] w-full flex-1 border-none outline-none'
@@ -140,9 +140,13 @@ const FooterInfo = () => {
 
       <BlackCards clipPath={clipPath} />
 
-      <div className='w-full h-fit flex flex-col gap-10 items-center'>
+      <div className='w-full h-[276.28px] flex flex-col gap-10 items-center justify-end'>
 
-        <div className='flex items-center gap-2.5'>
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1, transition: {duration: 1.2, ease: 'easeIn'}}}
+          viewport={{once: true}}
+          className='flex items-center gap-2.5'>
 
           <div className='py-2 px-4.5 rounded-[20px] bg-[#FFFFFF1A] flex items-center gap-2.5 w-fit text-[#FFFFFF]'>
             <p className='font-light'>Built by</p>
@@ -150,15 +154,75 @@ const FooterInfo = () => {
           </div>
 
           <img
-            className='w-28.75 h-10 opacity-30'
+            className='w-28.75 h-10'
             src={Comp_Logo} 
             alt='Rvysion Logo' />
 
-        </div>
+        </motion.div>
 
-        <p>
-          BRANTIUM
-        </p>
+        <motion.div
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1, transition: {duration: 1.2, ease: 'easeIn'}}}
+          viewport={{once: true}}
+          className='flex items-center h-53.5 gap-2 w-full justify-center'>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            B
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            R
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            A
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            N
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            T
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            I
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            U
+          </motion.h1>
+
+          <motion.h1
+            initial={{scale: 1}}
+            whileHover={{scale: 1.1}}
+            className='text-[18rem] font-light tracking-[-0.32px] text-[#181818]'>
+            M
+          </motion.h1>
+
+        </motion.div>
 
       </div>
 

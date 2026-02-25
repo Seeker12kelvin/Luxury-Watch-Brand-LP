@@ -10,9 +10,9 @@ const Login = () => {
   return (
     <main className='w-screen h-screen flex items-center place-content-center bg-[black]'>
       <form className={`${styles['login-form']}`}>
-        <div className={`${styles['first-section']} flex-1 border-b border-[#00000066] justify-between`}>
+        <div className={`${styles['first-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
           <div className={`${styles['first-section-text']}`}>
-            <h1>Get in touch with the</h1>
+            <p>Get in touch with the</p>
             <img src={Comp_Logo} alt='Rvysion Logo' />
             <p>team</p>
           </div>
@@ -66,7 +66,7 @@ const Login = () => {
                 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 className="origin-left h-12 px-3.5 w-full text-sm font-extralight overflow-hidden">
-                SUBMIT
+                REQUEST ACCESS
               </motion.button>
 
               <motion.button
@@ -75,21 +75,21 @@ const Login = () => {
                   hover: { backgroundColor: '#ffffff', color: '#000000' }
                 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="w-10.5 h-12 py-5 px-2 text-3xl flex items-center justify-center flex-0">
-                <IoIosArrowRoundForward />
+                className="w-10.5 h-12 shrink-0 flex items-center justify-center">
+                <IoIosArrowRoundForward className='text-2xl' />
               </motion.button>
-              
+            
             </motion.div>
 
 
             <div className='flex gap-4 items-start bg-[#1111110A] p-4'>
-              <div className='rounded-lg bg-[black] text-white h-[2.65rem] w-[2.65rem] flex items-center justify-center'>
+              <div className='rounded-[4.8px] bg-[black] text-white h-10 w-10 flex items-center justify-center'>
                 <span>Cal</span>
               </div>
               <div className='flex w-full flex-col items-start'>
 
                 <div className='flex items-center justify-between w-full'>
-                  <h3 className='text-[1rem] font-normal' >Book a 1 on 1 call with us</h3>
+                  <h4 className='text-[1rem] font-normal tracking-[-0.14px] text-[#111]' >Book a 1 on 1 call with us</h4>
                   <IoIosArrowRoundForward className='text-3xl' />
                 </div>
                 <p className='text-[0.875rem] font-light'>Schedule a 30-minute call to share your project goals and learn how we can craft a tailored exploration for your product or brand.</p>

@@ -32,7 +32,7 @@ const SlideShowSection = () => {
       <Background bg={bg} />
 
       <AnimatePresence mode="wait">
-        <div className={`${styles['content-overlay']} overflow-hidden w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
+        <div className={`${styles['content-overlay']} overflow-x-hidden w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
           <SlideShowInfo data={{bg, activeIndex, setActiveIndex, nextSlide, prevSlide}} />
 
           <Slider data={{activeIndex}}/>

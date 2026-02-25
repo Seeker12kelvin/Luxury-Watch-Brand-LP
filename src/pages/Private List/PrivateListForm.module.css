@@ -1,0 +1,60 @@
+.private-form {
+  font-family: 'Inter Tight', sans-serif;
+}
+
+.private-form .private-section,
+.private-form .private-section-text,
+.private-form label {
+  display: flex;
+}
+
+
+.private-form .private-section,
+.private-form .private-section-text {
+  align-items: center;
+}
+
+.private-form .private-section {
+  padding: 1.25rem 2rem;
+}
+
+.private-form .private-section-text {
+  font-weight: 300;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+}
+
+.private-form label {
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.05rem;
+  letter-spacing: -0.00875rem;
+}
+
+.private-form input {
+  background-color: #1111110D;
+  font-size: 0.875rem;
+  outline: none;
+  font-weight: 300;
+}
+
+.private-form input {
+  max-width: 20rem;
+  padding: 1rem 1.25rem;
+  flex: 1;
+}
+
+.private-form input::placeholder{
+  opacity: 0.3;
+}
+
+.private-form textarea {
+  resize: none;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  height: 6.25rem;
+}

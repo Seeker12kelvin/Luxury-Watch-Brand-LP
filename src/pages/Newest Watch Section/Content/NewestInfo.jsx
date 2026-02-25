@@ -26,7 +26,7 @@ const NewestInfo = ({scrollYProgress}) => {
       <div className='flex flex-col items-start self-stretch gap-2.5'>
 
         <motion.div style={{clipPath}}>
-          <NewReleaseBadge text={`${date} RELEASE`} textColor={'black'} borderColor={'black'} />
+          <NewReleaseBadge text={`${date} RELEASE`} textColor={'white'} borderColor={'white'} background={'[#0A0A0A14]'}/>
         </motion.div>
 
         <motion.h1

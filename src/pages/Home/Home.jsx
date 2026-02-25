@@ -14,10 +14,10 @@ const Home = () => {
   const { displayProgress } = useContext(UserContext)
 
   return (
-      displayProgress < 100
-      ? 
-      <LoadingScreen /> 
-      :
+      // displayProgress < 100
+      // ? 
+      // <LoadingScreen /> 
+      // :
       <main className='h-full flex flex-col items-center w-full'>
         <HeroSection />
         
