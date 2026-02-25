@@ -145,8 +145,8 @@ const FooterInfo = () => {
         <div className='flex items-center gap-2.5'>
 
           <div className='py-2 px-4.5 rounded-[20px] bg-[#FFFFFF1A] flex items-center gap-2.5 w-fit text-[#FFFFFF]'>
-            <p className='font-light opacity-20'>Built by</p>
-            <IoIosArrowRoundForward className='font-light opacity-20' />
+            <p className='font-light'>Built by</p>
+            <IoIosArrowRoundForward className='font-light text-[#FFF]' />
           </div>
 
           <img

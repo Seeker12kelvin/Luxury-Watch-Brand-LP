@@ -17,7 +17,7 @@ const DetailsPage = () => {
 
   return (
 
-    <div className='bg-[white] flex flex-col gap-21'>
+    <div className='bg-[white] flex flex-col gap-21 w-358 overflow-x-hidden h-full'>
       
       <div className='px-52 mix-blend-difference text-white'>
 
