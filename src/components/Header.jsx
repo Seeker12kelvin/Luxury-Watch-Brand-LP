@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { motion } from 'framer-motion'
+import Logo from './Logo'
 
 const Header = () => {
   return (
@@ -9,6 +10,8 @@ const Header = () => {
       animate={{opacity: 1}}
       transition={{duration: 1.6}}
       className='flex w-full py-3 justify-between items-center'>
+
+      <Logo />
 
       <div className='flex gap-1 items-center'>
         <button 

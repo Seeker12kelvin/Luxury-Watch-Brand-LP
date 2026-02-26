@@ -11,7 +11,7 @@ const NewestInfo = ({scrollYProgress}) => {
 
   const clipPath = useTransform(
     scrollYProgress,
-    [0, 0.2],
+    [0, 0.15],
     ["inset(0 0 100% 0)", "inset(0 0 0% 0)"],
   )
 

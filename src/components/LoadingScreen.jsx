@@ -4,7 +4,7 @@ import UserContext from "./userContext"
 
 const LoadingScreen = () => {
 
-  const { displayProgress, setDisplayProgress } = useContext(UserContext)
+  const { displayProgress, setDisplayProgress, opacity} = useContext(UserContext)
 
   const progress = useMotionValue(0)
   const [complete, setComplete] = useState(false)
@@ -53,11 +53,11 @@ const LoadingScreen = () => {
   })
 
   return (
-    <div className="h-screen bg-black flex items-center justify-center">
+    <div className={`h-screen w-360 bg-black justify-self-center flex items-center justify-center opacity-${opacity}`}>
 
       <div className="relative">
 
-        <svg width="800" height="800" viewBox="0 0 300 300">
+        <svg width="700" height="700" viewBox="0 0 300 300">
 
           {/* border */}
           <circle
@@ -94,7 +94,7 @@ const LoadingScreen = () => {
 
           <h1 className="absolute top-10 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px]">I</h1>
           <h1 className="absolute right-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px]">III</h1>
-          <h1 className="absolute bottom-10 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px]">VI</h1>
+          <h1 className="absolute bottom-5 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px]">VI</h1>
           <h1 className="absolute left-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px]">IX</h1>
 
         </div>

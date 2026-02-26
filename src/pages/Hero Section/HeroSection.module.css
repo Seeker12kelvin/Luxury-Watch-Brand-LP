@@ -6,7 +6,8 @@
   position: relative;
   width: 90rem;
   height: fit-content;
-  background-color: black;
+  margin-bottom: 140px;
+  background-color: #0C0C0C;
 }
 
 .video-element {

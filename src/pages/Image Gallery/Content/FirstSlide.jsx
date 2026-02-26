@@ -90,7 +90,7 @@ const FirstSlide = () => {
               <button
                 key={index}
                 onClick={() => handleBgInfo(data.buttons)} 
-                className={`w-6 h-6 border border-white rounded-full`}
+                className={`w-6 h-6 ${bg?.color === data.buttons ? 'border-2 border-white' : ''} rounded-full`}
                 style={{backgroundColor: data.buttons}}>
               </button>
             ))}

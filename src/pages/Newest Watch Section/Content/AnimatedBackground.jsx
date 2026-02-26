@@ -15,88 +15,66 @@ const AnimatedBackground = ({scrollYProgress}) => {
 
   const maxHeight = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [460, HEIGHT_OF_DIV],
     
   )
   
   const maxWidth = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [1040, WIDTH_OF_DIV],
     
   )
 
   const scale = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [1, 1.2]
   )
 
   const scaleWatch = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
-    [0.6, 1.5]
+    [0.4, 0.6],
+    [0.6, 1.4]
   )
   
   const divOpacity = useTransform(
     scrollYProgress,
-    [0.2, 0.3],
+    [0.2, 0.25],
     [0, 1]
   )
 
   const watchOpacity = useTransform(
     scrollYProgress,
-    [0.4, 0.5],
-    [0, 1]
-  )
-
-  const paddingBlock = useTransform(
-    scrollYProgress,
-    [0.5, 0.8],
-    [62.08, 93],
-    
-  )
-
-  const aew = useTransform(
-    scrollYProgress,
-    [0.5, 0.8],
-    [0, 0],
-    
+    [0.3, 0.35, 0.8],
+    [0, 1, 0]
   )
 
   const borderRadius = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [20, 0],
     
   );
 
   const y = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [-650, -1050],
     
   )
 
   const x = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
+    [0.4, 0.6],
     [0, -200],
   )
 
-  const watchWidth = useTransform(
+  const watchBgOpacity = useTransform(
     scrollYProgress,
-    [0.5, 0.8],
-    [186, 524],
-    
-  )
-
-  const watchHeight = useTransform(
-    scrollYProgress,
-    [0.5, 0.8],
-    [336, 949],
-    
+    [0, 0.4, 0.8, 0.805],
+    [0, 0, 0, 1,]
   )
 
   return (
@@ -107,6 +85,13 @@ const AnimatedBackground = ({scrollYProgress}) => {
       <motion.img
         style={{scale: scaleWatch, opacity: watchOpacity}}
         className='object-cover mix-blend-difference' src={Watch} alt='A picture of a brantium watch'/>
+
+      
+      <motion.div
+        style={{opacity: watchBgOpacity, background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${Bg}) lightgray 50% / cover no-repeat`}}
+        className='absolute top-0 w-full h-full mix-blend-difference'>
+        
+      </motion.div>
 
     </motion.div>
   )

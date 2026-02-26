@@ -7,7 +7,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
   
   const firstTextClip = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.35, 0.45],
+    [0, 0.25, 0.35, 0.4],
     [
       "inset(0 0 100% 0)", 
       "inset(0 0 0% 0)",   
@@ -18,7 +18,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
 
   const secondTextClip = useTransform(
     scrollYProgress,
-    [0.45, 0.65, 0.7],
+    [0.4, 0.65, 0.7],
     [
       "inset(0 0 100% 0)", 
       "inset(0 0 0% 0)", 
@@ -28,75 +28,63 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
 
   const thirdTextClip = useTransform(
     scrollYProgress,
-    [0.7, 0.8, 1],
+    [0.7, 1],
     [
       "inset(0 0 100% 0)", 
-      "inset(0 0 0% 0)", 
       "inset(0 0 0% 0)"    
     ]
   )
 
   const y = useTransform(
     scrollYProgress,
-    [0, 0.35, 0.45],
-    [100, 0, -280]
+    [0, 0.25, 0.35, 0.4],
+    [100, 0, 0, -100]
   )
 
   const secondY = useTransform(
     scrollYProgress,
-    [0.1, 0.45, 0.55],
-    [100, 0, -280]
+    [0.4, 0.65, 0.7],
+    [100, 0, -100]
   )
 
   const thirdY = useTransform(
     scrollYProgress,
-    [0.2, 0.55, 0.65],
-    [100, 0, -280]
+    [0.7, 1],
+    [100, -100]
   )
 
   const watchScale = useTransform(
     scrollYProgress,
-    [0, 0.1],
+    [0, 0.05],
     [0, 1]
   )
 
   return (
-    <div className='w-full h-full flex flex-col justify-between gap-21.25 items-center mix-blend-difference text-white'>
+    <div className='z-10 w-full h-full flex flex-col justify-between gap-21.25 items-center'>
 
       <div className='h-237.5 w-full relative'>
 
         <div className='w-full overflow-hidden uppercase text-[8.75rem] text-center font-semibold leading-35 tracking-[-0.0875rem]'>
-          <motion.h1
-            style={{clipPath: firstTextClip}}
-            className='mix-blend-difference text-white'>
-            Crafted with
-          </motion.h1>
-          
-          <motion.h1
-            style={{clipPath: firstTextClip}}
-            className='mix-blend-difference text-white'>
-            precision
-          </motion.h1>
           
           <motion.div
-            style={{ clipPath: firstTextClip }}
-            className="absolute inset-0"
+            style={{ clipPath: firstTextClip, y: y }}
+            className="absolute inset-0 text-white mix-blend-difference"
           >
             <h1>Crafted with</h1>
             <h1>precision</h1>
           </motion.div>
           
           <motion.div
-            style={{ clipPath: secondTextClip }}
-            className="absolute inset-0"
+            style={{ clipPath: secondTextClip, y: secondY }}
+            className="absolute inset-0 text-white mix-blend-difference"
           >
             <h1>Brantium</h1>
             <h1>Argent Prime</h1>
           </motion.div>
 
           <motion.div
-            style={{ clipPath: thirdTextClip }}
-            className="absolute inset-0"
+            style={{ clipPath: thirdTextClip, y: thirdY }}
+            className="absolute inset-0 text-white mix-blend-difference"
           >
             <h1>$94,499.99</h1>
           </motion.div>
@@ -104,7 +92,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
 
         <motion.img
           style={{scale: watchScale, opacity: watchScale}}
-          className='absolute h-202.5 w-360 object-cover top-40'
+          className='absolute h-202.5 w-360 object-cover top-40 '
           src={Dark_Watch}
           alt='Picture of a wrist watch'
         />
@@ -113,10 +101,10 @@ const ShowCaseInfo = ({scrollYProgress, setBg}) => {
 
       <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>
         <button onClick={() => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
-        <button onClick={() => setBg("black")} className='h-6 w-6 bg-black rounded-full'></button>
+        <button onClick={() => setBg("[#0C0C0C]")} className='h-6 w-6 bg-black rounded-full'></button>
       </div>
       <div
-        className='flex items-center gap-1 mix-blend-difference text-black'>
+        className='flex items-center gap-1 text-black'>
 
         <motion.button
           style={{opacity: watchScale}}

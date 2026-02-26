@@ -36,7 +36,7 @@ const Background = ({bg}) => {
       style={bg ? { 
         backgroundImage: `url(${bg.img})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'}
+        backgroundSize: 'contain'}
         :
         {}
       }
