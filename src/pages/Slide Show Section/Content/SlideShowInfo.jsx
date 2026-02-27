@@ -21,7 +21,7 @@ const SlideShowInfo = ({data}) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: 'easeInOut'
       }
     },
@@ -30,7 +30,7 @@ const SlideShowInfo = ({data}) => {
       opacity: 0,
       y: -20,
       transition: {
-        duration: 0.6 * 0.7,
+        duration: 0.42,
         ease: 'easeInOut'
       }
     }
@@ -42,7 +42,8 @@ const SlideShowInfo = ({data}) => {
         <motion.div
           key={`${bg?.id}-badge`}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{once: true}}
           exit="exit"
           variants={textVariants}>
 
@@ -56,7 +57,8 @@ const SlideShowInfo = ({data}) => {
           key={`${bg?.id}-title`}
           variants={textVariants}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{once: true}}
           exit="exit"
           className='text-[4rem] font-semibold'>
 
@@ -73,7 +75,8 @@ const SlideShowInfo = ({data}) => {
           key={`${bg?.id}-description`}
           variants={textVariants}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{once: true}}
           exit="exit"
           className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight`}>
 
@@ -96,7 +99,8 @@ const SlideShowInfo = ({data}) => {
               key={`${bg?.id}-price`}
               variants={textVariants}
               initial="initial"
-              animate="animate"
+              whileInView="animate"
+              viewport={{once: true}}
               exit="exit"
               className='text-[4rem]'>
               {bg.price.toUpperCase()}
@@ -109,7 +113,8 @@ const SlideShowInfo = ({data}) => {
                 key={`${bg?.id}-join-button`}
                 variants={textVariants}
                 initial="initial"
-                animate="animate"
+                whileInView="animate"
+                viewport={{once: true}}
                 exit="exit"
                 className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
                   ADD TO WATCHLIST
@@ -121,7 +126,8 @@ const SlideShowInfo = ({data}) => {
                 key={`${bg?.id}-arrow-button`}
                 variants={textVariants}
                 initial="initial"
-                animate="animate"
+                whileInView="animate"
+                viewport={{once: true}}
                 exit="exit"
                 className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
                 <IoIosArrowRoundForward className='text-2xl' />
@@ -158,7 +164,7 @@ const SlideShowInfo = ({data}) => {
               onClick={() => {
                 prevSlide()
               }}
-              className={`w-9 h-2 ${activeIndex === 0 ? 'pointer-events-none opacity-50' : 'cursor-pointer opacity-100'}`}>
+              className={`w-9 h-2 ${activeIndex === 0 || activeIndex === -1 ? 'pointer-events-none opacity-50' : 'cursor-pointer opacity-100'}`}>
               <img src={LeftArrow} alt='Left arrow' />
             </button>
 
