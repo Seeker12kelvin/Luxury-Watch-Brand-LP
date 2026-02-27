@@ -20,7 +20,7 @@ const NewestWatchSection = () => {
   // })
 
   return (
-    <section ref={ref} className='relative h-[900vh] w-360 bg-black'>
+    <section ref={ref} className='relative h-[700vh] w-360 bg-black'>
       <div className='sticky overflow-clip top-0 px-50 py-15 w-full bg-white'>
         <NewestInfo scrollYProgress={scrollYProgress} />
         <AnimatedBackground scrollYProgress={scrollYProgress}/>

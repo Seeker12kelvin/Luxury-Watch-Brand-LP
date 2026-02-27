@@ -5,9 +5,9 @@ import Lenis from "@studio-freight/lenis"
 function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1,
       smooth: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 0.6,
     })
 
     function raf(time) {
