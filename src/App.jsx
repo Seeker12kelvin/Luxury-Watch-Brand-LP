@@ -19,9 +19,9 @@ function App() {
     <>
       <UserContext.Provider value={{ displayProgress, setDisplayProgress, opacity }}>
         {/* You can set the user context value here */}
-        <SmoothScroll>
+
           <RouterProvider router={routes}/>
-        </SmoothScroll>
+
       </UserContext.Provider>
     </>
   )

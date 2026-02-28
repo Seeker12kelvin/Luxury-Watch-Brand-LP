@@ -79,7 +79,7 @@ const AnimatedBackground = ({scrollYProgress}) => {
 
   return (
     <motion.div
-      style={{translateY: y, translateX: x, maxWidth: maxWidth, maxHeight: maxHeight, opacity: divOpacity}}
+      style={{translateY: y, translateX: x, maxWidth: maxWidth, maxHeight: maxHeight, opacity: divOpacity, borderRadius}}
       className="bg-white mix-blend-difference will-change-transform h-full max-w-260 max-h-278.75 w-full z-[0] py-[3.88rem] absolute bg-center flex justify-center items-center self-stretch">
       
       <motion.img

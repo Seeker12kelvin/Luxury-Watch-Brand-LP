@@ -14,7 +14,7 @@ const FooterInfo = () => {
     },
     show: {
       clipPath: "inset(0 0 0% 0)",
-      transition: { duration: 1.6, ease: 'easeIn' }
+      transition: { duration: 1, ease: 'easeIn' }
     }
   }
 

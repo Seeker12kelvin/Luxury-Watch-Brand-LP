@@ -9,7 +9,7 @@ const HeroInfo = () => {
     hidden: { clipPath: "inset(0 0 100% 0)" },
     show: {
       clipPath: "inset(0 0 0% 0)",
-      transition: { delay: 0.5, duration: 1.6, ease: 'easeInOut' }
+      transition: { delay: 0.5, duration: 1, ease: 'easeIn' }
     }
   }
 
