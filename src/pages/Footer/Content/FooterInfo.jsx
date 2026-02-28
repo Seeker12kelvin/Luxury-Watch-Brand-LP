@@ -1,10 +1,10 @@
-import React from 'react'
-import NewReleaseBadge from '../../../components/NewReleaseDiv'
-import BlackCards from './BlackCards'
-import Comp_Logo from '../../../images/Footer-Logo-Container.svg'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import Clock from './Clock'
-import { motion } from 'framer-motion'
+import React from 'react';
+import Clock from './Clock';
+import BlackCards from './BlackCards';
+import { motion } from 'framer-motion';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import NewReleaseBadge from '../../../components/NewReleaseDiv';
+import Comp_Logo from '../../../images/Footer-Logo-Container.svg';
 
 const FooterInfo = () => {
 

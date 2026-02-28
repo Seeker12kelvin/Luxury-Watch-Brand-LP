@@ -1,13 +1,13 @@
-import React, { useRef } from 'react'
-import './ShowCaseSection.module.css'
-import ShowCaseInfo from './Content/ShowCaseInfo'
+import './ShowCaseSection.module.css';
+import { useRef, useState } from 'react';
+import ShowCaseInfo from './Content/ShowCaseInfo';
 import { useScroll, useSpring } from 'framer-motion';
 import AnimatedBackground from './Content/AnimatedBackground';
 
 const ShowCaseSection = () => {
 
   const ref = useRef(null)
-  const [bg, setBg] = React.useState("[#0C0C0C]")
+  const [bg, setBg] = useState("[#0C0C0C]")
 
   const { scrollYProgress } = useScroll({
     target: ref,

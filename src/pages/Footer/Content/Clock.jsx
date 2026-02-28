@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styles from '../Footer.module.css'
 import { motion } from 'framer-motion';
+import styles from '../Footer.module.css';
+import React, { useState, useEffect } from 'react';
 
 const Clock = () => {
 

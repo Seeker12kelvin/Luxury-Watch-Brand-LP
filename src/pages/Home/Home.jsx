@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
-import HeroSection from '../Hero Section/HeroSection'
-import SlideShowSection from '../Slide Show Section/SlideShowSection'
-import NewestWatchSection from '../Newest Watch Section/NewestWatchSection'
-import BestSellerSection from '../Best Seller Section/BestSellerSection'
-import ShowCaseSection from '../Show Case Section/ShowCaseSection'
-import Footer from '../Footer/Footer'
-import ImageGallery from '../Image Gallery/ImageGallery'
-import LoadingScreen from '../../components/LoadingScreen'
-import UserContext from '../../components/userContext'
-import { motion } from 'framer-motion'
+import Footer from '../Footer/Footer';
+import { motion } from 'framer-motion';
+import React, { useContext } from 'react';
+import HeroSection from '../Hero Section/HeroSection';
+import UserContext from '../../components/userContext';
+import ImageGallery from '../Image Gallery/ImageGallery';
+import LoadingScreen from '../../components/LoadingScreen';
+import ShowCaseSection from '../Show Case Section/ShowCaseSection';
+import SlideShowSection from '../Slide Show Section/SlideShowSection';
+import BestSellerSection from '../Best Seller Section/BestSellerSection';
+import NewestWatchSection from '../Newest Watch Section/NewestWatchSection';
 
 const Home = () => {
 

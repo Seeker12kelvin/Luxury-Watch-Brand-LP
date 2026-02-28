@@ -1,6 +1,6 @@
-import React from 'react'
-import FooterInfo from './Content/FooterInfo'
-import bg from '../../images/Footer-Background-Img.png'
+import React from 'react';
+import FooterInfo from './Content/FooterInfo';
+import bg from '../../images/Footer-Background-Img.png';
 
 const Footer = () => {
 

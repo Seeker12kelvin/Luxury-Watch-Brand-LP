@@ -1,10 +1,10 @@
-import React, { use, useEffect, useState } from 'react'
-import { watchCollection } from '../../data'
-import styles from './SlideShowContent.module.css'
-import Background from './Content/Background'
-import SlideShowInfo from './Content/SlideShowInfo'
-import Slider from './Content/Slider'
-import { AnimatePresence } from 'framer-motion'
+import Slider from './Content/Slider';
+import { useEffect, useState } from 'react';
+import { watchCollection } from '../../data';
+import Background from './Content/Background';
+import { AnimatePresence } from 'framer-motion';
+import styles from './SlideShowSection.module.css';
+import SlideShowInfo from './Content/SlideShowInfo';
 
 const SlideShowSection = () => {
 

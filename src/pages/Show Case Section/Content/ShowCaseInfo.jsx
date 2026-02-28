@@ -1,7 +1,6 @@
-import React from 'react'
-import Dark_Watch from '../../../images/Dark-Watch.png'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { motion, scale, useTransform } from 'framer-motion'
+import Dark_Watch from '../../../images/Dark-Watch.png';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { motion, scale, useTransform } from 'framer-motion';
 
 const ShowCaseInfo = ({scrollYProgress, setBg}) => {
   

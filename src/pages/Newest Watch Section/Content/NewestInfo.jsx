@@ -1,8 +1,6 @@
-import React from 'react'
-import NewReleaseBadge from '../../../components/NewReleaseDiv'
-import { motion, useTransform } from 'framer-motion'
-import AnimatedBackground from './AnimatedBackground'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import { motion, useTransform } from 'framer-motion';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import NewReleaseBadge from '../../../components/NewReleaseDiv';
 
 
 const NewestInfo = ({scrollYProgress}) => {

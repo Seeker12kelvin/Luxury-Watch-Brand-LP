@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from '../HeroSection.module.css'
-import { motion } from 'framer-motion'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import React from 'react';
+import { motion } from 'framer-motion';
+import styles from '../HeroSection.module.css';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const HeroInfo = () => {
 

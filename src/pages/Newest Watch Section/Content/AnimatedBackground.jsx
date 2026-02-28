@@ -1,8 +1,7 @@
-import Watch from '../../../images/NewestInfo-Watch.png'
-import { motion } from 'framer-motion'
-import Bg from '../../../images/NewestBg.jpg'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { useTransform } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { useTransform } from 'framer-motion';
+import Bg from '../../../images/NewestBg.jpg';
+import Watch from '../../../images/NewestInfo-Watch.png';
 
 
 const WIDTH_OF_DIV = 1440

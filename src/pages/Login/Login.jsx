@@ -1,9 +1,8 @@
-import React from 'react'
-import styles from './Login.module.css'
-import Comp_Logo from '../../images/Comp_Logo.svg'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { MdClose } from 'react-icons/md'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import styles from './Login.module.css';
+import { MdClose } from 'react-icons/md';
+import Comp_Logo from '../../images/Comp_Logo.svg';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 
 const Login = () => {

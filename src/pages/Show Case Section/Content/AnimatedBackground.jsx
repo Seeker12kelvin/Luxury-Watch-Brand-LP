@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion, useTransform } from 'framer-motion'
-import fill_background from '../../../images/Fill-Background.svg'
+import { motion, useTransform } from 'framer-motion';
+import fill_background from '../../../images/Fill-Background.svg';
 
 const AnimatedBackground = ({scrollYProgress, bg}) => {
 

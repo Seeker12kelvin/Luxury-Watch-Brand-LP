@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion"
-import { watchCollection } from "../../../data"
+import { watchCollection } from "../../../data";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SLIDE_WIDTH = 400
 const VIEWPORT_WIDTH = 1440

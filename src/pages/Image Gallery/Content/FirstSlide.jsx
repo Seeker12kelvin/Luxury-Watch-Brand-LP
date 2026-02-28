@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { imageGalleryInfo } from '../../../data'
-import { AnimatePresence, motion } from 'framer-motion'
-import bg_blue_brantium from '../../../images/Second-Slider-Blue-Brantium.png'
+import React, { useState } from 'react';
+import { imageGalleryInfo } from '../../../data';
+import { AnimatePresence, motion } from 'framer-motion';
+import bg_blue_brantium from '../../../images/Second-Slider-Blue-Brantium.png';
 
 const FirstSlide = () => {
   

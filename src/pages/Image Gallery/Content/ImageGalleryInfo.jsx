@@ -1,6 +1,5 @@
-import React from 'react'
-import FirstSlide from './FirstSlide'
-import SecondSlide from './SecondSlide'
+import FirstSlide from './FirstSlide';
+import SecondSlide from './SecondSlide';
 
 const ImageGalleryInfo = () => {
   return (

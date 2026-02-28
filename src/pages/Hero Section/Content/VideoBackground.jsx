@@ -1,7 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import styles from '../HeroSection.module.css'
-import videoSource from '../../../assets/Whisk_emyyqtn4i2yxmmzm1sm0ewytetzmrtlwatz50co.mp4'
+import React from 'react';
+import { motion } from 'framer-motion';
+import styles from '../HeroSection.module.css';
+import videoSource from '../../../assets/Whisk_emyyqtn4i2yxmmzm1sm0ewytetzmrtlwatz50co.mp4';
 
 const VideoBackground = () => {
   return (

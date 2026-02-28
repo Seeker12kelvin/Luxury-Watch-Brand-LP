@@ -1,10 +1,10 @@
-import styles from '../HeroSection.module.css'
-import { aleteir } from '../../../data'
-import NewReleaseBadge from '../../../components/NewReleaseDiv'
-import { MdClose, MdStar } from 'react-icons/md'
-import { motion } from 'framer-motion'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { aleteir } from '../../../data';
+import styles from '../HeroSection.module.css';
+import { MdClose, MdStar } from 'react-icons/md';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import NewReleaseBadge from '../../../components/NewReleaseDiv';
 
 const HeroProductPopUp = ({isOpen, open}) => { 
   return isOpen ?

@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import styles from './HeroSection.module.css'
-import Header from '../../components/Header'
+import { useState } from 'react';
+import HeroInfo from './Content/HeroInfo';
+import Header from '../../components/Header';
+import styles from './HeroSection.module.css';
 import HeroFooter from './Content/HeroFooter';
+import { AnimatePresence } from 'framer-motion';
 import VideoBackground from './Content/VideoBackground';
 import HeroProductPopUp from './Content/HeroProductPopUp';
-import { AnimatePresence } from 'framer-motion';
-import HeroInfo from './Content/HeroInfo';
 
 const HeroSection = () => {
 

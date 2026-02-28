@@ -1,6 +1,5 @@
-import React from 'react'
-import ImageGalleryInfo from './Content/ImageGalleryInfo'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion';
+import ImageGalleryInfo from './Content/ImageGalleryInfo';
 
 const ImageGallery = () => {
   return (

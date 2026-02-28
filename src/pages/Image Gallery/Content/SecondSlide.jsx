@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { imageGalleryInfo } from '../../../data'
-import bg_dark_blue_brantium from '../../../images/Second-Slider-Dark-Blue.png'
-import { motion } from 'framer-motion'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { imageGalleryInfo } from '../../../data';
+import bg_dark_blue_brantium from '../../../images/Second-Slider-Dark-Blue.png';
 
 const SecondSlide = () => {
   const [bg, setBg] = useState(

@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from '../Footer.module.css'
-import { RiInstagramFill } from "react-icons/ri";
-import { FaPinterest } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import React from 'react';
 import { motion } from 'framer-motion';
+import styles from '../Footer.module.css';
+import { FaYoutube } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 const BlackCards = ({clipPath}) => {
   

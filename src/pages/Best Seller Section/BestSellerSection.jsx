@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import { useScroll } from 'framer-motion'
-import styles from './BestSellerSection.module.css'
+import { motion } from 'framer-motion';
+import { useScroll } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import styles from './BestSellerSection.module.css';
 
 const BestSellerSection = () => {
   

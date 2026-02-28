@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import styles from '../SlideShowContent.module.css'
+import { motion } from 'framer-motion';
+import styles from '../SlideShowSection.module.css';
 
 const Background = ({bg}) => {
 

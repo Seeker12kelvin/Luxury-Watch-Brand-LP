@@ -20,7 +20,7 @@ function App() {
       <UserContext.Provider value={{ displayProgress, setDisplayProgress, opacity }}>
         {/* You can set the user context value here */}
 
-          <RouterProvider router={routes}/>
+        <RouterProvider router={routes}/>
 
       </UserContext.Provider>
     </>

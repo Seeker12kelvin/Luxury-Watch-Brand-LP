@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react'
-import './NewestWatchSection.module.css'
-import NewestInfo from './Content/NewestInfo'
-import AnimatedBackground from './Content/AnimatedBackground'
-import { useAnimationControls, useInView, useScroll, useSpring } from 'framer-motion'
+import { useRef } from 'react';
+import './NewestWatchSection.module.css';
+import { useScroll } from 'framer-motion';
+import NewestInfo from './Content/NewestInfo';
+import AnimatedBackground from './Content/AnimatedBackground';
 
 const NewestWatchSection = () => {
 

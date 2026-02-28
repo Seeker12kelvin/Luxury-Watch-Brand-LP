@@ -1,10 +1,9 @@
-import React from 'react'
-import styles from './PrivateListForm.module.css'
-import { motion } from 'framer-motion'
-import { MdClose } from 'react-icons/md'
-import Logo from '../../components/Logo'
-import product from '../../images/Private-List-Img.jpg'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import { motion } from 'framer-motion';
+import { MdClose } from 'react-icons/md';
+import Logo from '../../components/Logo';
+import styles from './PrivateListForm.module.css';
+import product from '../../images/Private-List-Img.jpg';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const PrivateListForm = () => {
   return (

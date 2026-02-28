@@ -1,7 +1,7 @@
-import React from 'react'
-import Watch_Btn from '../../../images/Watch-Button.png'
-import { motion } from 'framer-motion'
-import { IoIosArrowDown } from 'react-icons/io'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { IoIosArrowDown } from 'react-icons/io';
+import Watch_Btn from '../../../images/Watch-Button.png';
 
 
 const HeroFooter = ({closeDiv}) => {
