@@ -1,9 +1,9 @@
-@import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
-  font-family: 'Moela';
-  src: url('./fonts/MOELA.ttf') format('truetype');
+  font-family: "Moela";
+  src: url("./fonts/MOELA.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
   display: flex;
   scroll-behavior: smooth;
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
 }
 
 .inter-tight {
@@ -24,12 +24,16 @@ body {
   font-style: normal;
 }
 
-h1, h3 {
-  font-family: 'Moela', sans-serif;
+h1,
+h3,
+button {
+  font-family: "Moela", sans-serif;
 }
 
-p, h4, label {
-  font-family: 'Inter Tight', sans-serif;
+p,
+h4,
+label {
+  font-family: "Inter Tight", sans-serif;
 }
 
 button {

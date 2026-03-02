@@ -1,0 +1,197 @@
+import { JSX } from 'react';
+import type { WatchItem } from '../../../data';
+import { motion } from 'framer-motion';
+import { watchCollection } from '../../../data';
+import styles from '../SlideShowSection.module.css';
+import LeftArrow from '../../../images/LeftArrow.svg';
+import RightArrow from '../../../images/RightArrow.svg';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import NewReleaseBadge from '../../../components/NewReleaseDiv';
+
+type SlideShowInfoProps = {
+  data: {
+    bg: WatchItem | null,
+    nextSlide: () => void,
+    prevSlide: () => void,
+    setActiveIndex: (index: number) => void,
+    activeIndex: number
+  }
+}
+
+const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
+  
+  const { bg, nextSlide, prevSlide, setActiveIndex, activeIndex} = data
+
+  const textVariants: any = {
+    initial: {
+      clipPath: 'inset(0 0 100% 0)',
+      opacity: 0,
+      y: 20
+    },
+    animate: {
+      clipPath: 'inset(0 0 0% 0)',
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: 'easeInOut'
+      }
+    },
+    exit: {
+      clipPath: 'inset(100% 0 0 0)',
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.42,
+        ease: 'easeInOut'
+      }
+    }
+  }
+
+  return (
+    <div className='h-[60%] w-full flex flex-col justify-between pt-25 px-50'>
+      <div className='w-260 flex flex-col gap-[0.6rem]'>
+        <motion.div
+          key={`${bg?.id}-badge`}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true}}
+          exit="exit"
+          variants={textVariants}>
+
+          <NewReleaseBadge text={bg?.release} />
+
+        </motion.div>
+
+
+
+        <motion.h1
+          key={`${bg?.id}-title`}
+          variants={textVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true}}
+          exit="exit"
+          className='text-[4rem] font-semibold'>
+
+          {bg?.title 
+          || 
+          'INTRODUCING THE NEW SERIES'
+          }
+
+        </motion.h1>
+
+
+
+        <motion.p
+          key={`${bg?.id}-description`}
+          variants={textVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{once: true}}
+          exit="exit"
+          className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight`}>
+
+          {bg?.description 
+          ||
+          'Our newest series blends contemporary engineering with traditional haute horlogerie. Every model features a Swiss-made automatic movement, refined finishing, and the presence expected from a grail-level timepiece'
+          }
+
+        </motion.p>
+      </div>
+
+      <div className='flex flex-col w-full'>
+
+        {bg 
+        && 
+        (
+          <div className='flex justify-between items-center self-stretch flex-1'>
+
+            <motion.h2
+              key={`${bg?.id}-price`}
+              variants={textVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{once: true}}
+              exit="exit"
+              className='text-[4rem]'>
+              {bg.price.toUpperCase()}
+            </motion.h2>
+
+
+            <div className='flex gap-1 items-center'>
+
+              <motion.button
+                key={`${bg?.id}-join-button`}
+                variants={textVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{once: true}}
+                exit="exit"
+                className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
+                  ADD TO WATCHLIST
+              </motion.button>
+
+
+
+              <motion.button
+                key={`${bg?.id}-arrow-button`}
+                variants={textVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{once: true}}
+                exit="exit"
+                className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
+                <IoIosArrowRoundForward className='text-2xl' />
+              </motion.button>
+
+            </div>
+
+          </div>
+        )}
+
+        <div className='flex justify-between items-end-safe self-stretch h-full'>
+
+          <div className='flex gap-2.5 h-full'>
+
+            <button
+              onClick={() => setActiveIndex(0)}
+              className={`${activeIndex === -1 || activeIndex === 0 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>
+            </button>
+
+            <button
+              onClick={() => setActiveIndex(watchCollection.length / 2)}
+              className={`${activeIndex === watchCollection.length / 2 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>
+            </button>
+
+            <button
+              onClick={() => setActiveIndex(watchCollection.length - 1)}
+              className={`${activeIndex === watchCollection.length - 1 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>  
+            </button>
+
+          </div>
+
+          <div className='flex items-start gap-2 h-full'>
+            <button
+              onClick={() => {
+                prevSlide()
+              }}
+              className={`w-9 h-2 ${activeIndex === 0 || activeIndex === -1 ? 'pointer-events-none opacity-50' : 'cursor-pointer opacity-100'}`}>
+              <img src={LeftArrow} alt='Left arrow' />
+            </button>
+
+            <button
+              onClick={() => {
+                nextSlide()
+              }}
+              className='w-9 h-2 cursor-pointer'>
+              <img src={RightArrow} alt='Right arrow' />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default SlideShowInfo
