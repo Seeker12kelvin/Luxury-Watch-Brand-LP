@@ -6,10 +6,11 @@ import { motion, MotionValue, useTransform } from 'framer-motion';
 
 type AnimatedBackgroundProps = {
   scrollYProgress: MotionValue<number>,
-  setBg: (bg: string) => void
+  setBg: (bg: string) => void,
+  bg: string
 }
 
-const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.Element => {
+const ShowCaseInfo = ({scrollYProgress, setBg, bg}: AnimatedBackgroundProps): JSX.Element => {
   
   const firstTextClip: any = useTransform(
     scrollYProgress,
@@ -76,9 +77,9 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
 
   const secondWatchClip: any = useTransform(
     scrollYProgress,
-    [0, 0.4],
+    [0.05, 0.1515],
     [
-      "inset(0 0 0 0)",
+      "inset(0 0 0% 0)",
       "inset(0 0 100% 0)"
     ]
   )
@@ -117,7 +118,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
         <div>
 
           <motion.img
-            style={{scale: watchScale, opacity: watchScale, clipPath: firstWatchClip}}
+            style={{scale: watchScale, opacity: watchScale, clipPath: bg === "#0C0C0C" ? firstWatchClip : ''}}
             className='absolute h-202.5 w-360 object-cover top-40 z-10'
             src={Dark_Watch}
             alt='Picture of a wrist watch'
@@ -135,8 +136,9 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
 
       <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>
         <button onClick={() => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
-        <button onClick={() => setBg("[#0C0C0C]")} className='h-6 w-6 bg-black rounded-full'></button>
+        <button onClick={() => setBg("#0C0C0C")} className='h-6 w-6 bg-black rounded-full'></button>
       </div>
+
       <div
         className='flex items-center gap-1 text-black'>
 

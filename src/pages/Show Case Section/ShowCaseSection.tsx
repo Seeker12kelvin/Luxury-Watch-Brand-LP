@@ -7,7 +7,7 @@ import AnimatedBackground from './Content/AnimatedBackground';
 const ShowCaseSection = (): JSX.Element => {
 
   const ref = useRef(null)
-  const [bg, setBg] = useState<string>("[#0C0C0C]")
+  const [bg, setBg] = useState<string>("#0C0C0C")
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -23,7 +23,7 @@ const ShowCaseSection = (): JSX.Element => {
   return (
     <section ref={ref} className='h-[1100vh] w-360 relative'>
       <div className='sticky top-0 px-50 py-25 bg-white mix-blend-difference'>
-        <ShowCaseInfo setBg={setBg} scrollYProgress={smoothScroll} />
+        <ShowCaseInfo setBg={setBg} bg={bg} scrollYProgress={smoothScroll} />
         <AnimatedBackground scrollYProgress={smoothScroll} bg={bg} />
       </div>
     </section>
