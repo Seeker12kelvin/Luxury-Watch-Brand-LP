@@ -36,13 +36,13 @@ const Clock = (): JSX.Element => {
         {/* Center dot */}
         <div className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-[#D9D9D9] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
 
-        <h1 className='absolute top-5 left-1/2'>I</h1>
+        <h1 className='absolute top-5 left-[46.5%]'>XII</h1>
 
         <h1 className='absolute bottom-2 left-[47%]'>VI</h1>
 
         <h1 className='absolute bottom-[43%] left-[88%]'>III</h1>
 
-        <h1 className='absolute bottom-[43%] left-5'>XI</h1>
+        <h1 className='absolute bottom-[43%] left-5'>IX</h1>
 
         <p className='absolute bottom-1/2 left-[55%] text-[1rem]'>{hours}:{minutes} {ampm}</p>
 

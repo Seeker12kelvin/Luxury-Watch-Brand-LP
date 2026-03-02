@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 import Dark_Watch from '../../../images/Dark-Watch.png';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import Light_Watch from '../../../images/Light_Watch.png';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 
 type AnimatedBackgroundProps = {
@@ -25,9 +26,9 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
     scrollYProgress,
     [0.4, 0.65, 0.7],
     [
-      "inset(0 0 100% 0)", 
-      "inset(0 0 0% 0)", 
-      "inset(100% 0 0 0)"    
+      "inset(0 0 100% 0)",
+      "inset(0 0 0% 0)",
+      "inset(100% 0 0 0)"
     ]
   )
 
@@ -35,8 +36,8 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
     scrollYProgress,
     [0.7, 1],
     [
-      "inset(0 0 100% 0)", 
-      "inset(0 0 0% 0)"    
+      "inset(0 0 100% 0)",
+      "inset(0 0 0% 0)" 
     ]
   )
 
@@ -62,6 +63,24 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
     scrollYProgress,
     [0, 0.05],
     [0, 1]
+  )
+
+  const firstWatchClip: any = useTransform(
+    scrollYProgress,
+    [0.05, 0.1515],
+    [
+      "inset(0 0 0% 0)",
+      "inset(0 0 100% 0)"
+    ]
+  )
+
+  const secondWatchClip: any = useTransform(
+    scrollYProgress,
+    [0, 0.4],
+    [
+      "inset(0 0 0 0)",
+      "inset(0 0 100% 0)"
+    ]
   )
 
   return (
@@ -95,13 +114,23 @@ const ShowCaseInfo = ({scrollYProgress, setBg}: AnimatedBackgroundProps): JSX.El
           </motion.div>
         </div>
 
-        <motion.img
-          style={{scale: watchScale, opacity: watchScale}}
-          className='absolute h-202.5 w-360 object-cover top-40 '
-          src={Dark_Watch}
-          alt='Picture of a wrist watch'
-        />
-      
+        <div>
+
+          <motion.img
+            style={{scale: watchScale, opacity: watchScale, clipPath: firstWatchClip}}
+            className='absolute h-202.5 w-360 object-cover top-40 z-10'
+            src={Dark_Watch}
+            alt='Picture of a wrist watch'
+          />
+
+          <motion.img
+            style={{scale: watchScale, opacity: watchScale}}
+            className='absolute h-202.5 w-360 object-cover top-40'
+            src={Light_Watch}
+            alt='Picture of a wrist watch'
+          />
+
+        </div>
       </div>
 
       <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>

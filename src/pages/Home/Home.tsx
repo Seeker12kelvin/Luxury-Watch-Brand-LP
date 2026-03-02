@@ -15,16 +15,16 @@ const Home = (): JSX.Element => {
   const { displayProgress }: any = useContext(UserContext)
 
   return (
-      displayProgress < 100
-      ?
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }}
-      >
-        <LoadingScreen />
-      </motion.div>
-      :
+      // displayProgress < 100
+      // ?
+      // <motion.div
+      //   initial={{ opacity: 1 }}
+      //   animate={{ opacity: 0 }}
+      //   transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }}
+      // >
+      //   <LoadingScreen />
+      // </motion.div>
+      // :
       <main className='h-full flex flex-col items-center w-full'>
         <HeroSection />
         
