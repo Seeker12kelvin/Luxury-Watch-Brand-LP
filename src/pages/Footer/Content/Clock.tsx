@@ -4,27 +4,29 @@ import React, { JSX, useState, useEffect } from 'react';
 
 const Clock = (): JSX.Element => {
 
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(new Date())
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
+      setTime(new Date())
+    }, 1000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
-  const seconds: number = time.getSeconds();
-  const minutes: number = time.getMinutes();
-  const hours: number = time.getHours();
-  const ampm: string = hours >= 12 ? 'PM' : 'AM';
+  const seconds: number = time.getSeconds()
+  const minutes: number = time.getMinutes()
+  const hours: number = time.getHours()
+  const ampm: string = hours >= 12 ? 'PM' : 'AM'
 
-  const dayOfWeekNumber: number = time.getDay();
-  const daysOfWeek: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayOfWeekName: string = daysOfWeek[dayOfWeekNumber];
+  const dayOfWeekNumber: number = time.getDay()
+  const daysOfWeek: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  const dayOfWeekName: string = daysOfWeek[dayOfWeekNumber]
 
-  const minuteDegrees: number = minutes * 6 + seconds * 0.1;
-  const hourDegrees: number = (hours % 12) * 30 + minutes * 0.5;
+  const minuteDegrees: number = minutes * 6 + seconds * 0.1
+  const hourDegrees: number = (hours % 12) * 30 + minutes * 0.5
+
+  const formattedMinutes = String(minutes).padStart(2, '0')
 
   return (
       <motion.div
@@ -44,19 +46,19 @@ const Clock = (): JSX.Element => {
 
         <h1 className='absolute bottom-[43%] left-5'>IX</h1>
 
-        <p className='absolute bottom-1/2 left-[55%] text-[1rem]'>{hours}:{minutes} {ampm}</p>
+        <p className='absolute bottom-1/2 left-[55%] text-[1rem]'>{hours}:{formattedMinutes} {ampm}</p>
 
         <p className='absolute bottom-[40%] left-[55%] text-[1rem] uppercase opacity-[0.5]'>{dayOfWeekName}</p>
 
         {/* Hour Hand */}
         <div 
-          className="absolute bottom-1/2 left-1/2 w-[1.515px] h-[137.429px] bg-[#FFF] transform origin-bottom -translate-x-1/2 rounded-full"
+          className="absolute bottom-1/2 left-1/2 w-0.5 h-25.25 bg-[#FFF] transform origin-bottom -translate-x-1/2 rounded-full"
           style={{ transform: `translateX(-50%) rotate(${hourDegrees}deg)` }}
         ></div>
 
         {/* Minute Hand */}
         <div 
-          className="absolute bottom-1/2 left-1/2 w-0.5 h-25.25 bg-[#FFF] transform origin-bottom -translate-x-1/2 rounded-full"
+          className="absolute bottom-1/2 left-1/2 w-[1.515px] h-[137.429px] bg-[#FFF] transform origin-bottom -translate-x-1/2 rounded-full"
           style={{ transform: `translateX(-50%) rotate(${minuteDegrees}deg)` }}
         ></div>
 

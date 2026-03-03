@@ -1,6 +1,6 @@
 import { JSX } from 'react';
-import type { WatchItem } from '../../../data';
 import { motion } from 'framer-motion';
+import type { WatchItem } from '../../../data';
 import { watchCollection } from '../../../data';
 import styles from '../SlideShowSection.module.css';
 import LeftArrow from '../../../images/LeftArrow.svg';
@@ -154,20 +154,13 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
 
           <div className='flex gap-2.5 h-full'>
 
+          {Array.from({ length: watchCollection.length }, (_, i) => (
             <button
-              onClick={() => setActiveIndex(0)}
-              className={`${activeIndex === -1 || activeIndex === 0 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>
-            </button>
-
-            <button
-              onClick={() => setActiveIndex(watchCollection.length / 2)}
-              className={`${activeIndex === watchCollection.length / 2 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>
-            </button>
-
-            <button
-              onClick={() => setActiveIndex(watchCollection.length - 1)}
-              className={`${activeIndex === watchCollection.length - 1 ? 'w-20 bg-[#FFFFFF]': ' w-5 bg-[#FFFFFF66]'} h-2`}>  
-            </button>
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              className={`${activeIndex === i ? 'w-20 bg-[#FFFFFF] cursor-pointer' : 'w-5 bg-[#FFFFFF66]'} h-2 cursor-pointer`}
+            />
+          ))}
 
           </div>
 
