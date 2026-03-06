@@ -6,7 +6,7 @@ import Comp_Logo from '../../images/Comp_Logo.svg';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
 
-const Login = (): JSX.Element => {
+const ContactRvysion = (): JSX.Element => {
   return (
     <main className='w-screen h-screen flex items-center place-content-center bg-[black]'>
       <form className={`${styles['login-form']}`}>
@@ -102,4 +102,4 @@ const Login = (): JSX.Element => {
   )
 }
 
-export default Login
+export default ContactRvysion
