@@ -15,11 +15,11 @@ const NewestWatchSection = (): JSX.Element => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"]
+    offset: ["start end", "end start"]
   })
 
   return (
-    <section ref={ref} className='relative h-[800vh] w-360 bg-black'>
+    <section ref={ref} className='relative h-[700vh] w-360 bg-black snap-start'>
       <div className='sticky h-278.75 overflow-clip top-0 px-50 py-15 w-full bg-white'>
         <NewestInfo scrollYProgress={scrollYProgress} payUp={payUp} image={Watch}/>
         <AnimatedBackground scrollYProgress={scrollYProgress}/>

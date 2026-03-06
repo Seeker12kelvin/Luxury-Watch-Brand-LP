@@ -9,17 +9,55 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const PrivateListForm = (): JSX.Element | null => {
 
+  const divVariants: any = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {duration: 0.2, ease: 'easeIn'}
+    },
+    exit: {
+      opacity: 0,
+      transition: {duration: 0.2, ease: 'easeOut'}
+    }
+  }
+
+  const formVariants: any = {
+    hidden: {
+      scale: 0
+    },
+    visible: {
+      scale: 1,
+      transition: {duration: 0.4, ease: 'easeIn'}
+    },
+    exit: {
+      scale: 0,
+      transition: {duration: 0.4, ease: 'easeOut'}
+    }
+  }
+
   const context = useContext(UserContext)
   if(!context){
     return null
   }
-  const { modal, setModal, selectedImage } = context
+  const { setModal, selectedImage } = context
 
-  return modal && selectedImage != '' ? (
+  return (
 
-    <div className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center'>
+    <motion.div
+      variants={divVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center'>
       
-      <form className={`${styles['private-form']} w-150 h-151.5 bg-[#FFF]`}>
+      <motion.form
+        variants={formVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className={`${styles['private-form']} w-150 h-fit bg-[#FFF]`}>
         <div className={`${styles['private-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
           <div className={`${styles['private-section-text']}`}>
             <p>Join the</p>
@@ -36,7 +74,7 @@ const PrivateListForm = (): JSX.Element | null => {
           </button>
         </div>
 
-        <div className='py-4 px-8 border h-full w-full flex flex-col gap-8'>
+        <div className='py-4 px-8 w-full flex flex-col gap-8'>
 
           <p className='text-sm font-light tracking-[-0.14px] leading-5.25 text-[#111]'>
             Selected Brantium timepieces are currently in production. Early access is offered to a limited group of collectors and prospective owners.
@@ -122,10 +160,9 @@ const PrivateListForm = (): JSX.Element | null => {
 
         </div>
 
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   )
-  : null
 };
 
 export default PrivateListForm;

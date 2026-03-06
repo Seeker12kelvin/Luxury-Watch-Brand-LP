@@ -16,21 +16,21 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
   const maxHeight: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [460, HEIGHT_OF_DIV],
     
   )
   
   const maxWidth: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [1040, WIDTH_OF_DIV],
     
   )
 
   const scaleWatch: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [0.6, 1.4]
   )
   
@@ -42,33 +42,33 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
   const watchOpacity: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.3, 0.35, 0.8],
+    [0.25, 0.3, 0.7],
     [0, 1, 0]
   )
 
   const borderRadius: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [20, 0],
     
   );
 
   const y: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [-650, -1055],
     
   )
 
   const x: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.3, 0.5],
     [0, -200],
   )
 
   const watchBgOpacity: MotionValue<number> = useTransform(
     scrollYProgress,
-    [0, 0.4, 0.8, 0.805],
+    [0, 0.4, 0.7, 0.71],
     [0, 0, 0, 1,]
   )
 

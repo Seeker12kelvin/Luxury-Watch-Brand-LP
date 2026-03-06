@@ -10,10 +10,10 @@ type NewReleaseBadgeProps = {
 
 const NewReleaseBadge = ({text = 'NEW RELEASE', textColor = 'white', borderColor = 'white', background = '[#FFFFFF14]'}: NewReleaseBadgeProps ): JSX.Element => {
   return (
-    <div className="relative w-fit inline-block">
-      <div className={`relative px-2 py-0.5 mb-3 bg-${background} rounded-sm`}>
+    <div className={`relative w-fit inline-block bg-${background} h-fit`}>
+      <div className={`relative px-2 py-0.5 rounded-sm`}>
 
-        <span className={`${styles['new-release']} mix-blend-difference text-${textColor} text-[1rem] font-light tracking-[-0.02rem]`}>{text}</span>
+        <span className={`${styles['new-release']} mix-blend-difference text-${textColor} text-sm font-light tracking-[-0.02rem]`}>{text}</span>
 
         {/* Top-left */}
         <span className={`absolute top-0 left-0 w-1 h-1 border-t-2 border-l-2 border-${borderColor}`} />

@@ -17,14 +17,8 @@ const NewestInfo = ({scrollYProgress, payUp, image}: NewestInfoProps): JSX.Eleme
 
   const clipPath: any = useTransform(
     scrollYProgress,
-    [0, 0.15],
+    [0, 0.2],
     ["inset(0 0 100% 0)", "inset(0 0 0% 0)"],
-  )
-
-  const priceAnim: any = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["inset(0 0 100% 0)", "inset(0 0 0% 0)"]
   )
 
   return (

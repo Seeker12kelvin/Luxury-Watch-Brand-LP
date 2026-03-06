@@ -136,12 +136,12 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
       </div>
 
       <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>
-        <button onClick={() => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
-        <button onClick={() => setBg("#0C0C0C")} className='h-6 w-6 bg-black rounded-full'></button>
+        <button onClick={(): void => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
+        <button onClick={(): void => setBg("#0C0C0C")} className='h-6 w-6 bg-black rounded-full'></button>
       </div>
 
       <div
-        className='flex items-center gap-1 text-black'>
+        className='flex items-center gap-1 text-black mix-blend-difference'>
 
         <WatchListButton onClick={(): void => payUp(Dark_Watch)}/>
 

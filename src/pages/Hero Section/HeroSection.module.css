@@ -28,13 +28,13 @@
 
 .Hero-Section-product {
   box-sizing: border-box;
-  max-height: 50rem;
-  width: 75rem;
+  height: 800px;
+  width: 1200px;
   position: absolute;
   bottom: 12%;
   right: 12%;
   z-index: 2;
-  margin-inline: auto;
+  background: rgba(12, 12, 12, 0.90);
 }
 
 .animated-block {
@@ -56,16 +56,10 @@
   font-style: normal;
 }
 
-.Hero-Section-product div p,
+.Hero-Section-product p,
 .Hero-Section-product h3,
 .animated-block {
   font-family: 'Inter Tight', sans-serif;
-}
-
-.Hero-Section-product h3 {
-  opacity: 0.5;
-  font-size: 1rem;
-  font-weight: 100;
 }
 
 .Hero-Section-product .product-price {
