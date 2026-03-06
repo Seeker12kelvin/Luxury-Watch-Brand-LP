@@ -2,6 +2,7 @@ import React, { JSX } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../HeroSection.module.css';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import WaitlistButton from '../../../components/WaitlistButton';
 
 const HeroInfo = (): JSX.Element => {
 
@@ -37,17 +38,8 @@ const HeroInfo = (): JSX.Element => {
         <motion.button
           variants={revealY}
           initial="hidden"
-          animate="show"
-          className='uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5'>
-            JOIN THE WAITLIST
-        </motion.button>
-
-        <motion.button
-          variants={revealY}
-          initial="hidden"
-          animate="show"
-          className='bg-white flex items-center text-[#111111] justify-center h-9.5 w-10.5'>
-          <IoIosArrowRoundForward className='w-6 h-6 shrink-0' />
+          animate="show">
+          <WaitlistButton />
         </motion.button>
       </div>
     </div>

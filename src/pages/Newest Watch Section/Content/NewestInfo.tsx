@@ -1,13 +1,17 @@
+import { JSX } from 'react';
+import { watchCollection } from '../../../data';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
-import { motion, MotionValue, useTransform } from 'framer-motion';
-import { JSX } from 'react';
+import WatchListButton from '../../../components/WatchListButton';
+import { AnimatePresence, motion, MotionValue, useTransform } from 'framer-motion';
 
 type NewestInfoProps = {
-  scrollYProgress: MotionValue<number>
+  scrollYProgress: MotionValue<number>,
+  payUp: (image: string | undefined) => void,
+  image: string
 }
 
-const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
+const NewestInfo = ({scrollYProgress, payUp, image}: NewestInfoProps): JSX.Element => {
 
   const date = new Date().getFullYear()
 
@@ -24,7 +28,7 @@ const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
   )
 
   return (
-    <div className='flex flex-col justify-between z-10 gap-145 mix-blend-difference text-[#0C0C0C]'>
+    <div className='h-full w-full flex flex-col justify-between mix-blend-difference z-10 text-[#0C0C0C]'>
       <div className='flex flex-col items-start self-stretch gap-2.5'>
 
         <motion.div style={{clipPath}}>
@@ -59,28 +63,13 @@ const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
           Featuring a Swiss high-complication automatic movement, precious metal casework, and exhibition finishing reserved for haute horlogerie ateliers. Designed as a generational collector’s asset.
         </motion.p>
 
-        <motion.div
-          style={{priceAnim}}
+        <div
           className='flex flex-col items-end gap-5'>
-
-          <div
-
-            className='flex gap-1 items-center'>
-            <motion.button
-              className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
-                ADD TO WATCHLIST
-            </motion.button>
-
-
-
-            <motion.button
-
-              className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
-              <IoIosArrowRoundForward className='text-2xl' />            </motion.button>
-          </div>
+          
+          <WatchListButton onClick={(): void => payUp(image)} bg={{id: 'wyrcft'}} extraStyle={'justify-end'}/>
 
           <h3 className='text-[4rem] font-semibold leading-16 tracking-[-0.04rem] mix-blend-difference text-white'>$145,999.99</h3>
-        </motion.div>
+        </div>
 
       </div>
       

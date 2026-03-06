@@ -26,8 +26,7 @@ body {
 }
 
 h1,
-h3,
-button {
+h3 {
   font-family: "Moela", sans-serif;
 }
 
@@ -41,4 +40,10 @@ button {
   font-family: "Inter Tight", sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.7;
+  scale: 0.7;
 }

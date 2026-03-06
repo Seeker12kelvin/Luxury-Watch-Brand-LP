@@ -1,7 +1,7 @@
-import Logo from './Logo'
-import { JSX } from 'react'
-import { motion } from 'framer-motion'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import Logo from './Logo';
+import { JSX } from 'react';
+import { motion } from 'framer-motion';
+import WaitlistButton from './WaitlistButton';
 
 const Header = (): JSX.Element => {
   return (
@@ -13,18 +13,7 @@ const Header = (): JSX.Element => {
 
       <Logo />
 
-      <div className='flex gap-1 items-center'>
-        <button 
-          className='uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5'>
-            JOIN THE WAITLIST
-        </button>
-        <button
-          className='bg-white flex items-center text-[#111111] justify-center h-9.5 w-10.5'>
-          <IoIosArrowRoundForward
-            className='w-6 h-6 shrink-0'
-          />
-        </button>
-      </div>
+      <WaitlistButton />
     </motion.nav>
   )
 }

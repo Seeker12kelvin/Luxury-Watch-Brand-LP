@@ -9,12 +9,10 @@ type AnimatedBackgroundProps = {
 }
 
 const WIDTH_OF_DIV = 1440
-const HEIGHT_OF_DIV = 1200
+const HEIGHT_OF_DIV = 1115
 
 const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Element => {
 
-  // const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
-  // const screenWidth = typeof window !== "undefined" ? window.innerWidth : 1000;
 
   const maxHeight: MotionValue<number> = useTransform(
     scrollYProgress,
@@ -58,7 +56,7 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const y: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.4, 0.6],
-    [-650, -1050],
+    [-650, -1055],
     
   )
 
@@ -76,8 +74,8 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
   return (
     <motion.div
-      style={{translateY: y, translateX: x, maxWidth: maxWidth, maxHeight: maxHeight, opacity: divOpacity, borderRadius}}
-      className="bg-white mix-blend-difference will-change-transform h-full max-w-260 max-h-278.75 w-full z-[0] py-[3.88rem] absolute bg-center flex justify-center items-center self-stretch">
+      style={{translateY: y, translateX: x, maxWidth: maxWidth, maxHeight: maxHeight, height: maxHeight, opacity: divOpacity, borderRadius}}
+      className="bg-white mix-blend-difference will-change-transform h-full max-w-260 w-full z-[-1] py-[3.88rem] absolute bg-center flex justify-center items-center self-stretch">
       
       <motion.img
         style={{scale: scaleWatch, opacity: watchOpacity}}

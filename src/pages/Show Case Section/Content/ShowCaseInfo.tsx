@@ -1,25 +1,26 @@
 import { JSX } from 'react';
 import Dark_Watch from '../../../images/Dark-Watch.png';
-import { IoIosArrowRoundForward } from 'react-icons/io';
 import Light_Watch from '../../../images/Light_Watch.png';
 import { motion, MotionValue, useTransform } from 'framer-motion';
+import WatchListButton from '../../../components/WatchListButton';
 
 type AnimatedBackgroundProps = {
   scrollYProgress: MotionValue<number>,
-  setBg: (bg: string) => void,
-  bg: string
+  setBg: React.Dispatch<React.SetStateAction<string>>,
+  bg: string,
+  payUp: (image : string | undefined) => void
 }
 
-const ShowCaseInfo = ({scrollYProgress, setBg, bg}: AnimatedBackgroundProps): JSX.Element => {
+const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundProps): JSX.Element => {
   
   const firstTextClip: any = useTransform(
     scrollYProgress,
     [0, 0.25, 0.35, 0.4],
     [
-      "inset(0 0 100% 0)", 
-      "inset(0 0 0% 0)",   
-      "inset(0 0 0% 0)",   
-      "inset(100% 0 0 0)" 
+      "inset(0 0 100% 0)",
+      "inset(0 0 0% 0)",
+      "inset(0 0 0% 0)",
+      "inset(100% 0 0 0)"
     ]
   )
 
@@ -142,21 +143,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg}: AnimatedBackgroundProps): JS
       <div
         className='flex items-center gap-1 text-black'>
 
-        <motion.button
-          style={{opacity: watchScale}}
-          className='uppercase bg-white h-9.5 py-2.5 px-3.5'>
-          add to watchlist
-        </motion.button>
-
-        <motion.button
-          style={{opacity: watchScale}}
-          className='bg-white flex items-center justify-center h-9.5 w-10.5'>
-
-          <IoIosArrowRoundForward 
-            className='w-6 h-6 shrink-0'
-          />
-
-        </motion.button>
+        <WatchListButton onClick={(): void => payUp(Dark_Watch)}/>
 
       </div>
 

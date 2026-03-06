@@ -1,18 +1,26 @@
-import { JSX } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { JSX, useContext } from 'react';
 import { aleteir } from '../../../data';
 import styles from '../HeroSection.module.css';
 import { MdClose, MdStar } from 'react-icons/md';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import UserContext from '../../../components/userContext';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
+import WatchListButton from '../../../components/WatchListButton';
 
-type Props = {
+type HeroProductPopUpProps = {
   isOpen: boolean;
   open: () => void;
 }
 
-const HeroProductPopUp = ({isOpen, open}: Props): JSX.Element | null => { 
+const HeroProductPopUp = ({isOpen, open}: HeroProductPopUpProps): JSX.Element | null => { 
+  
+  const context = useContext(UserContext)
+  if(!context){
+    return null
+  }
+
+  const { payUp } = context
+
   return isOpen ?
   (
     <motion.div
@@ -59,12 +67,7 @@ const HeroProductPopUp = ({isOpen, open}: Props): JSX.Element | null => {
             </div>
             
             <div className='flex w-full items-center gap-2'>
-              <Link to={'/login'} className='bg-[#FEFEFE] w-full text-[#111111] text-sm py-2 px-3.5'>
-                ADD TO WATCHLIST
-              </Link>
-              <button className='bg-[#FEFEFE] flex items-center h-full w-fit text-[#111111] text-sm py-3 px-3.5'>
-                <IoIosArrowRoundForward className='h-full w-full scale-150' />
-              </button>
+              <WatchListButton onClick={(): void => payUp(aleteir.img)} extraStyle={"w-full"}/>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { JSX, useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { WatchItem } from '../../../data';
 import { watchCollection } from '../../../data';
@@ -7,6 +7,9 @@ import LeftArrow from '../../../images/LeftArrow.svg';
 import RightArrow from '../../../images/RightArrow.svg';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
+import UserContext from '../../../components/userContext';
+import PrivateListForm from '../../Private List/PrivateListForm';
+import WatchListButton from '../../../components/WatchListButton';
 
 type SlideShowInfoProps = {
   data: {
@@ -14,13 +17,14 @@ type SlideShowInfoProps = {
     nextSlide: () => void,
     prevSlide: () => void,
     setActiveIndex: (index: number) => void,
-    activeIndex: number
+    activeIndex: number,
+    payUp: (image : string | undefined) => void
   }
 }
 
 const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
   
-  const { bg, nextSlide, prevSlide, setActiveIndex, activeIndex} = data
+  const { bg, nextSlide, prevSlide, setActiveIndex, activeIndex, payUp} = data
 
   const textVariants: any = {
     initial: {
@@ -122,29 +126,35 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
             <div className='flex gap-1 items-center'>
 
               <motion.button
+                onClick={():void => payUp(bg?.img)}
+                whileTap={{scale: 0.7, opacity: 0.7}}
                 key={`${bg?.id}-join-button`}
                 variants={textVariants}
                 initial="initial"
                 whileInView="animate"
                 viewport={{once: true}}
                 exit="exit"
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 className='bg-[#FEFEFE] text-[#111111] text-sm py-2.5 px-3.5'>
                   ADD TO WATCHLIST
               </motion.button>
-
-
-
+        
+        
+        
               <motion.button
+                onClick={():void => payUp(bg?.img)}
+                whileTap={{scale: 0.7, opacity: 0.7}}
                 key={`${bg?.id}-arrow-button`}
                 variants={textVariants}
                 initial="initial"
                 whileInView="animate"
                 viewport={{once: true}}
                 exit="exit"
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
                 <IoIosArrowRoundForward className='text-2xl' />
               </motion.button>
-
+        
             </div>
 
           </div>
@@ -183,6 +193,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

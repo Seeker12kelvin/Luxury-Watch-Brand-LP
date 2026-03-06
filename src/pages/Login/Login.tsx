@@ -1,4 +1,3 @@
-// No code changes, just renaming to .tsx
 import { JSX } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Login.module.css';

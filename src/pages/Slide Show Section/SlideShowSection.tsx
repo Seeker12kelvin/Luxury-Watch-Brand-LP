@@ -3,9 +3,11 @@ import type { WatchItem } from '../../data';
 import { watchCollection } from '../../data';
 import Background from './Content/Background';
 import { AnimatePresence } from 'framer-motion';
-import { JSX, useEffect, useState } from 'react';
 import styles from './SlideShowSection.module.css';
 import SlideShowInfo from './Content/SlideShowInfo';
+import { JSX, useContext, useEffect, useState } from 'react';
+import PrivateListForm from '../Private List/PrivateListForm';
+import UserContext, { UserContextType } from '../../components/userContext';
 
 const SlideShowSection = (): JSX.Element => {
 
@@ -25,13 +27,15 @@ const SlideShowSection = (): JSX.Element => {
       if (activeIndex < 0 || activeIndex >= watchCollection.length) {
         setBg(null)
       } else {
-        const currentBg: WatchItem = watchCollection[activeIndex]
+        const currentBg: WatchItem | null = watchCollection[activeIndex]
         setBg(currentBg)
       }
     }
     return setData()
   }, [activeIndex])
 
+  const { payUp } = useContext<UserContextType | undefined>(UserContext)
+  
   return (
     <section className='h-245 w-360 border bg-black relative'>
       
@@ -41,7 +45,7 @@ const SlideShowSection = (): JSX.Element => {
 
         <div className={`${styles['content-overlay']} w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
 
-          <SlideShowInfo data={{bg, activeIndex, setActiveIndex, nextSlide, prevSlide}} />
+          <SlideShowInfo data={{bg, activeIndex, setActiveIndex, nextSlide, prevSlide, payUp}} />
 
           <Slider data={{activeIndex}}/>
 

@@ -1,9 +1,10 @@
 import React from 'react'
-import Footer from '../pages/Footer/Footer'
+import Footer from '../Footer/Footer'
 import { IoIosArrowRoundForward } from 'react-icons/io'
-import Header from '../components/Header'
-import { watchCollection } from '../data'
+import Header from '../../components/Header'
+import { watchCollection } from '../../data'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const DetailsPage = () => {
 
@@ -73,19 +74,21 @@ const DetailsPage = () => {
               animate="show"
               className='flex items-center gap-1 mix-blend-difference text-black'>
 
-              <button
+              <Link
+                to={'/login'}
                 className='uppercase bg-white h-9.5 py-2.5 px-3.5'>
                 add to watchlist
-              </button>
+              </Link>
 
-              <button
+              <Link
+                to={'/login'}
                 className='bg-white flex items-center justify-center h-9.5 w-10.5'>
 
                 <IoIosArrowRoundForward
                   className='w-6 h-6 shrink-0'
                 />
 
-              </button>
+              </Link>
 
             </motion.div>
 

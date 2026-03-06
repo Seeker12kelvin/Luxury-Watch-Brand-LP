@@ -1,7 +1,6 @@
-// SmoothScroll.jsx
+import { JSX } from "react"
 import { useEffect } from "react"
 import Lenis from "@studio-freight/lenis"
-import { JSX } from "react"
 
 function SmoothScroll({ children }: { children: JSX.Element } ): JSX.Element {
   useEffect(() => {

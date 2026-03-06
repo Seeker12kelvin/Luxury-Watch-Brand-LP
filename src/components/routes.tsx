@@ -20,7 +20,7 @@ const routes: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
     element: <DetailsPage />
   },
   {
-    path: 'private-list',
+    path: '/private-list',
     element: <PrivateListForm />
   }
 ])
