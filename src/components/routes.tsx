@@ -1,8 +1,7 @@
-import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home/Home'
 import Login from '../pages/Login/Login'
-import DetailsPage from '../Details Page/DetailsPage'
+import { createBrowserRouter } from 'react-router-dom'
+import DetailsPage from '../pages/Details Page/DetailsPage'
 import PrivateListForm from '../pages/Private List/PrivateListForm'
 
 const routes: ReturnType<typeof createBrowserRouter> = createBrowserRouter([

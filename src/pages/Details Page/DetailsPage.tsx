@@ -1,14 +1,14 @@
-import React from 'react'
-import Footer from '../Footer/Footer'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import Header from '../../components/Header'
-import { watchCollection } from '../../data'
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { JSX } from 'react';
+import Footer from '../Footer/Footer';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import { watchCollection } from '../../data';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
-const DetailsPage = () => {
+const DetailsPage = (): JSX.Element => {
 
-  const revealY = {
+  const revealY: any = {
     hidden: { clipPath: "inset(0 0 100% 0)" },
     show: {
       clipPath: "inset(0 0 0% 0)",
