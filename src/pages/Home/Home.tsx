@@ -21,16 +21,16 @@ const Home = (): JSX.Element | null => {
 
 
   return (
-      // displayProgress < 100
-      // ?
-      // <motion.div
-      //   initial={{ opacity: 1 }}
-      //   animate={{ opacity: 0 }}
-      //   transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }}
-      // >
-      //   <LoadingScreen />
-      // </motion.div>
-      // :
+      displayProgress < 100
+      ?
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }}
+      >
+        <LoadingScreen />
+      </motion.div>
+      :
       <main className='h-full flex flex-col items-center w-full'>
         <AnimatePresence mode="wait">
           {modal && <PrivateListForm />}
