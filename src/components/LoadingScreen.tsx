@@ -59,11 +59,15 @@ const LoadingScreen = (): JSX.Element => {
   })
 
   return (
-    <div className={`h-screen w-360 bg-black justify-self-center flex items-center justify-center opacity-${opacity}`}>
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 0 }}
+      transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }} 
+      className={`max-sm:w-screen max-sm:h-full overflow-hidden h-full fixed left-0 max-sm:justify-start w-screen justify-self-center flex items-center justify-center opacity-${opacity}`}>
 
       <div className="relative">
 
-        <svg width="700" height="700" viewBox="0 0 300 300">
+        <svg width="700" height="700" className="max-sm:h-full max-sm:w-full overflow-hidden" viewBox="0 0 300 300">
 
           {/* border */}
           <circle
@@ -98,10 +102,10 @@ const LoadingScreen = (): JSX.Element => {
         
         <div className="absolute inset-0 text-gray-300 font-serif pointer-events-none">
 
-          <h1 className="absolute top-10 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px]">I</h1>
-          <h1 className="absolute right-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px]">III</h1>
-          <h1 className="absolute bottom-5 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px]">VI</h1>
-          <h1 className="absolute left-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px]">IX</h1>
+          <h1 className="absolute max-sm:top-[10%] top-10 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px] max-sm:text-2xl">I</h1>
+          <h1 className="absolute right-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px] max-sm:text-2xl">III</h1>
+          <h1 className="absolute max-sm:bottom-[10%] bottom-5 mix-blend-difference left-1/2 -translate-x-1/2 text-[80px] max-sm:text-2xl">VI</h1>
+          <h1 className="absolute left-10 mix-blend-difference top-1/2 -translate-y-1/2 text-[80px] max-sm:text-2xl">IX</h1>
 
         </div>
 
@@ -120,7 +124,7 @@ const LoadingScreen = (): JSX.Element => {
 
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 

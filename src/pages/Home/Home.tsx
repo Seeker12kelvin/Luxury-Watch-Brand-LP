@@ -23,15 +23,9 @@ const Home = (): JSX.Element | null => {
   return (
       displayProgress < 100
       ?
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 3.5, delay: 0, ease: 'easeIn' }}
-      >
-        <LoadingScreen />
-      </motion.div>
+      <LoadingScreen />
       :
-      <main className='h-full flex flex-col items-center w-full'>
+      <main className='h-full flex flex-col items-center w-full justify-self-center'>
         <AnimatePresence mode="wait">
           {modal && <PrivateListForm />}
         </AnimatePresence>
