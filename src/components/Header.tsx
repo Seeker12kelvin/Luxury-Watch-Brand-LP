@@ -9,7 +9,7 @@ const Header = (): JSX.Element => {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       transition={{duration: 1.6}}
-      className='flex w-full py-3 justify-between items-center'>
+      className='flex w-full py-3 justify-between items-center z-1'>
 
       <Logo />
 

@@ -14,7 +14,7 @@ const HeroFooter = ({closeDiv}: Props): JSX.Element => {
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{ delay: 2, duration: 1.6 }}
-        className='flex items-center gap-2 text-sm'>
+        className='flex items-center gap-2 text-sm z-1'>
         <IoIosArrowDown />
         <p>SCROLL DOWN</p>
       </motion.div>

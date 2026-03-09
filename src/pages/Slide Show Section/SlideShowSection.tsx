@@ -37,7 +37,7 @@ const SlideShowSection = (): JSX.Element => {
   const { payUp } = useContext<UserContextType | undefined>(UserContext)
   
   return (
-    <section className='h-245 w-360 border bg-black relative'>
+    <section className='h-245 w-360 border bg-black relative max-sm:h-[120vh]'>
       
       <Background bg={bg} />
 

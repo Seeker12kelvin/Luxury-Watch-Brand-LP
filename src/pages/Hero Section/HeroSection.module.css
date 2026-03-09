@@ -27,7 +27,7 @@
   .video-element {
     width: 100%;
     position: absolute;
-    height: 120vh;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -41,23 +41,19 @@
   }
 
   .Hero-Section-product {
-    height: fit-content;
-    max-height: 120vh;
+    width: 100vw;
     max-width: 100vw;
-    left: -13.75%;
-    top: -7.5%;
+    backdrop-filter: blur(10px);
   }
 }
 
 .content-overlay {
-  position: relative;
   z-index: 1;
   color: white;
   background: radial-gradient(183.43% 92.76% at 50% 7.24%, rgba(12, 12, 12, 0.00) 0%, #0C0C0C 100%);
 }
 
 .Hero-Section-product {
-  box-sizing: border-box;
   height: 800px;
   width: 1200px;
   position: absolute;
