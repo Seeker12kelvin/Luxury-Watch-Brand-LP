@@ -33,15 +33,9 @@ const HeroInfo = (): JSX.Element => {
             Explore our latest collection of luxury men’s and women’s timepieces—Swiss-made, precision-engineered, and crafted with the same heritage found in icons like Rolex, Patek Philippe, and Audemars Piguet.
         </motion.p>
       </div>
+      
+      <WaitlistButton variants={revealY} />
 
-      <div className='flex items-center gap-1'>
-        <motion.button
-          variants={revealY}
-          initial="hidden"
-          animate="show">
-          <WaitlistButton />
-        </motion.button>
-      </div>
     </div>
   )
 }

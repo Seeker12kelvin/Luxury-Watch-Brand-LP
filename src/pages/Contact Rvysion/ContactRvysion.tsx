@@ -1,22 +1,71 @@
-import { JSX } from 'react';
 import { motion } from 'framer-motion';
-import styles from './Login.module.css';
+import { JSX, useContext } from 'react';
+import styles from './ContactRvysion.module.css';
 import { MdClose } from 'react-icons/md';
 import Comp_Logo from '../../images/Comp_Logo.svg';
+import UserContext from '../../components/userContext';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
 
-const ContactRvysion = (): JSX.Element => {
+const ContactRvysion = (): JSX.Element | null=> {
+
+  const divVariants: any = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {duration: 0.2, ease: 'easeIn'}
+    },
+    exit: {
+      opacity: 0,
+      transition: {duration: 0.2, ease: 'easeOut'}
+    }
+  }
+
+  const formVariants: any = {
+    hidden: {
+      scale: 0
+    },
+    visible: {
+      scale: 1,
+      transition: {duration: 0.4, ease: 'easeIn'}
+    },
+    exit: {
+      scale: 0,
+      transition: {duration: 0.4, ease: 'easeOut'}
+    }
+  }
+
+  const context = useContext(UserContext)
+  if(!context){
+    return null
+  }
+  const { setContactModal } = context
+  
   return (
-    <main className='w-screen h-screen flex items-center place-content-center bg-[black]'>
-      <form className={`${styles['login-form']}`}>
+    <motion.div
+      variants={divVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center'>
+      <motion.form
+        variants={formVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className={`${styles['login-form']}`}>
         <div className={`${styles['first-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
           <div className={`${styles['first-section-text']}`}>
             <p>Get in touch with the</p>
             <img src={Comp_Logo} alt='Rvysion Logo' />
             <p>team</p>
           </div>
-          <button type='button' className='bg-[#E6E6E6] w-10.5 h-10.5 flex items-center justify-center text-2xl'>
+          <button
+            onClick={() => setContactModal(false)}
+            type='button'
+            className='bg-[#E6E6E6] w-10.5 h-10.5 flex items-center justify-center text-2xl'>
             <MdClose />
           </button>
         </div>
@@ -65,7 +114,7 @@ const ContactRvysion = (): JSX.Element => {
                   }
                 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="origin-left h-12 px-3.5 w-full text-sm font-extralight overflow-hidden">
+                className="origin-left h-12 px-0 w-full text-sm font-extralight overflow-hidden">
                 REQUEST ACCESS
               </motion.button>
 
@@ -97,8 +146,8 @@ const ContactRvysion = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </form>
-    </main>
+      </motion.form>
+    </motion.div>
   )
 }
 

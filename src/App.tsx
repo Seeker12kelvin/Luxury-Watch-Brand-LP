@@ -2,6 +2,7 @@ import { JSX, useState } from 'react'
 import routes from './components/routes'
 import { RouterProvider } from 'react-router-dom'
 import UserContext from './components/userContext'
+import LoadingScreen from './components/LoadingScreen'
 
 function App(): JSX.Element {
 
@@ -11,7 +12,9 @@ function App(): JSX.Element {
 
   const [selectedImage, setSelectedImage] = useState<string | undefined>('')
 
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState<boolean>(false)
+
+  const [contactModal, setContactModal] = useState<boolean>(false)
 
   if (displayProgress >= 100 && opacity > 0) {
     setTimeout(() => {
@@ -25,7 +28,6 @@ function App(): JSX.Element {
   }
 
   return (
-    <>
       <UserContext.Provider value={{ 
         displayProgress,
         setDisplayProgress,
@@ -34,13 +36,18 @@ function App(): JSX.Element {
         setSelectedImage,
         payUp,
         modal,
-        setModal
+        setModal,
+        contactModal,
+        setContactModal
       }}>
 
-        <RouterProvider router={routes}/>
+        {displayProgress < 100
+        ?
+        <LoadingScreen />
+        :
+        <RouterProvider router={routes}/>}
 
       </UserContext.Provider>
-    </>
   )
 }
 

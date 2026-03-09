@@ -9,6 +9,8 @@ export interface UserContextType {
   selectedImage: string | undefined,
   setSelectedImage: React.Dispatch<React.SetStateAction<string | undefined>>,
   payUp: (image: string | undefined) => void,
+  contactModal: boolean,
+  setContactModal: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined)

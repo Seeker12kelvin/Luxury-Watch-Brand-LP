@@ -1,11 +1,11 @@
 import Footer from '../Footer/Footer';
-import React, { JSX, useContext } from 'react';
+import { JSX, useContext } from 'react';
 import HeroSection from '../Hero Section/HeroSection';
 import UserContext from '../../components/userContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import ImageGallery from '../Image Gallery/ImageGallery';
-import LoadingScreen from '../../components/LoadingScreen';
 import PrivateListForm from '../Private List/PrivateListForm';
+import ContactRvysion from '../Contact Rvysion/ContactRvysion';
 import ShowCaseSection from '../Show Case Section/ShowCaseSection';
 import SlideShowSection from '../Slide Show Section/SlideShowSection';
 import BestSellerSection from '../Best Seller Section/BestSellerSection';
@@ -17,17 +17,17 @@ const Home = (): JSX.Element | null => {
   if(!context){
     return null
   }
-  const { modal, displayProgress } = context
+  const { modal, contactModal } = context
 
 
   return (
-      displayProgress < 100
-      ?
-      <LoadingScreen />
-      :
       <main className='h-full flex flex-col items-center w-full justify-self-center'>
         <AnimatePresence mode="wait">
           {modal && <PrivateListForm />}
+        </AnimatePresence>
+
+        <AnimatePresence mode="wait">
+          {contactModal && <ContactRvysion />}
         </AnimatePresence>
         
         <HeroSection />

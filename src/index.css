@@ -24,6 +24,7 @@ body {
   display: flex;
   scroll-behavior: smooth;
   background-color: #0c0c0c;
+  background: linear-gradient(from top, rgb(0, 0, 0) 20%, rgb(225, 225, 225) 80%);
 }
 
 @media (max-width: 640px) {
@@ -68,9 +69,4 @@ button {
   font-weight: 300;
   font-size: 0.875rem;
   cursor: pointer;
-}
-
-button:active {
-  opacity: 0.7;
-  scale: 0.7;
 }

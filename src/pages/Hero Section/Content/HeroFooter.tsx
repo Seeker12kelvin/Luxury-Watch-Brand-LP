@@ -25,7 +25,7 @@ const HeroFooter = ({closeDiv}: Props): JSX.Element => {
         transition={{ delay: 3, duration: 1.6 }}
         onClick={() => closeDiv()}
         className='flex flex-col gap-4'>
-        <div className={`relative inline-block h-30 w-30`}>
+        <div className={`relative inline-block h-30 w-30 z-1`}>
           <div
             className="relative px-1 py-1 text-white rounded-sm">
 
@@ -48,7 +48,7 @@ const HeroFooter = ({closeDiv}: Props): JSX.Element => {
           </div>
         </div>
 
-        <div className='flex justify-between items-center text-sm'>
+        <div className='flex justify-between items-center text-sm z-1'>
           <span className='underline'>01</span>
           <span>$5,499.99</span>
         </div>

@@ -1,12 +1,15 @@
-import { JSX } from 'react';
+import { JSX, useContext } from 'react';
 import Footer from '../Footer/Footer';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import { watchCollection } from '../../data';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import WaitlistButton from '../../components/WaitlistButton';
+import ContactRvysion from '../Contact Rvysion/ContactRvysion';
+import UserContext from '../../components/userContext';
 
-const DetailsPage = (): JSX.Element => {
+const DetailsPage = (): JSX.Element | null => {
 
   const revealY: any = {
     hidden: { clipPath: "inset(0 0 100% 0)" },
@@ -16,9 +19,15 @@ const DetailsPage = (): JSX.Element => {
     }
   }
 
+  const context = useContext(UserContext)
+  if(!context){
+    return null
+  }
+  const { contactModal } = context
+
   return (
 
-    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 overflow-x-hidden h-full'>
+    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 overflow-x-hidden h-full z-1'>
       
       <div className='px-52 mix-blend-difference text-white'>
 
@@ -68,29 +77,7 @@ const DetailsPage = (): JSX.Element => {
               </div>
             </div>
 
-            <motion.div
-              variants={revealY}
-              initial="hidden"
-              animate="show"
-              className='flex items-center gap-1 mix-blend-difference text-black'>
-
-              <Link
-                to={'/login'}
-                className='uppercase bg-white h-9.5 py-2.5 px-3.5'>
-                add to watchlist
-              </Link>
-
-              <Link
-                to={'/login'}
-                className='bg-white flex items-center justify-center h-9.5 w-10.5'>
-
-                <IoIosArrowRoundForward
-                  className='w-6 h-6 shrink-0'
-                />
-
-              </Link>
-
-            </motion.div>
+            <WaitlistButton variants={revealY} extraStyling={'black'} textColor={'white'} />
 
           </div>
 
@@ -103,15 +90,21 @@ const DetailsPage = (): JSX.Element => {
         <div className='flex justify-between w-full'>
           {watchCollection.map(data => (
             <img
-            className='w-100 h-100 object-cover'
-            src={data.img}
-            alt={data.title} />
+              className='w-100 h-100 object-cover'
+              src={data.img}
+              alt={data.title}
+              key={data.id}
+            />
           ))}
         </div>
 
         <Footer />
 
       </div>
+      
+      <AnimatePresence mode="wait">
+        {contactModal && <ContactRvysion />}
+      </AnimatePresence>
 
     </div>
   )

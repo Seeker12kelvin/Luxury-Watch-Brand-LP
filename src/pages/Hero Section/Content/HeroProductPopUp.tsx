@@ -40,7 +40,7 @@ const HeroProductPopUp = ({isOpen, open}: HeroProductPopUpProps): JSX.Element | 
 
       <div className='flex gap-2.5 self-stretch items-center w-full max-sm:w-fit max-sm:h-full h-full flex-1'>
 
-        <div className='flex flex-col justify-between gap-15.25 items-start self-stretch h-full w-110.75. max-sm:w-full max-sm:text-center'>
+        <div className='flex flex-col justify-between gap-15.25 items-start self-stretch h-full w-110.75 max-sm:w-full max-sm:text-center'>
 
           <div className='w-full flex flex-col gap-5'>
 
@@ -92,7 +92,7 @@ const HeroProductPopUp = ({isOpen, open}: HeroProductPopUpProps): JSX.Element | 
             
             <div className='flex w-full items-center gap-2'>
 
-              <WatchListButton onClick={(): void => payUp(aleteir.img)} extraStyle={"w-full"}/>
+              <WatchListButton bg={aleteir.img} extraStyle={'w-full'}/>
 
             </div>
 

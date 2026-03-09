@@ -34,7 +34,7 @@ const SlideShowSection = (): JSX.Element => {
     return setData()
   }, [activeIndex])
 
-  const { payUp } = useContext<UserContextType | undefined>(UserContext)
+  const { payUp, setSelectedImage, setModal } = useContext<UserContextType | undefined>(UserContext)
   
   return (
     <section className='h-245 w-360 border bg-black relative max-sm:h-[120vh]'>
@@ -45,7 +45,7 @@ const SlideShowSection = (): JSX.Element => {
 
         <div className={`${styles['content-overlay']} w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
 
-          <SlideShowInfo data={{bg, activeIndex, setActiveIndex, nextSlide, prevSlide, payUp}} />
+          <SlideShowInfo data={{bg, activeIndex, setActiveIndex, nextSlide, prevSlide, payUp, setSelectedImage, setModal}} />
 
           <Slider data={{activeIndex}}/>
 

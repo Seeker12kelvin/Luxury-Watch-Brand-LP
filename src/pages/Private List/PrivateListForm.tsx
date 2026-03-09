@@ -129,17 +129,17 @@ const PrivateListForm = (): JSX.Element | null => {
                     color: '#000000'
                   }
                 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="origin-left h-12 px-3.5 w-full text-sm font-extralight overflow-hidden">
+                transition={{ duration: 0.25, ease: 'easeIn' }}
+                className="origin-left h-12 w-full text-sm font-extralight overflow-hidden">
                 REQUEST ACCESS
               </motion.button>
 
               <motion.button
                 variants={{
-                  rest: { backgroundColor: '#000000', color: '#ffffff' },
-                  hover: { backgroundColor: '#ffffff', color: '#000000' }
+                  rest: { background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff' },
+                  hover: { background: 'linear-gradient(to bottom, black 0%, white 0%)', color: '#000000' }
                 }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
+                transition={{ duration: 0.25, ease: 'easeIn' }}
                 className="w-10.5 h-12 shrink-0 flex items-center justify-center">
                 <IoIosArrowRoundForward size={24} />
               </motion.button>
