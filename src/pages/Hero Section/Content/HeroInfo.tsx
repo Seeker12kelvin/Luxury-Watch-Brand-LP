@@ -15,7 +15,7 @@ const HeroInfo = (): JSX.Element => {
   }
 
   return (
-    <div id='hero-section' className={`h-52.75 w-fit text-white flex flex-col gap-6 max-sm:items-center max-sm:w-full max-sm:h-fit`}>
+    <div id='hero-section' className={`h-52.75 w-fit bg-transparent z-20 text-white flex flex-col gap-6 max-sm:items-center max-sm:w-full max-sm:h-fit`}>
       <div className='flex flex-col gap-2.5 max-sm:text-center max-sm:w-full max-sm:h-full max-sm:gap-4'>
         <motion.h1
           variants={revealY}
