@@ -38,7 +38,7 @@ const WatchListButton = ({bg, variants, extraStyle = ''}:WatchListButtonProps): 
 
       <motion.button
         onClick={():void => {
-          setSelectedImage(bg?.img)
+          setSelectedImage(bg)
           setModal(true)
         }}
         whileTap={{scale: 0.9, opacity: 0.9}}

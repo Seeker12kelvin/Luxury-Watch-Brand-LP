@@ -76,15 +76,6 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
     ]
   )
 
-  const secondWatchClip: any = useTransform(
-    scrollYProgress,
-    [0.05, 0.1515],
-    [
-      "inset(0 0 0% 0)",
-      "inset(0 0 100% 0)"
-    ]
-  )
-
   return (
     <div className='z-10 w-full h-full flex flex-col justify-between gap-21.25 items-center'>
 
@@ -143,7 +134,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
       <div
         className='flex items-center gap-1 text-black mix-blend-difference'>
 
-        <WatchListButton onClick={(): void => payUp(Dark_Watch)}/>
+        <WatchListButton bg={Dark_Watch}/>
 
       </div>
 

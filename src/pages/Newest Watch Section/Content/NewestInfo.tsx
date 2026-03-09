@@ -1,17 +1,16 @@
 import { JSX } from 'react';
 import { watchCollection } from '../../../data';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import Watch from '../../../images/NewestInfo-Watch.png';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
 import WatchListButton from '../../../components/WatchListButton';
 import { AnimatePresence, motion, MotionValue, useTransform } from 'framer-motion';
 
 type NewestInfoProps = {
   scrollYProgress: MotionValue<number>,
-  payUp: (image: string | undefined) => void,
-  image: string
 }
 
-const NewestInfo = ({scrollYProgress, payUp, image}: NewestInfoProps): JSX.Element => {
+const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
 
   const date = new Date().getFullYear()
 
@@ -60,7 +59,7 @@ const NewestInfo = ({scrollYProgress, payUp, image}: NewestInfoProps): JSX.Eleme
         <div
           className='flex flex-col items-end gap-5'>
           
-          <WatchListButton onClick={(): void => payUp(image)} bg={{id: 'wyrcft'}} extraStyle={'justify-end'}/>
+          <WatchListButton bg={Watch} extraStyle={'justify-end'}/>
 
           <h3 className='text-[4rem] font-semibold leading-16 tracking-[-0.04rem] mix-blend-difference text-white'>$145,999.99</h3>
         </div>
