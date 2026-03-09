@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styles from '../HeroSection.module.css';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import WaitlistButton from '../../../components/WaitlistButton';
+import { Link } from 'react-router-dom';
 
 const HeroInfo = (): JSX.Element => {
 
@@ -34,7 +35,22 @@ const HeroInfo = (): JSX.Element => {
         </motion.p>
       </div>
       
-      <WaitlistButton variants={revealY} />
+      <div className='flex gap-1 items-center'>
+        <Link
+          to={'details-page'}
+          target='_blank'
+          className={`uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5`}>
+            JOIN THE WAITLIST
+        </Link>
+        <Link
+          to={'details-page'}
+          target='_blank'
+          className={`bg-white flex items-center text-[#111111] justify-center h-9.5 w-10.5`}>
+          <IoIosArrowRoundForward
+            className='w-6 h-6 shrink-0'
+          />
+        </Link>
+      </div>
 
     </div>
   )

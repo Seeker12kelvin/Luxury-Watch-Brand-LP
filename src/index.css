@@ -60,11 +60,11 @@ h3 {
 
 p,
 h4,
-label {
+label{
   font-family: "Inter Tight", sans-serif;
 }
 
-button {
+button, a {
   font-family: "Inter Tight", sans-serif;
   font-weight: 300;
   font-size: 0.875rem;

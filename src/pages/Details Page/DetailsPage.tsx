@@ -8,6 +8,7 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 import WaitlistButton from '../../components/WaitlistButton';
 import ContactRvysion from '../Contact Rvysion/ContactRvysion';
 import UserContext from '../../components/userContext';
+import Logo from '../../components/Logo';
 
 const DetailsPage = (): JSX.Element | null => {
 
@@ -31,7 +32,29 @@ const DetailsPage = (): JSX.Element | null => {
       
       <div className='px-52 mix-blend-difference text-white'>
 
-        <Header />
+        <motion.nav
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 1.6}}
+          className='flex w-full py-3 justify-between items-center z-1'>
+
+          <Logo />
+
+          <div className='flex gap-1 items-center'>
+            <Link
+              to={'/details-page'}
+              className={`uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5`}>
+                JOIN THE WAITLIST
+            </Link>
+            <Link
+              to={'/details-page'}
+              className={`bg-white flex items-center text-[#111111] justify-center h-9.5 w-10.5`}>
+              <IoIosArrowRoundForward
+                className='w-6 h-6 shrink-0'
+              />
+            </Link>
+          </div>
+        </motion.nav>
 
       </div>
 
