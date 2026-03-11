@@ -71,8 +71,8 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
     scrollYProgress,
     [0.05, 0.1515],
     [
-      "inset(0 0 0% 0)",
-      "inset(0 0 100% 0)"
+      "ellipse(150% 0% at 50% 100%)",
+      "ellipse(150% 100% at 50% 100%)"
     ]
   )
 
