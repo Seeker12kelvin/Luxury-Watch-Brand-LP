@@ -6,8 +6,8 @@ import { AnimatePresence } from 'framer-motion';
 import styles from './SlideShowSection.module.css';
 import SlideShowInfo from './Content/SlideShowInfo';
 import { JSX, useContext, useEffect, useState } from 'react';
-import PrivateListForm from '../Private List/PrivateListForm';
 import UserContext, { UserContextType } from '../../components/userContext';
+import useWindowSize from '../../hooks/windowSize';
 
 const SlideShowSection = (): JSX.Element => {
 
@@ -34,10 +34,12 @@ const SlideShowSection = (): JSX.Element => {
     return setData()
   }, [activeIndex])
 
+  const { height } = useWindowSize()
+
   const { payUp, setSelectedImage, setModal } = useContext<UserContextType | undefined>(UserContext)
   
   return (
-    <section className='h-245 w-360 border bg-black relative max-sm:h-[120vh]'>
+    <section className={`h-245 max-sm:h-{${height} w-360 max-sm:w-screen border bg-black relative`}>
       
       <Background bg={bg} />
 

@@ -55,8 +55,8 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
   }
 
   return (
-    <div className='h-[60%] w-full flex flex-col justify-between pt-25 px-50'>
-      <div className='w-260 flex flex-col gap-[0.6rem]'>
+    <div className='h-[60%] max-sm:h-full w-full flex flex-col justify-between pt-25 px-50 max-sm:px-6 max-sm:py-5'>
+      <div className='w-260 flex flex-col gap-[0.6rem] max-sm:w-full'>
         <motion.div
           key={`${bg?.id}-badge`}
           initial="initial"
@@ -78,7 +78,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           whileInView="animate"
           viewport={{once: true}}
           exit="exit"
-          className='text-[4rem] font-semibold'>
+          className='text-[1rem] font-semibold'>
 
           {bg?.title 
           || 
@@ -96,7 +96,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           whileInView="animate"
           viewport={{once: true}}
           exit="exit"
-          className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight`}>
+          className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight max-sm:w-full max-sm:leading-10 max-sm:text-lg`}>
 
           {bg?.description 
           ||
@@ -106,12 +106,12 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
         </motion.p>
       </div>
 
-      <div className='flex flex-col w-full'>
+      <div className='flex flex-col w-full max-sm:gap-[1.3em]'>
 
         {bg 
         && 
         (
-          <div className='flex justify-between items-center self-stretch flex-1'>
+          <div className='flex justify-between items-center self-stretch flex-1 max-[603px]:flex-col max-[375px]:flex-col max-sm:gap-2'>
 
             <motion.h2
               key={`${bg?.id}-price`}
@@ -120,7 +120,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
               whileInView="animate"
               viewport={{once: true}}
               exit="exit"
-              className='text-[4rem]'>
+              className='text-[4rem] max-sm:text-5xl'>
               {bg.price.toUpperCase()}
             </motion.h2>
 
@@ -133,13 +133,13 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
 
           <div className='flex gap-2.5 h-full'>
 
-          {Array.from({ length: watchCollection.length }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`${activeIndex === i ? 'w-20 bg-[#FFFFFF] cursor-pointer' : 'w-5 bg-[#FFFFFF66]'} h-2 cursor-pointer`}
-            />
-          ))}
+            {Array.from({ length: watchCollection.length }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`${activeIndex === i ? 'w-20 bg-[#FFFFFF] cursor-pointer' : 'w-5 bg-[#FFFFFF66]'} h-2 cursor-pointer`}
+              />
+            ))}
 
           </div>
 

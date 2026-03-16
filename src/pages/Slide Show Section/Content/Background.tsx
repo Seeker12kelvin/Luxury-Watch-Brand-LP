@@ -41,11 +41,10 @@ const Background = ({bg}: BackgroundProps): JSX.Element => {
       exit="exit"
       variants={backgroundAnimation}
       transition={{ delay: 2, duration: 1.6 }}
-      className={`${styles['video-element']} bg-black text-white`}
+      className={`${styles['video-element']} bg-black text-white max-sm:bg-cover bg-contain max-sm:w-screen`}
       style={bg ? { 
         backgroundImage: `url(${bg.img})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain'}
+        backgroundRepeat: 'no-repeat'}
         :
         {}
       }

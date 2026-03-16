@@ -110,15 +110,22 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
         <div>
 
           <motion.img
-            style={{scale: watchScale, opacity: watchScale, clipPath: bg === "#0C0C0C" ? firstWatchClip : ''}}
-            className='absolute h-202.5 w-360 object-cover top-40 z-10'
+            style={{
+              scale: watchScale,
+              opacity: watchScale,
+              zIndex: bg === "white" ? 10: 0}}
+            className='absolute h-202.5 w-360 object-cover top-40'
             src={Dark_Watch}
             alt='Picture of a wrist watch'
           />
 
           <motion.img
-            style={{scale: watchScale, opacity: watchScale}}
-            className='absolute h-202.5 w-360 object-cover top-40'
+            style={{
+              scale: watchScale,
+              opacity: watchScale,
+              clipPath: bg === "#0C0C0C" ? firstWatchClip : '',
+              zIndex: bg === "white" ? 0: 10}}
+            className='absolute h-202.5 w-360 object-cover top-40 z-10'
             src={Light_Watch}
             alt='Picture of a wrist watch'
           />
@@ -126,7 +133,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
         </div>
       </div>
 
-      <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center'>
+      <div className='gap-2 bg-[#FFFFFF1A] p-1.5 rounded-[2.5rem] flex items-center mix-blend-difference'>
         <button onClick={(): void => setBg("white")} className='h-6 w-6 bg-white rounded-full'></button>
         <button onClick={(): void => setBg("#0C0C0C")} className='h-6 w-6 bg-black rounded-full'></button>
       </div>

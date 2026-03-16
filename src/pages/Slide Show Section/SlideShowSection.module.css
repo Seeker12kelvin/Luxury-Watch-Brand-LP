@@ -3,7 +3,6 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 0;
 }
 
@@ -14,11 +13,6 @@
   font-family: 'Moela', sans-serif;
 }
 
-.content-overlay div div h1 {
-  font-family: 'Moela', sans-serif;
-  font-size: 4rem;
-}
-
 .slide-description {
   font-family: 'Inter Tight', sans-serif;
   font-size: 1rem;
@@ -26,4 +20,51 @@
   font-weight: 300;
   line-height: 1.3rem;
   letter-spacing: -0.02rem;
+}
+
+@media (max-width: 640px) {
+  .content-overlay div div h1 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .content-overlay div div h1 {
+    font-family: 'Moela', sans-serif;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 603px) {
+  .content-overlay div div h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .content-overlay div div p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .content-overlay div div div h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .content-overlay div div h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .content-overlay div div p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .content-overlay div div div h2 {
+    font-size: 2rem;
+  }
 }

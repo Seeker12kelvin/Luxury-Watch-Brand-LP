@@ -1,4 +1,5 @@
 import { JSX } from "react";
+import useWindowSize from "../../../hooks/windowSize";
 import { watchCollection } from "../../../data";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,9 +14,10 @@ type SliderProps = {
 
 const Slider = ({ data }: SliderProps): JSX.Element => {
   const { activeIndex } = data
+  const { width } = useWindowSize()
 
   const totalWidth: number = watchCollection.length * SLIDE_WIDTH
-  const maxTranslateX: number = Math.max(totalWidth - VIEWPORT_WIDTH, 0)
+  const maxTranslateX: number = Math.max(totalWidth - width, 0)
 
   const isActive: boolean = activeIndex >= 0
   const translateX: number = isActive
@@ -24,11 +26,11 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
 
   return (
     <div
-      className="relative overflow-hidden h-100"
-      style={{ width: VIEWPORT_WIDTH }}
+      className="relative overflow-x-hidden h-100 max-sm:h-full"
+      style={{ width: width }}
     >
       <motion.div
-        className="relative flex"
+        className="relative flex max-sm:h-full"
         style={{ width: totalWidth }}
         animate={{ x: -translateX }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -38,7 +40,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
           {isActive && (
             <motion.div
               key="border"
-              className="absolute top-0 left-0 z-10 border-[0.875rem] border-[#FFFFFF1A]"
+              className="absolute top-0 left-0 z-10 border-[0.875rem] border-[#FFFFFF1A] max-sm:h-full"
               style={{ width: SLIDE_WIDTH, height: '100%' }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{
@@ -56,7 +58,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
         {watchCollection.map(item => (
           <div
             key={item.id}
-            className="shrink-0 h-100"
+            className="shrink-0 h-100 max-sm:h-full"
             style={{ width: SLIDE_WIDTH }}
           >
             <img
