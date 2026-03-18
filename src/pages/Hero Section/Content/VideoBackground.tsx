@@ -14,6 +14,7 @@ const VideoBackground = (): JSX.Element => {
       loop
       playsInline
       preload="auto"
+      disablePictureInPicture
       className={styles['video-element']}>
       <source src={videoSource} type="video/mp4" />
     </motion.video>
