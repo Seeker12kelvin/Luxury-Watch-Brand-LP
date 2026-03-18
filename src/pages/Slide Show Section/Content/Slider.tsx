@@ -26,7 +26,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
 
   return (
     <div
-      className="relative overflow-x-hidden h-100 max-sm:h-full"
+      className="relative overflow-hidden h-100 max-sm:h-full"
       style={{ width: width }}
     >
       <motion.div
