@@ -34,12 +34,12 @@ const SlideShowSection = (): JSX.Element => {
     return setData()
   }, [activeIndex])
 
-  const { height } = useWindowSize()
+  const { height, width } = useWindowSize()
 
   const { payUp, setSelectedImage, setModal } = useContext<UserContextType | undefined>(UserContext)
   
   return (
-    <section className={`h-245 max-sm:h-{${height} w-360 max-sm:w-screen border bg-black relative`}>
+    <section className={`h-245 max-sm:h-{${height} w-360 overflow-hidden max-sm:w-[${width}] border bg-black relative`}>
       
       <Background bg={bg} />
 
