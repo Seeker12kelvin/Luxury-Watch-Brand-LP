@@ -24,7 +24,7 @@ body {
   display: flex;
   scroll-behavior: smooth;
   background-color: #0c0c0c;
-  background: linear-gradient(from top, rgb(0, 0, 0) 20%, rgb(225, 225, 225) 80%);
+  background: black;
 }
 
 @media (max-width: 640px) {
