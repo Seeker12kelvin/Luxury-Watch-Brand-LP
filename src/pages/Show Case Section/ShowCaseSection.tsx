@@ -25,7 +25,7 @@ const ShowCaseSection = (): JSX.Element => {
   })
 
   return (
-    <section ref={ref} className='h-[800vh] w-360 relative'>
+    <section ref={ref} className='h-[800vh] w-full relative'>
       <div className='sticky top-0 px-50 py-25 bg-white mix-blend-difference'>
         <ShowCaseInfo setBg={setBg} bg={bg} payUp={payUp} scrollYProgress={smoothScroll} />
         <AnimatedBackground scrollYProgress={smoothScroll} bg={bg} />

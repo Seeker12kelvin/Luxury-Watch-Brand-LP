@@ -4,7 +4,7 @@
 
 .video-background-container {
   position: relative;
-  width: 90rem;
+  width: 100%;
   height: fit-content;
   background-color: #0C0C0C;
 }
@@ -20,7 +20,7 @@
 
 @media (max-width: 640px) {
   .video-background-container {
-    width: 100vw;
+    width: 100%;
     height: fit-content;
   }
   
@@ -42,7 +42,7 @@
   }
 
   .Hero-Section-product {
-    width: 100vw;
+    width: 100%;
     max-width: 100vw;
     backdrop-filter: blur(10px);
   }

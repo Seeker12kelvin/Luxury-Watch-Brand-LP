@@ -10,6 +10,7 @@ import ShowCaseSection from '../Show Case Section/ShowCaseSection';
 import SlideShowSection from '../Slide Show Section/SlideShowSection';
 import BestSellerSection from '../Best Seller Section/BestSellerSection';
 import NewestWatchSection from '../Newest Watch Section/NewestWatchSection';
+import useWindowSize from '../../hooks/windowSize';
 
 const Home = (): JSX.Element | null => {
 
@@ -19,9 +20,10 @@ const Home = (): JSX.Element | null => {
   }
   const { modal, contactModal } = context
 
+  const { width } = useWindowSize()
 
   return (
-      <main className='h-full flex flex-col items-center w-full justify-self-center'>
+      <main className='flex flex-col'>
         <AnimatePresence mode="wait">
           {modal && <PrivateListForm />}
         </AnimatePresence>

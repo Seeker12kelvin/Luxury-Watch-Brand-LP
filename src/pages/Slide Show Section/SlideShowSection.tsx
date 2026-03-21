@@ -4,12 +4,12 @@ import { watchCollection } from '../../data';
 import Background from './Content/Background';
 import { AnimatePresence } from 'framer-motion';
 import styles from './SlideShowSection.module.css';
+import useWindowSize from '../../hooks/windowSize';
 import SlideShowInfo from './Content/SlideShowInfo';
 import { JSX, useContext, useEffect, useState } from 'react';
 import UserContext, { UserContextType } from '../../components/userContext';
-import useWindowSize from '../../hooks/windowSize';
 
-const SlideShowSection = (): JSX.Element => {
+const SlideShowSection = (): JSX.Element | null => {
 
   const [bg, setBg] = useState<WatchItem | null>(null)
   const [activeIndex, setActiveIndex] = useState<number>(-1)
@@ -34,12 +34,18 @@ const SlideShowSection = (): JSX.Element => {
     return setData()
   }, [activeIndex])
 
-  const { height, width } = useWindowSize()
+  const { height } = useWindowSize()
 
-  const { payUp, setSelectedImage, setModal } = useContext<UserContextType | undefined>(UserContext)
+  const context = useContext<UserContextType | undefined>(UserContext)
+
+  if(!context){
+    return null
+  }
+
+  const { payUp, setSelectedImage, setModal } = context
   
   return (
-    <section className={`h-245 max-sm:h-{${height} w-360 overflow-hidden max-sm:w-[${width}] border bg-black relative`}>
+    <section className={`h-245 max-sm:h-{${height} w-full overflow-hidden max-sm:w-full border bg-black relative`}>
       
       <Background bg={bg} />
 

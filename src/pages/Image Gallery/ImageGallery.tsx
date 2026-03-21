@@ -4,7 +4,7 @@ import ImageGalleryInfo from './Content/ImageGalleryInfo';
 
 const ImageGallery = (): JSX.Element => {
   return (
-    <section className='h-245 w-360'>
+    <section className='h-245 w-full'>
       <AnimatePresence mode="wait">
         <ImageGalleryInfo />
       </AnimatePresence>
