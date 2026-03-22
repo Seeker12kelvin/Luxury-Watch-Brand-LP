@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScroll } from 'framer-motion';
-import { JSX, useEffect, useRef, useState } from 'react';
 import styles from './BestSellerSection.module.css';
+import { JSX, useEffect, useRef, useState } from 'react';
 
 const BestSellerSection = (): JSX.Element => {
   
@@ -27,7 +27,7 @@ const BestSellerSection = (): JSX.Element => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={ref} className='h-[600vh] w-full flex justify-center items-center bg-[#0C0C0C]'>
+    <section ref={ref} className='h-[600vh] max-[391px]:h-[400vh] max-[391px]:max-h-full w-full flex justify-center items-center bg-[#0C0C0C]'>
       <div className={`${styles['seller-ul']} sticky top-0 bottom-0 h-screen flex flex-col items-center justify-center w-full`}>
         <motion.div
           className='w-52.5 h-27.5 text-center'

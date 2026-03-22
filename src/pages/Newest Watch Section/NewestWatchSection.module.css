@@ -4,22 +4,10 @@
   }
 }
 
-@media (max-width: 1244px) {
-}
-
-@media (max-width: 1118px) {
-}
-
-@media (max-width: 1034px) {
-}
-
 @media (max-width: 740px) {
   .sticky-div{
     padding-inline: 3.5rem;
   }
-}
-
-@media (min-width: 640px) {
 }
 
 @media (max-width: 573px) {

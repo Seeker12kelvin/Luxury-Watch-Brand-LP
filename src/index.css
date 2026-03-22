@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-
 @font-face {
   font-family: "Moela";
   src: url("./fonts/MOELA.ttf") format("truetype");
@@ -37,15 +36,6 @@ main {
 
 section {
   width: 100%;
-}
-
-@media (max-width: 769px) {
-}
-
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 1200px) {
 }
 
 .inter-tight {
