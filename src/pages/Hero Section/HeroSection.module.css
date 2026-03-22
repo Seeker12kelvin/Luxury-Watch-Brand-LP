@@ -48,6 +48,46 @@
   }
 }
 
+@media (max-width: 1244px) {
+  .content-overlay {
+    padding-inline: 9rem;
+  }
+}
+
+@media (max-width: 1118px) {
+  .content-overlay {
+    padding-inline: 5.5rem;
+  }
+}
+
+@media (max-width: 1005px) {
+  .video-background-container {
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .video-element {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .content-overlay .animated-block-h1 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .content-overlay .animated-block {
+    width: 80%;
+    max-width: 100%;
+    font-size: 1.1rem;
+    align-self: center;
+    text-align: center;
+  }
+}
+
 .content-overlay {
   height: 100%;
   z-index: 20;

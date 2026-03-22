@@ -45,7 +45,7 @@ const SlideShowSection = (): JSX.Element | null => {
   const { payUp, setSelectedImage, setModal } = context
   
   return (
-    <section className={`h-245 max-sm:h-{${height} w-full overflow-hidden max-sm:w-full border bg-black relative`}>
+    <section className={`${styles['slider-section']} h-245 max-sm:h-full w-full overflow-hidden border bg-black relative`}>
       
       <Background bg={bg} />
 

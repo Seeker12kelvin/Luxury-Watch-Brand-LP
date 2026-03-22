@@ -1,8 +1,10 @@
 import { JSX } from 'react';
 import { useTransform } from 'framer-motion';
 import Bg from '../../../images/NewestBg.jpg';
+import styles from '../NewestWatchSection.module.css'
 import { motion, MotionValue } from 'framer-motion';
 import Watch from '../../../images/NewestInfo-Watch.png';
+import useWindowSize from '../../../hooks/windowSize';
 
 type AnimatedBackgroundProps = {
   scrollYProgress: MotionValue<number>
@@ -13,6 +15,7 @@ const HEIGHT_OF_DIV = 1115
 
 const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Element => {
 
+  const { width } = useWindowSize()
 
   const maxHeight: MotionValue<number> = useTransform(
     scrollYProgress,
@@ -24,8 +27,14 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const maxWidth: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [1040, WIDTH_OF_DIV],
+    [1040, width],
     
+  )
+  
+  const widthOfDiv: MotionValue<number | string> = useTransform(
+    scrollYProgress,
+    [0.3, 0.5],
+    [ width < 1025 ? width - 200 : "100%", width],
   )
 
   const scaleWatch: MotionValue<number> = useTransform(
@@ -63,7 +72,7 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const x: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [0, -200],
+    [0, width < 1025 ? -128 : -200],
   )
 
   const watchBgOpacity: MotionValue<number> = useTransform(
@@ -74,8 +83,8 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
   return (
     <motion.div
-      style={{translateY: y, translateX: x, maxWidth: maxWidth, maxHeight: maxHeight, height: maxHeight, opacity: divOpacity, borderRadius}}
-      className="bg-white mix-blend-difference will-change-transform h-full max-w-260 w-full z-[-1] py-[3.88rem] absolute bg-center flex justify-center items-center self-stretch">
+      style={{translateY: y, translateX: x, width: widthOfDiv, maxWidth: maxWidth, maxHeight: maxHeight, height: maxHeight, opacity: divOpacity, borderRadius}}
+      className={`${styles['expand-animated-div']} bg-white mix-blend-difference will-change-transform h-full w-full max-w-260 z-[-1] py-[3.88rem] absolute bg-center flex justify-center items-center self-stretch`}>
       
       <motion.img
         style={{scale: scaleWatch, opacity: watchOpacity}}

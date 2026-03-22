@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+  .sticky-div{
+    padding: 3.75rem 8rem;
+  }
+  
+  /* .expand-animated-div {
+    transform: translateX(0px);
+  } */
+}

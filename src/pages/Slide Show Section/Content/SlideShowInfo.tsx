@@ -55,8 +55,10 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
   }
 
   return (
-    <div className='h-[60%] max-sm:h-full w-full flex flex-col justify-between pt-25 px-50 max-sm:px-6 max-sm:py-5'>
-      <div className='w-260 flex flex-col gap-[0.6rem] max-sm:w-full'>
+    <div 
+      className='h-[60%] w-full flex flex-col justify-between pt-25 px-50 
+        max-[670px]:px-6 max-sm:py-5 max-[1245px]:px-30 max-[1118px]:px-20 max-[1006px]:px-20 max-sm:h-full max-[743px]:px-10'>
+      <div className='w-260 flex flex-col gap-[0.6rem] max-[743px]:w-full max-[641px]:gap-5'>
         <motion.div
           key={`${bg?.id}-badge`}
           initial="initial"
@@ -78,7 +80,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           whileInView="animate"
           viewport={{once: true}}
           exit="exit"
-          className='text-[1rem] font-semibold'>
+          className='font-semibold'>
 
           {bg?.title 
           || 
@@ -96,7 +98,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           whileInView="animate"
           viewport={{once: true}}
           exit="exit"
-          className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight max-sm:w-full max-sm:leading-10 max-sm:text-lg`}>
+          className={`${styles['slide-description']} w-150 text-[1rem] leading-[1.3rem] tracking-tight font-extralight max-sm:w-full max-[437px]:leading-10 max-[437px]:text-[14px]`}>
 
           {bg?.description 
           ||
@@ -106,7 +108,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
         </motion.p>
       </div>
 
-      <div className='flex flex-col w-full max-sm:gap-[1.3em]'>
+      <div className='flex flex-col w-full max-[760px]:gap-[1.3em]'>
 
         {bg 
         && 
@@ -120,7 +122,7 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
               whileInView="animate"
               viewport={{once: true}}
               exit="exit"
-              className='text-[4rem] max-sm:text-5xl'>
+              className='text-[4rem] max-sm:text-5xl max-[760px]:text-5xl'>
               {bg.price.toUpperCase()}
             </motion.h2>
 
