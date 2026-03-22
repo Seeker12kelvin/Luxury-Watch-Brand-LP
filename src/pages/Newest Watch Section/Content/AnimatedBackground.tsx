@@ -36,7 +36,8 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
     [0.3, 0.5],
     [ width < 1455 && width > 1024 ? width - 400
       : width < 1025 && width > 740 ? width - 200
-      : width < 741 && width > 541 ? width - 100
+      : width < 741 && width > 573 ? width - 100
+      : width < 574 && width > 541 ? width - 80
       : width < 542 ? width - 60
       : "100%", width],
   )
@@ -44,7 +45,11 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const scaleWatch: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [0.6, 1.4]
+    [0.6,
+      width < 741 && width > 573 ? 1
+      : width < 574 && width > 541 ? 1
+      : width < 542 ? 1
+      : 1.4]
   )
   
   const divOpacity: MotionValue<number> = useTransform(
@@ -56,7 +61,9 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const watchOpacity: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.25, 0.3, 0.7],
-    [0, 1, 0]
+    [0, 1, 
+      width < 741 ? 1
+      : 0]
   )
 
   const borderRadius: MotionValue<number> = useTransform(
@@ -69,11 +76,13 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const y: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [width < 861 && width > 669 ? -690
-      : width < 670 && width > 494 ? -700
-      : width < 495 && width > 466 ? -710
-      : width < 467 && width > 464 ? -720
-      : width < 465 ? -710
+    [width < 861 && width > 819 ? -690
+      : width < 820 && width > 669 ? -720
+      : width < 670 && width > 494 ? -730
+      : width < 495 && width > 466 ? -740
+      : width < 467 && width > 464 ? -745
+      : width < 465 && width > 445 ? -744
+      : width < 446 ? -735
       : -650, -1055],
     
   )
@@ -91,7 +100,9 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const watchBgOpacity: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.4, 0.7, 0.71],
-    [0, 0, 0, 1,]
+    [0, 0, 0, 
+      width < 741 ? 0
+      : 1,]
   )
 
   return (
@@ -105,7 +116,7 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
       
       <motion.div
-        style={{opacity: watchBgOpacity, background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${Bg}) lightgray 50% / cover no-repeat`, backgroundPosition: 'center center'}}
+        style={{opacity: watchBgOpacity, background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${Bg}) lightgray 50% / cover no-repeat`, backgroundPosition: 'center'}}
         className='absolute top-0 w-full h-full mix-blend-difference'>
         
       </motion.div>

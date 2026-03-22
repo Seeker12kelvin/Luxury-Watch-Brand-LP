@@ -22,7 +22,7 @@ const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
 
   return (
     <div className='h-full w-full flex flex-col justify-between mix-blend-difference z-10 text-[#0C0C0C]'>
-      <div className='flex flex-col items-start self-stretch gap-2.5 max-[923px]:text-center max-[923px]:w-full max-[666px]:gap-1 max-[495px]:gap-0'>
+      <div className='flex flex-col items-start self-stretch gap-2.5 max-[923px]:text-center max-[923px]:w-full max-[666px]:gap-1 max-[495px]:gap-1'>
 
         <motion.div style={{clipPath}}>
           <NewReleaseBadge text={`${date} RELEASE`} textColor={'white'} borderColor={'white'} background={'[#0A0A0A14]'}/>
@@ -30,19 +30,19 @@ const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
 
         <motion.h1
           style={{clipPath}}
-          className='uppercase text-[4rem] mix-blend-difference text-white font-semibold not-italic leading-[4.8rem] w-260 max-[923px]:w-full max-[819px]:text-[3rem] max-[666px]:text-[2.5rem] max-[495px]:text-[2rem]'>
+          className='uppercase text-[4rem] mix-blend-difference text-white font-semibold not-italic leading-[4.8rem] w-260 max-[923px]:w-full max-[819px]:text-[3rem] max-[666px]:text-[2.5rem] max-[819px]:leading-12 max-[446px]:text-[2rem]'>
           The Brantium Grand
         </motion.h1>
 
         <motion.h1
           style={{clipPath}}
-          className='uppercase text-[4rem] mix-blend-difference text-white font-semibold not-italic leading-[4.8rem] w-260 max-[923px]:w-full max-[819px]:text-[3rem] max-[666px]:text-[2.5rem] max-[495px]:text-[2rem]'>
+          className='uppercase text-[4rem] mix-blend-difference text-white font-semibold not-italic leading-[4.8rem] w-260 max-[923px]:w-full max-[819px]:text-[3rem] max-[666px]:text-[2.5rem] max-[819px]:leading-12 max-[446px]:text-[2rem]'>
           Complication No. 1
         </motion.h1>
 
         <motion.p
           style={{clipPath}}
-          className='w-155 self-stretch text-[1rem] mix-blend-difference text-white font-light not-italic leading-[1.3rem] tracking-[-0.02rem] max-[923px]:w-full max-[923px]:text-lg max-[923px]:leading-6 max-[819px]:text-[1rem] max-[495px]:leading-5'>
+          className='w-155 self-stretch text-[1rem] mix-blend-difference text-white font-light not-italic leading-[1.3rem] tracking-[-0.02rem] max-[923px]:w-full max-[923px]:text-lg max-[923px]:leading-6 max-[819px]:text-[1rem] max-[495px]:leading-5 max-[446px]:text-[0.9rem]'>
           An ultra-exclusive mechanical masterpiece engineered for elite collectors and long-term investors. Hand-assembled, individually numbered, and produced in strictly limited quantities.
         </motion.p>
 
@@ -52,7 +52,7 @@ const NewestInfo = ({scrollYProgress}: NewestInfoProps): JSX.Element => {
 
         <motion.p
           style={{clipPath}}
-          className='w-155 mix-blend-difference text-white self-end text-[1rem] font-light not-italic leading-[1.3rem] tracking-[-0.02rem] max-[997px]:w-100 max-[861px]:w-full'>
+          className='w-155 mix-blend-difference text-white self-end text-[1rem] font-light not-italic leading-[1.3rem] tracking-[-0.02rem] max-[997px]:w-100 max-[861px]:w-full max-[446px]:text-[0.9rem]'>
           Featuring a Swiss high-complication automatic movement, precious metal casework, and exhibition finishing reserved for haute horlogerie ateliers. Designed as a generational collector’s asset.
         </motion.p>
 
