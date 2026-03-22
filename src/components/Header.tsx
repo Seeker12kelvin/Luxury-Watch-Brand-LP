@@ -14,7 +14,7 @@ const Header = (): JSX.Element => {
 
       <Logo />
 
-      <div className='flex gap-1 items-center max-[375px]:hidden'>
+      <div className='flex gap-1 items-center max-[452px]:hidden'>
         <Link
           to={'/details-page'}
           target='_blank'
