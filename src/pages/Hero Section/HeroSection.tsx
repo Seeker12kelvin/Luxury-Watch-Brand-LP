@@ -23,11 +23,11 @@ const HeroSection = (): JSX.Element => {
         <div className={`${styles['bg-content-overlay']}`}></div>
 
         <div 
-          className={`${styles['content-overlay']} flex flex-col gap-70 px-50 pb-10 w-full max-sm:px-5 max-sm:w-screen max-sm:gap-50 max-[1004px]:gap-50`}>
+          className={`${styles['content-overlay']} flex flex-col gap-70 px-50 pb-10 w-full max-sm:px-5 max-sm:w-screen max-[1005px]:gap-50`}>
 
           <Header />
 
-          <div className='h-full w-full flex flex-col gap-40 max-sm:h-full max-sm:justify-between max-sm:gap-60'>
+          <div className='h-full w-full flex flex-col gap-40 max-sm:h-full max-sm:justify-between max-[1005px]:gap-60'>
             <HeroInfo />
 
             <HeroFooter closeDiv={close} />

@@ -35,7 +35,7 @@ const HeroInfo = (): JSX.Element => {
         </motion.p>
       </div>
       
-      <div className='flex gap-1 items-center max-[1006px]:self-center'>
+      <div className='flex gap-1 items-center max-[941px]:self-center'>
         <Link
           to={'details-page'}
           target='_blank'
