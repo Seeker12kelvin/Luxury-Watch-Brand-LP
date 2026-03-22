@@ -34,7 +34,11 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const widthOfDiv: MotionValue<number | string> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [ width < 1025 ? width - 200 : "100%", width],
+    [ width < 1455 && width > 1024 ? width - 400
+      : width < 1025 && width > 740 ? width - 200
+      : width < 741 && width > 541 ? width - 100
+      : width < 542 ? width - 60
+      : "100%", width],
   )
 
   const scaleWatch: MotionValue<number> = useTransform(
@@ -65,14 +69,23 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
   const y: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [-650, -1055],
+    [width < 861 && width > 669 ? -690
+      : width < 670 && width > 494 ? -700
+      : width < 495 && width > 466 ? -710
+      : width < 467 && width > 464 ? -720
+      : width < 465 ? -710
+      : -650, -1055],
     
   )
 
   const x: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.3, 0.5],
-    [0, width < 1025 ? -128 : -200],
+    [0, width < 1025 && width > 740 ? -104
+      : width < 741 && width > 573 ? -56
+      : width < 574 && width > 541 ? -40
+      : width < 542 ? -32
+      : -200],
   )
 
   const watchBgOpacity: MotionValue<number> = useTransform(
@@ -92,7 +105,7 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
 
       
       <motion.div
-        style={{opacity: watchBgOpacity, background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${Bg}) lightgray 50% / cover no-repeat`}}
+        style={{opacity: watchBgOpacity, background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${Bg}) lightgray 50% / cover no-repeat`, backgroundPosition: 'center center'}}
         className='absolute top-0 w-full h-full mix-blend-difference'>
         
       </motion.div>

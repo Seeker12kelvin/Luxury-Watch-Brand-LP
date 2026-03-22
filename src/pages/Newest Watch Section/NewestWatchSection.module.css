@@ -1,9 +1,36 @@
 @media (max-width: 1024px) {
   .sticky-div{
-    padding: 3.75rem 8rem;
+    padding-inline: 6.5rem;
   }
-  
-  /* .expand-animated-div {
-    transform: translateX(0px);
-  } */
 }
+
+@media (max-width: 1244px) {
+}
+
+@media (max-width: 1118px) {
+}
+
+@media (max-width: 1034px) {
+}
+
+@media (max-width: 740px) {
+  .sticky-div{
+    padding-inline: 3.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+}
+
+@media (max-width: 573px) {
+  .sticky-div{
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (max-width: 541px) {
+  .sticky-div{
+    padding-inline: 2rem;
+  }
+}
+

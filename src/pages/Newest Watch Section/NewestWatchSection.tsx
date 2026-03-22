@@ -14,7 +14,7 @@ const NewestWatchSection = (): JSX.Element => {
   })
 
   return (
-    <section ref={ref} className='relative h-[800vh] w-full bg-black snap-start'>
+    <section ref={ref} className='relative h-[800vh] w-full max-w-screen bg-black snap-start'>
       <div className={`${styles['sticky-div']} sticky h-278.75 overflow-clip top-0 px-50 py-15 w-full bg-white`}>
         <NewestInfo scrollYProgress={scrollYProgress}/>
         <AnimatedBackground scrollYProgress={scrollYProgress}/>

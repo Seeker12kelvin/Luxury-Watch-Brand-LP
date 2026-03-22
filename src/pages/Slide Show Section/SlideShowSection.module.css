@@ -6,7 +6,7 @@
 
 .video-element {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   position: absolute;
   inset: 0;
   width: 100%;
