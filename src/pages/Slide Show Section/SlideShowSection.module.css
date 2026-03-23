@@ -1,5 +1,6 @@
 .slider-section{
-  height: 100vh;
+  height: 980px;
+  max-height: 980px;
   width: 100%;
   max-width: 100vw;
 }
