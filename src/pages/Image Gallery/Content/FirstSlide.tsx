@@ -61,11 +61,11 @@ const FirstSlide = (): JSX.Element => {
 
   return (
     <div
-      className='h-full w-1/2 relative overflow-hidden flex'>
+      className='h-full w-1/2 relative overflow-hidden max-[769px]:overflow-visible flex max-[1031px]:w-full'>
 
-      <img src={bg?.backgroundImage} className='absolute z-10 h-281.25 aspect-167/181 object-cover' />
+      <img src={bg?.backgroundImage} className='absolute z-10 h-281.25 aspect-167/181 object-cover object-center w-full max-w-full' />
 
-      <div className='absolute z-20 h-[79%] top-1/10 left-[28%] flex flex-col justify-between self-stretch text-[#FFF]'>
+      <div className='absolute z-20 h-[79%] top-1/10 left-[10%] max-[554px]:left-[5%] flex flex-col justify-between self-stretch text-[#FFF]'>
 
         <div className='flex flex-col gap-2.5'>
           <motion.h1
@@ -74,7 +74,7 @@ const FirstSlide = (): JSX.Element => {
             animate="animate"
             exit="exit"
             variants={textVariants}
-            className='text-[64px] font-semibold leading-16 tracking-[-0.04rem]'>
+            className='text-[64px] font-semibold leading-16 tracking-[-0.04rem] max-[490px]:text-[3rem]'>
               THE <br/> {bg?.header}
           </motion.h1>
 
@@ -84,7 +84,7 @@ const FirstSlide = (): JSX.Element => {
             animate="animate"
             exit="exit"
             variants={textVariants}
-            className='text-[1rem] max-w-150 w-112.5 font-light leading-[1.3rem] tracking-[-0.02rem]'>
+            className='text-[1rem] max-w-150 w-112.5 font-light leading-[1.3rem] tracking-[-0.02rem] max-[490px]:text-[0.9rem] max-[490px]:max-w-full max-[490px]:w-90'>
             {bg?.description}
           </motion.p>
         </div>
@@ -110,7 +110,7 @@ const FirstSlide = (): JSX.Element => {
             animate="animate"
             exit="exit"
             variants={textVariants}
-            className='text-[64px] font-semibold leading-16 tracking-[-0.04rem]'>
+            className='text-[64px] font-semibold leading-16 tracking-[-0.04rem] max-[490px]:text-[3rem]'>
               {bg?.price}
           </motion.h3>
 
