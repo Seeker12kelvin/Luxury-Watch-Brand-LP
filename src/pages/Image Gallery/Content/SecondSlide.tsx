@@ -60,11 +60,11 @@ const SecondSlide = (): JSX.Element => {
 
   return (
     <div
-      className='h-full w-1/2 relative overflow-hidden flex max-[1031px]:w-full'>
+      className='h-full w-1/2 relative overflow-hidden flex max-[1031px]:w-full max-[1031px]:h-screen'>
 
-      <img src={bg?.backgroundImage} className='absolute z-10 h-281.25 aspect-167/181 object-cover object-center w-full max-w-full' />
+      <img src={bg?.backgroundImage} className='absolute z-10 h-281.25 aspect-167/181 object-cover object-center w-full max-w-full max-[1031px]:h-full' />
 
-      <div className='absolute z-20 h-[79%] top-1/10 max-[554px]:top-10 min-[554px]:self-stretch max-[554px]:h-220 left-[10%] max-[554px]:left-[5%] flex flex-col justify-between text-[#FFF]'>
+      <div className='absolute z-20 h-[79%] top-1/10 max-[554px]:top-10 min-[554px]:self-stretch max-[554px]:h-[90%] left-[10%] max-[554px]:left-[5%] flex flex-col justify-between text-[#FFF]'>
 
         <div className='flex flex-col gap-2.5 w-full'>
 
