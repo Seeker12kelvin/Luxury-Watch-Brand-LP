@@ -4,7 +4,7 @@ import SecondSlide from './SecondSlide';
 
 const ImageGalleryInfo = (): JSX.Element => {
   return (
-    <div className='h-full w-full flex min-[1030px]:justify-between max-[1031px]:flex-col max-[554px]:h-562.5'>
+    <div className='h-full w-full flex min-[1030px]:justify-between max-[1031px]:flex-col max-[769px]:h-562.5'>
       <FirstSlide />
       <SecondSlide />
     </div>
