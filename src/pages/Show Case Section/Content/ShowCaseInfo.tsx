@@ -83,7 +83,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
 
         <div className='w-full overflow-hidden uppercase text-[8.75rem] 
         max-[1307px]:text-[5rem] max-[870px]:text-[5rem] max-[769px]:text-[4.2rem] 
-        max-[481px]:text-[3.5rem] max-[390px]:text-[3.4rem] max-[1307px]:leading-20 max-[390px]:leading-15
+        max-[481px]:text-[3.5rem] max-[391px]:text-[3.4rem] max-[382px]:text-[3.2rem] max-[1307px]:leading-20 max-[391px]:leading-15
         text-center font-semibold leading-35 tracking-[-0.0875rem]'>
           
           <motion.div
