@@ -24,6 +24,18 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 481px) {
+  .private-section .private-section-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 421px) {
+  .private-form .private-section {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
 .private-form label {
   flex-direction: column;
   width: 100%;

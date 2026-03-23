@@ -74,7 +74,7 @@ const PrivateListForm = (): JSX.Element | null => {
           </button>
         </div>
 
-        <div className='py-4 px-8 w-full flex flex-col gap-8'>
+        <div className='py-4 px-8 w-full flex flex-col gap-8 max-[421px]:px-4'>
 
           <p className='text-sm font-light tracking-[-0.14px] leading-5.25 text-[#111]'>
             Selected Brantium timepieces are currently in production. Early access is offered to a limited group of collectors and prospective owners.
