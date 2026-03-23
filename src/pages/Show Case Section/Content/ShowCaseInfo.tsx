@@ -77,11 +77,13 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
   )
 
   return (
-    <div className='z-10 w-full h-full flex flex-col justify-between gap-21.25 items-center'>
+    <div className='z-10 w-full h-full flex flex-col justify-between gap-21.25 items-center max-[481px]:gap-15'>
 
       <div className='h-237.5 w-full relative'>
 
-        <div className='w-full overflow-hidden uppercase text-[8.75rem] text-center font-semibold leading-35 tracking-[-0.0875rem]'>
+        <div className='w-full overflow-hidden uppercase text-[8.75rem] 
+        max-[1307px]:text-[5rem] max-[870px]:text-[5rem] max-[769px]:text-[4.2rem] max-[481px]:text-[3.5rem] max-[1307px]:leading-20
+        text-center font-semibold leading-35 tracking-[-0.0875rem]'>
           
           <motion.div
             style={{ clipPath: firstTextClip, y: y }}
@@ -101,7 +103,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
 
           <motion.div
             style={{ clipPath: thirdTextClip, y: thirdY }}
-            className="absolute inset-0 text-white mix-blend-difference"
+            className="absolute inset-0 text-white mix-blend-difference max-[481px]:text-[4rem]"
           >
             <h1>$94,499.99</h1>
           </motion.div>
@@ -114,7 +116,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
               scale: watchScale,
               opacity: watchScale,
               zIndex: bg === "white" ? 10: 0}}
-            className='absolute h-202.5 w-360 object-cover top-40'
+            className='absolute h-202.5 w-360 object-cover top-40 max-[510px]:h-180 max-[510px]:w-full max-[481px]:h-150'
             src={Dark_Watch}
             alt='Picture of a wrist watch'
           />
@@ -125,7 +127,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
               opacity: watchScale,
               clipPath: bg === "#0C0C0C" ? firstWatchClip : '',
               zIndex: bg === "white" ? 0: 10}}
-            className='absolute h-202.5 w-360 object-cover top-40 z-10'
+            className='absolute h-202.5 w-360 object-cover top-40 z-10 max-[510px]:h-180 max-[510px]:w-full max-[481px]:h-150'
             src={Light_Watch}
             alt='Picture of a wrist watch'
           />
