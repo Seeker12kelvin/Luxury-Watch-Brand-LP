@@ -1,6 +1,7 @@
+import { JSX } from 'react';
+import useWindowSize from '../../../hooks/windowSize';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import fill_background from '../../../images/Fill-Background.svg';
-import { JSX } from 'react';
 
 type AnimatedBackgroundProps = {
   scrollYProgress: MotionValue<number>,
@@ -9,9 +10,11 @@ type AnimatedBackgroundProps = {
 
 const AnimatedBackground = ({scrollYProgress, bg}: AnimatedBackgroundProps): JSX.Element => {
 
+  const { width } = useWindowSize()
+
   const y: any = useTransform(
     scrollYProgress,
-    [0, 0.4],
+    [0,  0.4],
     ["100%", "0%"]
   )
 

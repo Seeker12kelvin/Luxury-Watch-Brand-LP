@@ -13,7 +13,7 @@ type AnimatedBackgroundProps = {
 
 const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundProps): JSX.Element => {
   
-  const firstTextClip: any = useTransform(
+  const firstTextClip: MotionValue<string> = useTransform(
     scrollYProgress,
     [0, 0.25, 0.35, 0.4],
     [
@@ -24,7 +24,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
     ]
   )
 
-  const secondTextClip: any = useTransform(
+  const secondTextClip: MotionValue<string> = useTransform(
     scrollYProgress,
     [0.4, 0.65, 0.7],
     [
@@ -34,7 +34,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
     ]
   )
 
-  const thirdTextClip: any = useTransform(
+  const thirdTextClip: MotionValue<string> = useTransform(
     scrollYProgress,
     [0.7, 1],
     [
@@ -43,36 +43,36 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
     ]
   )
 
-  const y: any = useTransform(
+  const y: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.25, 0.35, 0.4],
     [100, 0, 0, -100]
   )
 
-  const secondY: any = useTransform(
+  const secondY: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.4, 0.65, 0.7],
     [100, 0, -100]
   )
 
-  const thirdY: any = useTransform(
+  const thirdY: MotionValue<number> = useTransform(
     scrollYProgress,
     [0.7, 1],
     [100, -100]
   )
 
-  const watchScale: any = useTransform(
+  const watchScale: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.05],
     [0, 1]
   )
 
-  const firstWatchClip: any = useTransform(
+  const firstWatchClip: MotionValue<string> = useTransform(
     scrollYProgress,
     [0.05, 0.1515],
     [
-      "ellipse(150% 0% at 50% 100%)",
-      "ellipse(150% 100% at 50% 100%)"
+      "ellipse(100% 0% at 50% 100%)",
+      "ellipse(100% 100% at 50% 100%)"
     ]
   )
 

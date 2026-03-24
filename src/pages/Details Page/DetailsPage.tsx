@@ -1,14 +1,13 @@
-import { JSX, useContext } from 'react';
 import Footer from '../Footer/Footer';
-import { AnimatePresence, motion } from 'framer-motion';
+import { JSX, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 import { watchCollection } from '../../data';
+import UserContext from '../../components/userContext';
+import { AnimatePresence, motion } from 'framer-motion';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import WaitlistButton from '../../components/WaitlistButton';
 import ContactRvysion from '../Contact Rvysion/ContactRvysion';
-import UserContext from '../../components/userContext';
-import Logo from '../../components/Logo';
 
 const DetailsPage = (): JSX.Element | null => {
 
@@ -28,19 +27,19 @@ const DetailsPage = (): JSX.Element | null => {
 
   return (
 
-    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 overflow-x-hidden h-full z-1'>
+    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 max-w-screen overflow-x-hidden h-full z-1 max-[510px]:gap-11 max-[510px]:h-full max-[510px]:max-h-screen'>
       
-      <div className='px-52 mix-blend-difference text-white'>
+      <div className='px-52 mix-blend-difference text-white max-[1201px]:px-30 max-[937px]:px-20 max-[679px]:px-10 max-[430px]:px-5'>
 
         <motion.nav
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 1.6}}
-          className='flex w-full py-3 justify-between items-center z-1'>
+          className='flex w-full py-3 justify-between items-center z-1 max-[391px]:py-5'>
 
           <Logo />
 
-          <div className='flex gap-1 items-center'>
+          <div className='flex gap-1 items-center max-[391px]:hidden'>
             <Link
               to={'/details-page'}
               className={`uppercase bg-white text-[#111111] h-9.5 py-2.5 px-3.5`}>
@@ -58,23 +57,23 @@ const DetailsPage = (): JSX.Element | null => {
 
       </div>
 
-      <main>
+      <main className='w-full'>
 
-        <section className='px-52 py-5'>
+        <section className='px-52 py-5 max-[1201px]:px-30 max-[937px]:px-20 w-full max-[679px]:px-10 max-[430px]:px-5'>
 
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-6 w-full max-[496px]:items-center'>
 
-            <div className='flex flex-col gap-2.5'>
+            <div className='flex flex-col gap-2.5 w-full'>
 
               <motion.h1
                 variants={revealY}
                 initial="hidden"
                 animate="show"
-                className='text-[80px] font-semibold uppercase tracking-[-0.8px] leading-[80.8px]'>
+                className='text-[80px] font-semibold uppercase tracking-[-0.8px] leading-[80.8px] max-[857px]:text-[65px] max-[724px]:text-[60px] max-[599px]:text-[55px] max-[599px]:leading-15 max-[555px]:text-[50px] max-[555px]:leading-14 max-[510px]:text-[45px] max-[496px]:text-center max-[466px]:text-[40px] max-[422px]:text-[35px] max-[422px]:leading-12'>
                   Designed and built by Rvysion Studios
               </motion.h1>
 
-              <div className='text-[1rem] tracking-[-0.32px] leading-[20.8px] font-light max-w-150 w-full flex flex-col gap-5'>
+              <div className='text-[1rem] tracking-[-0.32px] leading-[20.8px] font-light max-w-150 w-full flex flex-col gap-5 max-[599px]:text-[0.9rem] max-[496px]:text-center max-[466px]:text-[0.8rem]'>
 
                 <motion.p
                   variants={revealY}
@@ -108,9 +107,9 @@ const DetailsPage = (): JSX.Element | null => {
 
       </main>
 
-      <div>
+      <div className='w-full'>
 
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between w-full overflow-scroll'>
           {watchCollection.map(data => (
             <img
               className='w-100 h-100 object-cover'
