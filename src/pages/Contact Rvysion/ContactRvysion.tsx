@@ -49,7 +49,7 @@ const ContactRvysion = (): JSX.Element | null=> {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center max-[481px]:max-w-screen'>
+      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center max-[481px]:max-h-screen max-[481px]:max-w-screen'>
       <motion.form
         variants={formVariants}
         initial="hidden"
