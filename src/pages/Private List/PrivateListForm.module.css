@@ -34,11 +34,26 @@
   .private-form .private-section {
     padding: 1.25rem 1.5rem;
   }
+
+  .private-section .private-section-text {
+    font-size: 0.9rem;
+  }
+
+  .private-form input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 401px) {
+  .private-section .private-section-text {
+    font-size: 0.75rem;
+  }
 }
 
 .private-form label {
   flex-direction: column;
   width: 100%;
+  max-width: 100%;
   gap: 0.5rem;
   font-size: 0.875rem;
   font-style: normal;
@@ -54,11 +69,18 @@
   font-weight: 300;
 }
 
-.private-form input {
-  max-width: 20rem;
-  padding: 1rem 1.25rem;
-  flex: 1;
+@media (min-width: 480px) {
+  .private-form input {
+    max-width: 20rem;
+    padding: 1rem 1.25rem;
+    flex: 1;
+  }
 }
+
+.private-form input {
+    padding: 1rem 1.25rem;
+    flex: 1;
+  }
 
 .private-form input::placeholder{
   opacity: 0.3;

@@ -74,9 +74,9 @@ const PrivateListForm = (): JSX.Element | null => {
           </button>
         </div>
 
-        <div className='py-4 px-8 w-full flex flex-col gap-8 max-[421px]:px-4'>
+        <div className='py-4 px-8 w-full flex flex-col gap-8 max-[422px]:px-4'>
 
-          <p className='text-sm font-light tracking-[-0.14px] leading-5.25 text-[#111]'>
+          <p className='text-sm font-light tracking-[-0.14px] leading-5.25 text-[#111] max-[422px]:text-[0.8rem] w-full'>
             Selected Brantium timepieces are currently in production. Early access is offered to a limited group of collectors and prospective owners.
           </p>
           
@@ -96,7 +96,7 @@ const PrivateListForm = (): JSX.Element | null => {
 
             </div>
 
-            <div className='flex gap-5 justify-between w-full'>
+            <div className='flex gap-5 justify-between w-full max-[422px]:flex-col max-[422px]:items-center'>
               <label>
                 Email address
                 <input name="user-name" required placeholder='your@email.com' type="email"/>
@@ -151,7 +151,7 @@ const PrivateListForm = (): JSX.Element | null => {
           <div className='flex gap-2 items-start bg-[#1111110A] p-4'>
             <IoIosArrowRoundForward className='text-3xl' />
 
-            <p className='text-sm text-[#111] flex-1 font-light tracking-[-0.14px] leading-5.25'>
+            <p className='text-sm text-[#111] flex-1 font-light tracking-[-0.14px] leading-5.25 max-[422px]:text-[0.8rem]'>
               Your information is kept strictly confidential.
               <br />
               No advertising. No third-party sharing. Private communication only.
