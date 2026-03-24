@@ -28,7 +28,7 @@ const BestSellerSection = (): JSX.Element => {
 
   return (
     <section ref={ref} className='h-[600vh] max-h-screen max-[769px]:h-full max-[769px]:max-h-[350vh] w-full flex justify-center items-center bg-[#0C0C0C]'>
-      <div className={`${styles['seller-ul']} sticky top-0 bottom-0 h-full max-h-screen flex flex-col items-center justify-center w-full`}>
+      <div className={`${styles['seller-ul']} sticky top-0 bottom-0 h-screen flex flex-col items-center justify-center w-full`}>
         <motion.div
           className='w-52.5 h-27.5 text-center'
           animate={{
