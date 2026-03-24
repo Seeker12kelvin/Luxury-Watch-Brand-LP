@@ -27,7 +27,7 @@ const DetailsPage = (): JSX.Element | null => {
 
   return (
 
-    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 max-w-screen overflow-x-hidden h-full z-1 max-[510px]:gap-11 max-[510px]:h-full max-[510px]:max-h-screen'>
+    <div className='bg-[white] flex flex-col justify-self-center gap-21 w-358 max-w-screen overflow-x-hidden h-full z-1 max-[510px]:gap-11'>
       
       <div className='px-52 mix-blend-difference text-white max-[1201px]:px-30 max-[937px]:px-20 max-[679px]:px-10 max-[430px]:px-5'>
 
