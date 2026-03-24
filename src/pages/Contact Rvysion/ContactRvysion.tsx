@@ -49,14 +49,14 @@ const ContactRvysion = (): JSX.Element | null=> {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center'>
+      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center max-[481px]:max-w-screen'>
       <motion.form
         variants={formVariants}
         initial="hidden"
         animate="visible"
         exit="exit"
         className={`${styles['login-form']}`}>
-        <div className={`${styles['first-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
+        <div className={`${styles['first-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between max-[422px]:`}>
           <div className={`${styles['first-section-text']}`}>
             <p>Get in touch with the</p>
             <img src={Comp_Logo} alt='Rvysion Logo' />
@@ -65,15 +65,15 @@ const ContactRvysion = (): JSX.Element | null=> {
           <button
             onClick={() => setContactModal(false)}
             type='button'
-            className='bg-[#E6E6E6] w-10.5 h-10.5 flex items-center justify-center text-2xl'>
+            className='bg-[#E6E6E6] w-10.5 h-10.5 flex items-center justify-center text-2xl max-[422px]:mt-7'>
             <MdClose />
           </button>
         </div>
 
         <div className={`${styles['second-section']}`}>
-          <div className={`gap-[2.02rem] flex flex-col h-full px-8 py-4 w-full`}>
+          <div className={`gap-[2.02rem] flex flex-col h-full px-8 py-4 w-full max-[422px]:px-4`}>
 
-            <div className='flex gap-5 justify-between w-full'>
+            <div className='flex gap-5 justify-between w-full max-[481px]:flex-col'>
               <label>
                 Your name
                 <input name="user-name" required placeholder='Collins Donye' type="text"/>

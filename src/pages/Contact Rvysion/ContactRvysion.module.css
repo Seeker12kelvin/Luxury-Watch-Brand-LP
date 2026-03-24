@@ -29,6 +29,33 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 481px) {
+  .login-form .first-section-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 421px) {
+  .login-form .first-section {
+    padding: 1.25rem 1.5rem;
+    align-items: end;
+  }
+
+  .login-form .first-section-text {
+    font-size: 1rem;
+  }
+
+  .login-form .second-section input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 401px) {
+  .login-form .first-section-text {
+    font-size: 0.8rem;
+  }
+}
+
 .login-form .second-section {
   padding-block: 1.25rem;
   height: 100%;
@@ -54,8 +81,13 @@
   font-weight: 300;
 }
 
+@media (min-width: 480px) {
+  .login-form .second-section input {
+    max-width: 20rem;
+  }
+}
+
 .login-form .second-section input {
-  max-width: 20rem;
   padding: 1rem 1.25rem;
   flex: 1;
 }
