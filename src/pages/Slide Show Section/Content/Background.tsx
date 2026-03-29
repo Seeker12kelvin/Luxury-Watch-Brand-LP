@@ -1,5 +1,4 @@
 import { JSX } from 'react';
-import { motion } from 'framer-motion';
 import styles from '../SlideShowSection.module.css';
 
 type BackgroundProps = {
@@ -8,39 +7,15 @@ type BackgroundProps = {
     img: string;
     title: string;
     description: string;
-  } | null
+  } | null,
+  backgroundRef: any
 }
 
-const Background = ({bg}: BackgroundProps): JSX.Element => {
-
-  const backgroundAnimation: any = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeIn'
-      }
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.6 * 0.7,
-        ease: 'easeInOut'
-      }
-    }
-  }
+const Background = ({bg, backgroundRef}: BackgroundProps): JSX.Element => {
 
   return (
-    <motion.div
-      key={`${bg?.id}-background`}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={backgroundAnimation}
-      transition={{ delay: 2, duration: 1.6 }}
+    <div
+      ref={backgroundRef}
       className={`${styles['video-element']} bg-black text-white bg-cover max-sm:w-full`}
       style={bg ? { 
         backgroundImage: `url(${bg.img})`}
@@ -48,7 +23,7 @@ const Background = ({bg}: BackgroundProps): JSX.Element => {
         {}
       }
     >
-    </motion.div>
+    </div>
   )
 }
 
