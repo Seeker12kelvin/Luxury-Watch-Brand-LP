@@ -32,13 +32,13 @@ const Home = (): JSX.Element | null => {
           {contactModal && <ContactRvysion />}
         </AnimatePresence>
         
-        {/* <HeroSection />
+        <HeroSection />
         
         <SlideShowSection />
         
         <NewestWatchSection />
         
-        <BestSellerSection /> */}
+        <BestSellerSection />
         
         <ShowCaseSection />
 
