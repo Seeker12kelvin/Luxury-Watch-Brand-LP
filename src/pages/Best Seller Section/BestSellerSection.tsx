@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import styles from './BestSellerSection.module.css';
+import gsap from 'gsap';
 import { JSX, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import { motion } from 'framer-motion';
+import styles from './BestSellerSection.module.css';
 
 const BestSellerSection = (): JSX.Element => {
   
