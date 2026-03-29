@@ -152,7 +152,7 @@ const ShowCaseSection = (): JSX.Element => {
       <img
         ref={comeUpRef}
         style={{background: bg}}
-        className={`${bg === 'white' ? 'hidden' : ''} absolute left-0 right-0 bottom-0 w-full h-full z-[-1]`}
+        className={`${bg === 'white' ? 'hidden' : ''} absolute left-0 right-0 bottom-0 w-full max-w-550.75 h-full z-[-1]`}
         src={fill_background}
       />
 

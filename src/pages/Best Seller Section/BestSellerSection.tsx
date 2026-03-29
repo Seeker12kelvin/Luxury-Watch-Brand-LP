@@ -27,15 +27,11 @@ const BestSellerSection = (): JSX.Element => {
       opacity: 1,
       stagger: 0.3,
       ease: 'easeIn'
-    });
-
-    return () => {
-      tl.kill();
-    };
+    })
   }, []);
 
   return (
-    <section ref={ref} className='h-[600vh] max-[769px]:h-full max-[769px]:max-h-[350vh] w-full flex justify-center items-center bg-[#0C0C0C]'>
+    <section ref={ref} className='h-screen max-[769px]:h-full max-[769px]:max-h-screen w-full flex justify-center items-center bg-[#0C0C0C]'>
       <div className={`${styles['seller-ul']} sticky top-0 bottom-0 h-screen flex flex-col items-center justify-center w-full`}>
         <motion.div
           className='w-52.5 h-27.5 text-center'
