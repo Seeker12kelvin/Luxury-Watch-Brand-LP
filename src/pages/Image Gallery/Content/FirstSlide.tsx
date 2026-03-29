@@ -1,10 +1,9 @@
-import React, { JSX, useEffect, useRef, useState } from 'react';
-import type { ImageGalleryItem } from '../../../data';
-import { imageGalleryInfo } from '../../../data';
-import { AnimatePresence, motion } from 'framer-motion';
-import bg_blue_brantium from '../../../images/Second-Slider-Blue-Brantium.png';
-import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { JSX, useRef, useState } from 'react';
+import { imageGalleryInfo } from '../../../data';
+import type { ImageGalleryItem } from '../../../data';
+import bg_blue_brantium from '../../../images/Second-Slider-Blue-Brantium.png';
 
 type Buttons = {
   buttons: string
