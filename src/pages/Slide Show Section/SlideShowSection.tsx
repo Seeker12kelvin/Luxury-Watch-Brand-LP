@@ -84,7 +84,7 @@ const SlideShowSection = (): JSX.Element | null => {
   }
   
   return (
-    <section className={`${styles['slider-section']} h-245 max-sm:h-full w-full overflow-hidden border bg-black relative`}>
+    <section className={`${styles['slider-section']} h-245 max-sm:h-220 w-full overflow-hidden border bg-black relative`}>
       
       <Background bg={bg} backgroundRef={backgroundRef} />
 
