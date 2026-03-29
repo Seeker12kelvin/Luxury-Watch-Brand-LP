@@ -81,14 +81,14 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
 
       <div className='h-237.5 w-full relative'>
 
-        <div className='w-full overflow-hidden uppercase text-[8.75rem] 
+        <div className='max-h-70 max-w-260 w-full h-full overflow-hidden uppercase text-[8.75rem] 
         max-[1307px]:text-[5rem] max-[870px]:text-[5rem] max-[769px]:text-[4.2rem] 
         max-[481px]:text-[3.5rem] max-[391px]:text-[3.4rem] max-[382px]:text-[3.2rem] max-[1307px]:leading-20 max-[391px]:leading-15
         text-center font-semibold leading-35 tracking-[-0.0875rem]'>
           
           <motion.div
             style={{ clipPath: firstTextClip, y: y }}
-            className="absolute inset-0 text-white mix-blend-difference"
+            className="absolute inset-0 text-black"
           >
             <h1>Crafted with</h1>
             <h1>precision</h1>
@@ -96,7 +96,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
           
           <motion.div
             style={{ clipPath: secondTextClip, y: secondY }}
-            className="absolute inset-0 text-white mix-blend-difference"
+            className="absolute inset-0 text-black text-[140px]"
           >
             <h1>Brantium</h1>
             <h1>Argent Prime</h1>
@@ -104,7 +104,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
 
           <motion.div
             style={{ clipPath: thirdTextClip, y: thirdY }}
-            className="absolute inset-0 text-white mix-blend-difference max-[481px]:text-[4rem]"
+            className="absolute inset-0 text-black max-[481px]:text-[4rem]"
           >
             <h1>$94,499.99</h1>
           </motion.div>
@@ -147,6 +147,7 @@ const ShowCaseInfo = ({scrollYProgress, setBg, bg, payUp}: AnimatedBackgroundPro
         <WatchListButton bg={Dark_Watch}/>
 
       </div>
+      
 
     </div>
   )

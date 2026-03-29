@@ -7,10 +7,11 @@ import UserContext, { UserContextType } from './userContext';
 type WatchListButtonProps = {
   bg?: WatchItem | any,
   variants?: any,
-  extraStyle?: string
+  extraStyle?: string,
+  background?: string
 }
 
-const WatchListButton = ({bg, variants, extraStyle = ''}:WatchListButtonProps): JSX.Element => {
+const WatchListButton = ({bg, variants, extraStyle = '', background = 'white'}:WatchListButtonProps): JSX.Element => {
 
   const { setSelectedImage, setModal } = useContext<UserContextType | undefined>(UserContext)
 
@@ -30,7 +31,7 @@ const WatchListButton = ({bg, variants, extraStyle = ''}:WatchListButtonProps): 
         viewport={{once: true}}
         exit="exit"
         transition={{ duration: 0.5, type: "spring", stiffness: 400, damping: 10 }}
-        className={`bg-[#FEFEFE] ${extraStyle} text-[#111111] text-sm py-2.5 px-3.5`}>
+        className={`bg-[#FEFEFE] bg-${background} ${extraStyle} text-[#111111] text-sm py-2.5 px-3.5`}>
           ADD TO WATCHLIST
       </motion.button>
 
@@ -49,7 +50,7 @@ const WatchListButton = ({bg, variants, extraStyle = ''}:WatchListButtonProps): 
         viewport={{once: true}}
         exit="exit"
         transition={{ duration: 0.5, type: "spring", stiffness: 400, damping: 10 }}
-        className='bg-[#FEFEFE] flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2'>
+        className={`${extraStyle} bg-${background} flex items-center h-fit w-fit text-[#111111] text-sm py-2 px-2`}>
         <IoIosArrowRoundForward className='text-2xl' />
       </motion.button>
 

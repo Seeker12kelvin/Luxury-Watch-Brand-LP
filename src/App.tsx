@@ -3,6 +3,10 @@ import routes from './components/routes'
 import { RouterProvider } from 'react-router-dom'
 import UserContext from './components/userContext'
 import LoadingScreen from './components/LoadingScreen'
+import { ScrollTrigger } from 'gsap/all'
+import gsap from 'gsap'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function App(): JSX.Element {
 

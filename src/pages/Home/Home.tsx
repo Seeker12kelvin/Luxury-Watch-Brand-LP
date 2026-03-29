@@ -23,7 +23,7 @@ const Home = (): JSX.Element | null => {
   const { width } = useWindowSize()
 
   return (
-      <main className='flex flex-col'>
+      <main className=''>
         <AnimatePresence mode="wait">
           {modal && <PrivateListForm />}
         </AnimatePresence>
@@ -32,13 +32,13 @@ const Home = (): JSX.Element | null => {
           {contactModal && <ContactRvysion />}
         </AnimatePresence>
         
-        <HeroSection />
+        {/* <HeroSection />
         
         <SlideShowSection />
         
         <NewestWatchSection />
         
-        <BestSellerSection />
+        <BestSellerSection /> */}
         
         <ShowCaseSection />
 
