@@ -112,7 +112,8 @@ const AnimatedBackground = ({scrollYProgress}: AnimatedBackgroundProps): JSX.Ele
       
       <motion.img
         style={{scale: scaleWatch, opacity: watchOpacity}}
-        className='object-cover mix-blend-difference' src={Watch} alt='A picture of a brantium watch'/>
+        className='object-cover mix-blend-difference' src={Watch} alt='A picture of a brantium watch'
+      />
 
       
       <motion.div
