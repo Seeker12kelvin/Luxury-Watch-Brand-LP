@@ -4,7 +4,6 @@ import Slider from './Content/Slider';
 import type { WatchItem } from '../../data';
 import { watchCollection } from '../../data';
 import Background from './Content/Background';
-import { AnimatePresence } from 'framer-motion';
 import styles from './SlideShowSection.module.css';
 import SlideShowInfo from './Content/SlideShowInfo';
 import { ElementType, JSX, useEffect, useRef, useState } from 'react';
@@ -21,12 +20,6 @@ const SlideShowSection = (): JSX.Element | null => {
   const h1Ref = useRef<ElementType | null>(null)
   const h2Ref = useRef<ElementType | null>(null)
   const pRef = useRef<ElementType | null>(null)
-
-  const animateOut = () => {
-    const tl = gsap.timeline()
-
-    tl.to(movingBoxRef.current, {opacity: 0, scale: 0.95, duration: 0.5})
-  }
   
   useGSAP(() => {
     const span = spanRef.current
@@ -64,7 +57,7 @@ const SlideShowSection = (): JSX.Element | null => {
   const animate = (type: string) => {
     const span = spanRef.current;
     const h1 = h1Ref.current;
-    const h2 = h2Ref.current
+    const h2 = h2Ref.current;
     const para = pRef.current;
     const background = backgroundRef.current
 
@@ -78,9 +71,9 @@ const SlideShowSection = (): JSX.Element | null => {
     })
     .to(background, { opacity: 0, duration: 0.5, onComplete: () => {
         setIncrement(prev => type === 'add' ? prev + 1: prev - 1)
-        animateOut()
       }
     })
+    .to(movingBoxRef.current, {opacity: 0, scale: 0.95, duration: 0.5})
   }
   
   return (
@@ -88,17 +81,15 @@ const SlideShowSection = (): JSX.Element | null => {
       
       <Background bg={bg} backgroundRef={backgroundRef} />
 
-      <AnimatePresence mode="wait">
 
-        <div className={`${styles['content-overlay']} w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
+      <div className={`${styles['content-overlay']} w-full h-full flex flex-col justify-between gap-8 absolute bg-linear-to-b from-[#0C0C0C] to-[#ffffff00]`}>
 
-          <SlideShowInfo data={{bg, animate, setBtn, increment, setIncrement, h1Ref, h2Ref, pRef, spanRef }} />
+        <SlideShowInfo data={{bg, animate, setBtn, increment, setIncrement, h1Ref, h2Ref, pRef, spanRef }} />
 
-          <Slider data={{setIncrement, increment, parentDivRef, movingBoxRef}}/>
+        <Slider data={{setIncrement, increment, parentDivRef, movingBoxRef}}/>
 
-        </div>
-        
-      </AnimatePresence>
+      </div>
+      
       
     </section>
   )

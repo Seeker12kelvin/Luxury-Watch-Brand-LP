@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion';
 import styles from '../Footer.module.css';
-import React, { JSX, useState, useEffect } from 'react';
+import { JSX, useState, useEffect } from 'react';
 
-const Clock = (): JSX.Element => {
+type Props = {
+  ref: any
+}
+
+const Clock = ({ref}: Props): JSX.Element => {
 
   const [time, setTime] = useState(new Date())
 
@@ -29,10 +32,8 @@ const Clock = (): JSX.Element => {
   const formattedMinutes = String(minutes).padStart(2, '0')
 
   return (
-      <motion.div
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1, transition: { delay: 1.6, duration: 1.6, ease: 'easeIn' }}}
-        viewport={{once: true}}
+      <div
+        ref={ref}
         className={`${styles['clock-background']} relative w-84 h-84 text-white text-[32px]`}>
         
         {/* Center dot */}
@@ -62,7 +63,7 @@ const Clock = (): JSX.Element => {
           style={{ transform: `translateX(-50%) rotate(${minuteDegrees}deg)` }}
         ></div>
 
-      </motion.div>
+      </div>
   );
 };
 

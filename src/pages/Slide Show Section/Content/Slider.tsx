@@ -26,7 +26,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
 
   const isActive = increment >= 0
   const translateX = isActive ? Math.min(increment * SLIDE_WIDTH, maxTranslateX) : 0
-
+8 
   useGSAP(() => {
     gsap.set(movingBoxRef.current, {opacity: 0, scale: 0.95})
     gsap.to(parentDivRef.current, {x: -translateX, duration: 0.5,})

@@ -5,8 +5,11 @@ import Bg from '../../images/NewestBg.jpg';
 import Watch from '../../images/NewestInfo-Watch.png';
 import NewReleaseBadge from '../../components/NewReleaseDiv';
 import WatchListButton from '../../components/WatchListButton';
+import useWindowSize from '../../hooks/windowSize';
 
 const NewestWatchSection = (): JSX.Element => {
+
+  const { width } = useWindowSize()
 
   const date = new Date().getFullYear()
   const imgRef = useRef<HTMLDivElement | any>(null)
@@ -44,10 +47,12 @@ const NewestWatchSection = (): JSX.Element => {
     .fromTo([span, h1, para, pFirst], {clipPath: "inset(0 0 100% 0)"}, {clipPath: "inset(0 0 0% 0)", duration: 1, stagger: 0.5})
     .fromTo(div, 
       {
-        opacity: 0
+        opacity: 0,
+        borderRadius: 20,
       },
       {
         opacity: 1,
+        borderRadius: 20,
         duration: 1
       }
     )
@@ -61,11 +66,14 @@ const NewestWatchSection = (): JSX.Element => {
       }
     )
     .fromTo(div, 
-      { width: 1040,
+      { 
+        borderRadius: 20,
+        width: 1040,
         height: 460,
         y: 415
       },
       {
+        borderRadius: 0,
         width: "100%",
         height: '100%',
         y: 0,
@@ -101,7 +109,7 @@ const NewestWatchSection = (): JSX.Element => {
 
         </div>
 
-        <div className='flex items-center justify-between w-full border-2 border-white max-[861px]:flex-col max-[861px]:text-center max-[861px]:gap-10'>
+        <div className='flex items-center justify-between w-full max-[861px]:flex-col max-[861px]:text-center max-[861px]:gap-10'>
 
           <p ref={pRef} className='text-[1rem] mix-blend-difference text-white max-w-150 w-full font-light not-italic leading-[1.3rem] tracking-[-0.02rem] max-[997px]:max-w-100 max-[446px]:text-[0.9rem]'>Featuring a Swiss high-complication automatic movement, precious metal casework, and exhibition finishing reserved for haute horlogerie ateliers. Designed as a generational collector’s asset.</p>
 
@@ -116,7 +124,7 @@ const NewestWatchSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div ref={animatedDiv} className='bg-black z-[-1] absolute self-center py-6'>
+      <div  ref={animatedDiv} className='bg-black z-[-1] absolute self-center py-6'>
         <div ref={innerAnimatedDiv} className='h-full relative flex items-center justify-center'>
 
           <div

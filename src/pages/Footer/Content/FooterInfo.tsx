@@ -1,21 +1,37 @@
-import React, { JSX } from 'react';
+import React, { JSX, useRef } from 'react';
 import Clock from './Clock';
 import BlackCards from './BlackCards';
-import { motion } from 'framer-motion';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
 import FooterLogo from './FooterLogo';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const FooterInfo = (): JSX.Element => {
+  
+  const releaseRef = useRef<HTMLElement | any | null>(null)
+  const h1Ref = useRef<HTMLElement | any | null>(null)
+  const paraRef = useRef<HTMLElement | any | null>(null)
+  const inputRef = useRef<HTMLElement | any | null>(null)
+  const langRef = useRef<HTMLElement | any | null>(null)
+  const clockRef = useRef<HTMLElement | any | null>(null)
+  const cardRef = useRef<HTMLElement | any | null>(null)
+  const logoRef = useRef<HTMLElement | any | null>(null)
+  
+  useGSAP(() => {
+    const release = releaseRef.current
+    const h1 = h1Ref.current
+    const para = paraRef.current
+    const input = inputRef.current
+    const lang = langRef.current
+    const clock = clockRef.current
+    const card = gsap.utils.selector(cardRef)
+    const logo = logoRef.current
+    const tl = gsap.timeline()
 
-  const clipPath: any = {
-    hidden: {
-      clipPath: "inset(0 0 100% 0)"
-    },
-    show: {
-      clipPath: "inset(0 0 0% 0)",
-      transition: { duration: 1, ease: 'easeIn' }
-    }
-  }
+    tl
+    .fromTo([release, h1, para, input, lang, card('.box')], {clipPath: "inset(0 0 100% 0)"}, {clipPath: "inset(0 0 0% 0)", stagger: 0.125, duration: 0.25})
+    .fromTo([clock, logo], {opacity: 0}, {opacity: 1, duration: 1})
+  })
 
   return (
     <div className={`z-10 w-full h-full flex flex-col justify-between pt-25 px-50 overflow-hidden max-[1453px]:px-30 max-[1077px]:px-15 max-[955px]:px-10 max-[910px]:px-5 max-[837px]:gap-10 max-[480px]:px-0`}>
@@ -28,46 +44,34 @@ const FooterInfo = (): JSX.Element => {
 
             <div className='text-white w-full flex flex-col gap-2.5 max-[837px]:items-center'>
               
-              <motion.div
-                variants={clipPath}
-                initial="hidden"
-                whileInView="show"
-                viewport={{once: true}}
+              <div
+                ref={releaseRef}
                 className='h-fit w-fit max-[837px]:self-start'>
 
                 <NewReleaseBadge text={'FOOTER'} textColor={'white'} borderColor={'white'} />
 
-              </motion.div>
+              </div>
 
-              <motion.h1
-                variants={clipPath}
-                initial="hidden"
-                whileInView="show"
-                viewport={{once: true}}
+              <h1
+                ref={h1Ref}
                 className='text-[64px] font-semibold leading-16 tracking-[-0.64px] max-[865px]:text-[55px]'>
                 
                 STAY IN TIME
 
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                variants={clipPath}
-                initial="hidden"
-                whileInView="show"
-                viewport={{once: true}}
+              <p
+                ref={paraRef}
                 className='text-[1rem] font-light max-w-105 self-stretch tracking-[-0.32px] leading-[20.8px] max-[865px]:text-[0.9rem] max-[837px]:max-w-full max-[837px]:w-full max-[837px]:text-center'>
 
                 Be the first to receive private previews, new releases, and early access to upcoming collections.
 
-              </motion.p>
+              </p>
 
             </div>
 
-            <motion.div
-              variants={clipPath}
-              initial="hidden"
-              whileInView="show"
-              viewport={{once: true}}
+            <div
+              ref={inputRef}
               className='flex items-start gap-2.5 w-full max-[837px]:justify-center max-[381px]:flex-col max-[381px]:gap-4'>
 
               <div className="relative h-full max-w-[320px] w-full inline-block">
@@ -99,15 +103,12 @@ const FooterInfo = (): JSX.Element => {
                 SUBSCRIBE
               </button>
 
-            </motion.div>
+            </div>
 
           </div>
 
-          <motion.div
-            variants={clipPath}
-            initial="hidden"
-            whileInView="show"
-            viewport={{once: true}}
+          <div
+            ref={langRef}
             className='text-white flex items-center justify-between text-[1rem] max-[865px]:text-[0.9rem] max-[430px]:text-[0.8rem]'>
 
             <ul className='flex gap-2 items-center'>
@@ -130,16 +131,16 @@ const FooterInfo = (): JSX.Element => {
               © 2026 Brantium. All rights reserved.
             </p>
 
-          </motion.div>
+          </div>
 
         </div>
 
-        <Clock />
+        <Clock ref={clockRef} />
       </div>
 
-      <BlackCards clipPath={clipPath} />
+      <BlackCards ref={cardRef} />
 
-      <FooterLogo />
+      <FooterLogo ref={logoRef} />
 
     </div>
   )

@@ -150,7 +150,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: radial-gradient(183.43% 92.76% at 50% 7.24%, rgba(12, 12, 12, 0.00) 0%, #0C0C0C 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(183.43% 92.76% at 50% 7.24%, rgba(12, 12, 12, 0.00) 0%, #0C0C0C 100%);
 }
 
 .Hero-Section-product {

@@ -1,28 +1,26 @@
-import React, { JSX } from 'react';
-import { motion } from 'framer-motion';
+import { JSX } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import Watch_Btn from '../../../images/Watch-Button.png';
 
 type Props = {
-  closeDiv: () => void
+  closeDiv: () => void,
+  ref: any
 }
 
-const HeroFooter = ({closeDiv}: Props): JSX.Element => {
+const HeroFooter = ({closeDiv, ref}: Props): JSX.Element => {
+  const {scrollRef, scaleRef} = ref
+
   return (
     <div className='w-full flex items-end justify-between'>
-      <motion.div
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{ delay: 2, duration: 1.6 }}
+      <div
+        ref={scrollRef}
         className='flex items-center gap-2 text-sm z-1'>
         <IoIosArrowDown />
         <p>SCROLL DOWN</p>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{ delay: 3, duration: 1.6 }}
+      <div
+        ref={scaleRef}
         onClick={() => closeDiv()}
         className='flex flex-col gap-4'>
         <div className={`relative inline-block h-30 w-30 z-1`}>
@@ -52,7 +50,7 @@ const HeroFooter = ({closeDiv}: Props): JSX.Element => {
           <span className='underline'>01</span>
           <span>$5,499.99</span>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
