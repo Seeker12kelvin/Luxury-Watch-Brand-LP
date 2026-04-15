@@ -5,12 +5,12 @@ import Lenis from "@studio-freight/lenis"
 function SmoothScroll({ children }: { children: JSX.Element } ): JSX.Element {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1,
-      smooth: true,
+      duration: 0.5,
+      smoothWheel: true,
       wheelMultiplier: 0.6,
     })
 
-    function raf(time) {
+    function raf(time: any) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }

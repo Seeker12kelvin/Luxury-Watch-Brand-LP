@@ -11,6 +11,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <SmoothScroll>
+      <App />
+    </SmoothScroll>
   </StrictMode>,
 )
