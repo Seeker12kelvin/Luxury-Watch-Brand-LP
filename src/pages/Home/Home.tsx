@@ -28,10 +28,6 @@ const Home = (): JSX.Element | null => {
           {modal && <PrivateListForm />}
         </AnimatePresence>
 
-        <AnimatePresence mode="wait">
-          {contactModal && <ContactRvysion />}
-        </AnimatePresence>
-        
         <HeroSection />
         
         <SlideShowSection />

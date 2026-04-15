@@ -29,14 +29,12 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
     <div 
       className='h-[60%] w-full flex flex-col justify-between pt-25 px-50 
         max-[670px]:px-6 max-sm:py-5 max-[1245px]:px-30 max-[1118px]:px-20 max-[1006px]:px-20 max-sm:h-full max-[743px]:px-10'>
-      <div className='w-260 flex flex-col gap-[0.6rem] max-[1013px]:w-full max-[641px]:gap-5'>
+      <div className='w-260 flex flex-col gap-[0.6rem] max-[1013px]:w-full max-[641px]:gap-5 max-[481px]:gap-2'>
         <div ref={spanRef}>
 
           <NewReleaseBadge text={bg?.release} />
 
         </div>
-
-
 
         <h1
           ref={h1Ref}
@@ -48,8 +46,6 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
           }
 
         </h1>
-
-
 
         <p
           ref={pRef}

@@ -81,7 +81,7 @@ const NewestWatchSection = (): JSX.Element => {
       }
     )
     .to(img, {height: 336, duration: 1})
-    .to(img, {height: width <= 481 ? 700 : width <= 818 ? 300 : 915, duration: 1})
+    .to(img, {height: width <= 780 ? 600 : width <= 818 ? 800 : 915, duration: 1})
     .to(img, {opacity: width <= 818 ? 1 : 0, duration: width <= 818 ? 1 : 0})
     .fromTo(div, {paddingTop: 93, paddingBottom: 93}, {paddingTop: 0, paddingBottom: 0})
     .to(background, {opacity: width <= 818 ? 0 : 1, duration: width <= 818 ? 0 : 1})

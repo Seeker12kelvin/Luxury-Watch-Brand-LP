@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { JSX, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import Logo from '../../components/Logo';
 import styles from './PrivateListForm.module.css';
@@ -9,6 +8,10 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const PrivateListForm = (): JSX.Element | null => {
 
+  const handleSubmit = (e: any): void => {
+    e.preventDefault()
+  }
+  
   const divVariants: any = {
     hidden: {
       opacity: 0
@@ -57,6 +60,7 @@ const PrivateListForm = (): JSX.Element | null => {
         initial="hidden"
         animate="visible"
         exit="exit"
+        onSubmit={handleSubmit}
         className={`${styles['private-form']} w-150 h-fit bg-[#FFF]`}>
         <div className={`${styles['private-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
           <div className={`${styles['private-section-text']}`}>
