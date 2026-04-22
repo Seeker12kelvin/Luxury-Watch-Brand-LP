@@ -15,7 +15,7 @@ const BestSellerSection = (): JSX.Element => {
       scrollTrigger: {
         trigger: ref.current,
         start: "top top",
-        end: `+=${window.innerHeight * 5}`,
+        end: `+=${window.innerHeight * 3}`,
         scrub: true,
         pin: true,
       }

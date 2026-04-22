@@ -24,9 +24,7 @@ const Home = (): JSX.Element | null => {
 
   return (
       <main className=''>
-        <AnimatePresence mode="wait">
-          {modal && <PrivateListForm />}
-        </AnimatePresence>
+        <PrivateListForm />
 
         <HeroSection />
         

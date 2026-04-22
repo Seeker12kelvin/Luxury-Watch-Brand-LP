@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { JSX, RefObject } from 'react';
 import type { WatchItem } from '../../../data';
 import { watchCollection } from '../../../data';
 import styles from '../SlideShowSection.module.css';
@@ -7,23 +7,25 @@ import RightArrow from '../../../images/RightArrow.svg';
 import NewReleaseBadge from '../../../components/NewReleaseDiv';
 import WatchListButton from '../../../components/WatchListButton';
 
-type SlideShowInfoProps = {
+type Props = {
   data: {
     bg: WatchItem | null,
-    animate: (type: string) => void,
-    setBtn: React.Dispatch<React.SetStateAction<boolean>>,
+    animate: (type?: string, num?: number) => void,
     setIncrement: React.Dispatch<React.SetStateAction<number>>,
-    increment: number,
+    increment: number | any,
     h1Ref : any,
     h2Ref: any,
     pRef : any,
-    spanRef : any
+    setBtn: React.Dispatch<React.SetStateAction<boolean>>,
+    spanRef : any,
+    arrowRef: RefObject<HTMLElement | any>
+    buttonRef: RefObject<HTMLElement | any>
   }
 }
 
-const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
+const SlideShowInfo = ({data}: Props): JSX.Element => {
   
-  const { bg, animate, setBtn, setIncrement, increment, h1Ref, h2Ref, pRef, spanRef } = data
+  const { bg, animate, setIncrement, increment, h1Ref, h2Ref, pRef, arrowRef, buttonRef, spanRef } = data
 
   return (
     <div 
@@ -64,10 +66,9 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
         {bg 
         && 
         (
-          <div className='flex justify-between items-center self-stretch flex-1 max-[603px]:flex-col max-[375px]:flex-col max-sm:gap-2'>
+          <div ref={h2Ref} className='flex justify-between items-center self-stretch flex-1 max-[603px]:flex-col max-[375px]:flex-col max-sm:gap-2'>
 
             <h2
-              ref={h2Ref}
               className='text-[4rem] max-sm:text-5xl max-[760px]:text-5xl'>
               {bg.price.toUpperCase()}
             </h2>
@@ -79,23 +80,24 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
 
         <div className='flex justify-between items-end-safe self-stretch h-full'>
 
-          <div className='flex gap-2.5 h-full'>
+          <div ref={buttonRef} className='flex gap-2.5 h-full'>
 
             {Array.from({ length: watchCollection.length }, (_, i) => (
               <button
                 key={i}
-                onClick={() => setIncrement(i)}
+                onClick={() => {
+                  animate(undefined, i)
+                }}
                 className={`${increment === i ? 'w-20 bg-[#FFFFFF] cursor-pointer' : 'w-5 bg-[#FFFFFF66]'} h-2 cursor-pointer`}
               />
             ))}
 
           </div>
 
-          <div className='flex items-start gap-2 h-full'>
+          <div ref={arrowRef} className='flex items-start gap-2 h-full'>
             <button
               onClick={() => {
                 animate('subtract')
-                setBtn(true)
               }}
               disabled={increment <= 0 ? true : false}
               className={`w-9 h-2 ${increment <= 0 ? 'pointer-events-none opacity-50' : 'cursor-pointer opacity-100'}`}>
@@ -105,7 +107,6 @@ const SlideShowInfo = ({data}: SlideShowInfoProps): JSX.Element => {
             <button
               onClick={() => {
                 animate('add')
-                setBtn(true)
               }}
               className='w-9 h-2 cursor-pointer'>
               <img src={RightArrow} alt='Right arrow' />

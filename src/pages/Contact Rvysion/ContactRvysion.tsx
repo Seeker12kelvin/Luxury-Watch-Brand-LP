@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
-import { JSX, useContext } from 'react';
-import styles from './ContactRvysion.module.css';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { MdClose } from 'react-icons/md';
+import { JSX, useContext, useRef } from 'react';
+import styles from './ContactRvysion.module.css';
 import Comp_Logo from '../../images/Comp_Logo.svg';
 import UserContext from '../../components/userContext';
 import { IoIosArrowRoundForward } from 'react-icons/io';
@@ -41,20 +42,54 @@ const ContactRvysion = (): JSX.Element | null=> {
   if(!context){
     return null
   }
-  const { setContactModal } = context
+  const { contactModal, setContactModal } = context
+
+  const formRef = useRef<HTMLElement | any>(null)
+  const divRef = useRef<HTMLElement | any>(null)
+  const btnRef = useRef<HTMLElement | any>(null)
+  const arrowRef = useRef<HTMLElement | any>(null)
   
+  useGSAP(() => {
+    const div = divRef.current
+    const form = formRef.current
+    
+    const tl = gsap.timeline()
+    if(!contactModal){
+      gsap.to(div, {opacity: 0, display: 'none', duration: 0.5})
+      gsap.to(form, {opacity: 0, scale: 0, duration: 0.5})
+    } else {
+      tl
+      .to(div, {opacity: 1, display: 'flex', duration: 0.5})
+      .to(form, {opacity: 1, scale: 1, duration: 0.5})
+    }
+  }, [contactModal])
+  
+  const onEnter = (): void => {
+    const btn = btnRef.current
+    const arrow = arrowRef.current
+
+    const tl = gsap.timeline()
+    tl
+    .to(btn, {width: 'fit-content', opacity: 0.7, backgroundColor: '#ffffff', color: '#000000', duration: 0.25, ease: 'none'})
+    .to(arrow, {background: 'linear-gradient(to bottom, rgb(0, 0, 0) 20%, rgb(225, 225, 225, 0) 0%)', color: '#000000', duration: 0.25, ease: 'none'}, "<")
+  }
+
+  const onLeave = (): void => {
+    const btn = btnRef.current
+    const arrow = arrowRef.current
+
+    const tl = gsap.timeline()
+    tl
+    .to(btn, {width: '100%', opacity: 1, backgroundColor: '#111111', color: '#ffffff', duration: 0.25, ease: 'none'})
+    .to(arrow, {background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff', duration: 0.25, ease: 'none'}, "<")
+  }
+
   return (
-    <motion.div
-      variants={divVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center max-[481px]:h-screen max-[481px]:max-w-screen'>
-      <motion.form
-        variants={formVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
+    <div
+      ref={divRef}
+      className='hidden opacity-0 h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] items-center justify-center max-[481px]:h-screen max-[481px]:max-w-screen'>
+      <form
+        ref={formRef}
         className={`${styles['login-form']}`}>
         <div className={`${styles['first-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
           <div className={`${styles['first-section-text']}`}>
@@ -92,43 +127,26 @@ const ContactRvysion = (): JSX.Element | null=> {
               </textarea>
             </label>
             
-            <motion.div
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
+            <div
+              onMouseEnter={onEnter}
+              onMouseLeave={onLeave}
               className="flex gap-1 items-center w-full">
               
-              <motion.button
-                variants={{
-                  rest: {
-                    width: '100%',
-                    opacity: 1,
-                    backgroundColor: '#111111',
-                    color: '#ffffff'
-                  },
-                  hover: {
-                    width: 'fit-content',
-                    opacity: 0.7,
-                    backgroundColor: '#ffffff',
-                    color: '#000000'
-                  }
-                }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
+              <button
+                ref={btnRef}
+                style={{width: '100%', opacity: 1, backgroundColor: '#111111', color: '#ffffff'}}
                 className="origin-left h-12 px-0 w-full text-sm font-extralight overflow-hidden">
                 REQUEST ACCESS
-              </motion.button>
+              </button>
 
-              <motion.button
-                variants={{
-                  rest: { backgroundColor: '#000000', color: '#ffffff' },
-                  hover: { backgroundColor: '#ffffff', color: '#000000' }
-                }}
-                transition={{ duration: 0.25, ease: 'easeOut' }}
+              <button
+                ref={arrowRef}
+                style={{background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff'}}
                 className="w-10.5 h-12 shrink-0 flex items-center justify-center">
                 <IoIosArrowRoundForward className='text-2xl' />
-              </motion.button>
+              </button>
             
-            </motion.div>
+            </div>
 
 
             <div className='flex gap-4 items-start bg-[#1111110A] p-4'>
@@ -146,8 +164,8 @@ const ContactRvysion = (): JSX.Element | null=> {
             </div>
           </div>
         </div>
-      </motion.form>
-    </motion.div>
+      </form>
+    </div>
   )
 }
 

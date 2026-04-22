@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
-import { JSX, useContext } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { MdClose } from 'react-icons/md';
 import Logo from '../../components/Logo';
+import { JSX, useContext, useRef } from 'react';
 import styles from './PrivateListForm.module.css';
 import UserContext from '../../components/userContext';
 import { IoIosArrowRoundForward } from 'react-icons/io';
@@ -11,55 +12,61 @@ const PrivateListForm = (): JSX.Element | null => {
   const handleSubmit = (e: any): void => {
     e.preventDefault()
   }
-  
-  const divVariants: any = {
-    hidden: {
-      opacity: 0
-    },
-    visible: {
-      opacity: 1,
-      transition: {duration: 0.2, ease: 'easeIn'}
-    },
-    exit: {
-      opacity: 0,
-      transition: {duration: 0.2, ease: 'easeOut'}
-    }
-  }
-
-  const formVariants: any = {
-    hidden: {
-      scale: 0
-    },
-    visible: {
-      scale: 1,
-      transition: {duration: 0.4, ease: 'easeIn'}
-    },
-    exit: {
-      scale: 0,
-      transition: {duration: 0.4, ease: 'easeOut'}
-    }
-  }
 
   const context = useContext(UserContext)
   if(!context){
     return null
   }
-  const { setModal, selectedImage } = context
+  const { modal, setModal, selectedImage } = context
+
+  const formRef = useRef<HTMLElement | any>(null)
+  const divRef = useRef<HTMLElement | any>(null)
+  const btnRef = useRef<HTMLElement | any>(null)
+  const arrowRef = useRef<HTMLElement | any>(null)
+  
+  useGSAP(() => {
+    const div = divRef.current
+    const form = formRef.current
+    
+    const tl = gsap.timeline()
+    if(!modal){
+      gsap.to(div, {opacity: 0, display: 'none', duration: 0.5})
+      gsap.to(form, {opacity: 0, scale: 0, duration: 0.5})
+    } else {
+      tl
+      .to(div, {opacity: 1, display: 'flex', duration: 0.5})
+      .to(form, {opacity: 1, scale: 1, duration: 0.5})
+    }
+  }, [modal])
+
+  const onEnter = (): void => {
+    const btn = btnRef.current
+    const arrow = arrowRef.current
+
+    const tl = gsap.timeline()
+    tl
+    .to(btn, {width: 'fit-content', opacity: 0.7, backgroundColor: '#ffffff', color: '#000000', duration: 0.25, ease: 'none'})
+    .to(arrow, {background: 'linear-gradient(to bottom, rgb(0, 0, 0) 20%, rgb(225, 225, 225, 0) 0%)', color: '#000000', duration: 0.25, ease: 'none'}, "<")
+  }
+
+  const onLeave = (): void => {
+    const btn = btnRef.current
+    const arrow = arrowRef.current
+
+    const tl = gsap.timeline()
+    tl
+    .to(btn, {width: '100%', opacity: 1, backgroundColor: '#111111', color: '#ffffff', duration: 0.25, ease: 'none'})
+    .to(arrow, {background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff', duration: 0.25, ease: 'none'}, "<")
+  }
 
   return (
 
-    <motion.div
-      variants={divVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className='h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] flex items-center justify-center max-[481px]:max-h-screen max-[481px]:max-w-screen'>
+    <div
+      ref={divRef}
+      className='hidden opacity-0 h-full w-full fixed z-100 mx-auto top-0 bg-[#0000005f] items-center justify-center max-[481px]:max-h-screen max-[481px]:max-w-screen'>
       
-      <motion.form
-        variants={formVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
+      <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className={`${styles['private-form']} w-150 h-fit bg-[#FFF]`}>
         <div className={`${styles['private-section']} flex-1 border-b-[0.5px] border-[#00000066] justify-between`}>
@@ -112,43 +119,26 @@ const PrivateListForm = (): JSX.Element | null => {
               </label>
             </div>
 
-            <motion.div
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
+            <div
+              onMouseEnter={onEnter}
+              onMouseLeave={onLeave}
               className="flex gap-1 items-center w-full">
               
-              <motion.button
-                variants={{
-                  rest: {
-                    width: '100%',
-                    opacity: 1,
-                    backgroundColor: '#111111',
-                    color: '#ffffff'
-                  },
-                  hover: {
-                    width: 'fit-content',
-                    opacity: 0.7,
-                    backgroundColor: '#ffffff',
-                    color: '#000000'
-                  }
-                }}
-                transition={{ duration: 0.25, ease: 'easeIn' }}
+              <button
+                ref={btnRef}
+                style={{width: '100%', opacity: 1, backgroundColor: '#111111', color: '#ffffff'}}
                 className="origin-left h-12 w-full text-sm font-extralight overflow-hidden">
                 REQUEST ACCESS
-              </motion.button>
+              </button>
 
-              <motion.button
-                variants={{
-                  rest: { background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff' },
-                  hover: { background: 'linear-gradient(to bottom, black 0%, white 0%)', color: '#000000' }
-                }}
-                transition={{ duration: 0.25, ease: 'easeIn' }}
+              <button
+                ref={arrowRef}
+                style={{background: 'linear-gradient(to bottom, rgb(0, 0, 0) 100%, rgb(225, 225, 225) 0%)', color: '#ffffff'}}
                 className="w-10.5 h-12 shrink-0 flex items-center justify-center">
                 <IoIosArrowRoundForward size={24} />
-              </motion.button>
+              </button>
             
-            </motion.div>
+            </div>
 
           </div>
 
@@ -164,8 +154,8 @@ const PrivateListForm = (): JSX.Element | null => {
 
         </div>
 
-      </motion.form>
-    </motion.div>
+      </form>
+    </div>
   )
 };
 

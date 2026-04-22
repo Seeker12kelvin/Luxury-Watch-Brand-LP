@@ -1,4 +1,4 @@
-import { JSX, useState } from 'react'
+import { JSX, useRef, useState } from 'react'
 import routes from './components/routes'
 import { RouterProvider } from 'react-router-dom'
 import UserContext from './components/userContext'
@@ -31,6 +31,13 @@ function App(): JSX.Element {
     setModal(true)
   }
 
+  const sectionRef = useRef<HTMLElement | null>(null)
+
+  const handleScrolling = (): void => {
+    sectionRef.current?.scrollIntoView({behavior: 'smooth'})
+  }
+
+
   return (
       <UserContext.Provider value={{ 
         displayProgress,
@@ -42,7 +49,9 @@ function App(): JSX.Element {
         modal,
         setModal,
         contactModal,
-        setContactModal
+        setContactModal,
+        handleScrolling,
+        sectionRef,
       }}>
 
         {displayProgress < 100

@@ -1,24 +1,23 @@
-import { JSX } from "react";
-import useWindowSize from "../../../hooks/windowSize";
-import { watchCollection } from "../../../data";
-import { useGSAP } from '@gsap/react'
 import gsap from "gsap";
-import { motion, AnimatePresence } from "framer-motion";
+import { useGSAP } from '@gsap/react'
+import { JSX, RefObject } from "react";
+import { watchCollection } from "../../../data";
+import useWindowSize from "../../../hooks/windowSize";
 
 const SLIDE_WIDTH = 400
-const VIEWPORT_WIDTH = 1440
 
 type SliderProps = {
   data: {
     setIncrement: (index: number) => void,
-    increment: number,
     movingBoxRef : React.RefObject<any>,
-    parentDivRef : React.RefObject<any>
+    parentDivRef : React.RefObject<any>,
+    increment: number,
+    sliderRef: RefObject<HTMLElement | any>
   }
 }
 
 const Slider = ({ data }: SliderProps): JSX.Element => {
-  const { increment, movingBoxRef, parentDivRef } = data
+  const { increment, movingBoxRef, parentDivRef, sliderRef } = data
   const { width } = useWindowSize()
 
   const totalWidth = watchCollection.length * SLIDE_WIDTH
@@ -26,7 +25,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
 
   const isActive = increment >= 0
   const translateX = isActive ? Math.min(increment * SLIDE_WIDTH, maxTranslateX) : 0
-8 
+
   useGSAP(() => {
     gsap.set(movingBoxRef.current, {opacity: 0, scale: 0.95})
     gsap.to(parentDivRef.current, {x: -translateX, duration: 0.5,})
@@ -35,6 +34,7 @@ const Slider = ({ data }: SliderProps): JSX.Element => {
 
   return (
     <div
+      ref={sliderRef}
       className="relative h-100 z-10 max-sm:h-full"
       style={{ maxWidth: width }}>
       <div

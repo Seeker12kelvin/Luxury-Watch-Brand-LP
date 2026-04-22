@@ -4,20 +4,22 @@ import Watch_Btn from '../../../images/Watch-Button.png';
 
 type Props = {
   closeDiv: () => void,
+  handleScrolling: () => void,
   ref: any
 }
 
-const HeroFooter = ({closeDiv, ref}: Props): JSX.Element => {
+const HeroFooter = ({closeDiv, handleScrolling, ref}: Props): JSX.Element => {
   const {scrollRef, scaleRef} = ref
 
   return (
     <div className='w-full flex items-end justify-between'>
-      <div
+      <button
         ref={scrollRef}
+        onClick={(): void => handleScrolling()}
         className='flex items-center gap-2 text-sm z-1'>
         <IoIosArrowDown />
         <p>SCROLL DOWN</p>
-      </div>
+      </button>
 
       <div
         ref={scaleRef}

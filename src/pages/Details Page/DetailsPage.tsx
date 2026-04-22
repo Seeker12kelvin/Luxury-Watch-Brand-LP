@@ -124,9 +124,7 @@ const DetailsPage = (): JSX.Element | null => {
 
       </div>
       
-      <AnimatePresence mode="wait">
-        {contactModal && <ContactRvysion />}
-      </AnimatePresence>
+      <ContactRvysion />
 
     </div>
   )

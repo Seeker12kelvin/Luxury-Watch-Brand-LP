@@ -27,7 +27,7 @@ const ShowCaseSection = (): JSX.Element => {
       scrollTrigger: {
         trigger: stickyDiv.current,
         start: 'top top',
-        end: `+=${window.innerHeight * 10}`,
+        end: `+=${window.innerHeight * 7}`,
         scrub: true,
         pin: true
       }

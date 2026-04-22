@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, RefObject } from "react"
 
 export interface UserContextType {
   displayProgress: number
@@ -11,6 +11,8 @@ export interface UserContextType {
   payUp: (image: string | undefined) => void,
   contactModal: boolean,
   setContactModal: React.Dispatch<React.SetStateAction<boolean>>,
+  handleScrolling: () => void,
+  sectionRef: RefObject<HTMLElement | null>
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined)

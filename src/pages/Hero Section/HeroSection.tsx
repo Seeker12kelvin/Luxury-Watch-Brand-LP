@@ -3,13 +3,18 @@ import { useGSAP } from '@gsap/react';
 import HeroInfo from './Content/HeroInfo';
 import Header from '../../components/Header';
 import styles from './HeroSection.module.css';
-import { JSX, useRef, useState } from 'react';
+import { JSX, useContext, useRef, useState } from 'react';
 import HeroFooter from './Content/HeroFooter';
 import { AnimatePresence } from 'framer-motion';
 import HeroProductPopUp from './Content/HeroProductPopUp';
 import videoSource from '../../assets/Whisk_emyyqtn4i2yxmmzm1sm0ewytetzmrtlwatz50co.mp4';
+import UserContext from '../../components/userContext';
 
-const HeroSection = (): JSX.Element => {
+const HeroSection = (): JSX.Element | null | undefined => {
+
+  const context = useContext(UserContext)
+  if(!context) return
+  const { handleScrolling } = context
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   
@@ -21,7 +26,7 @@ const HeroSection = (): JSX.Element => {
   const scrollRef = useRef<HTMLElement | any>(null)
   const scaleRef = useRef<HTMLElement | any>(null)
 
-  useGSAP(() => {
+  useGSAP((): void => {
     const video = videoRef.current
     const scroll = scrollRef.current
     const scale = scaleRef.current
@@ -59,7 +64,7 @@ const HeroSection = (): JSX.Element => {
           <div className='h-full w-full flex flex-col gap-40 max-sm:h-full max-sm:justify-between max-[1005px]:gap-60'>
             <HeroInfo ref={contentRef} />
 
-            <HeroFooter ref={{scrollRef, scaleRef}} closeDiv={close} />
+            <HeroFooter ref={{scrollRef, scaleRef}} handleScrolling={handleScrolling} closeDiv={close} />
           </div>
 
           <AnimatePresence>
