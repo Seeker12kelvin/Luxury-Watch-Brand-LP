@@ -33,9 +33,9 @@ const HeroSection = (): JSX.Element | null | undefined => {
     const tl = gsap.timeline()
 
     tl
-    .fromTo('.box', {clipPath: "inset(0 0 100% 0)"}, {clipPath: "inset(0 0 0% 0)", duration: 0.5, stagger: 0.25})
-    .fromTo([video, scroll], {opacity: 0}, {opacity: 1, duration: 0.5})
-    .fromTo([scale], {opacity: 0}, {opacity: 1, duration: 0.5})
+    .fromTo('.box', {clipPath: "inset(0 0 100% 0)"}, {clipPath: "inset(0 0 0% 0)", duration: 1, stagger: 0.5})
+    .fromTo([video, scroll], {opacity: 0}, {opacity: 1, duration: 1})
+    .fromTo([scale], {opacity: 0}, {opacity: 1, duration: 1})
   }, [])
 
   return (
