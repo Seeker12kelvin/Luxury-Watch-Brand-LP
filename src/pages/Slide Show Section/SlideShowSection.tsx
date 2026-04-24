@@ -83,6 +83,7 @@ const SlideShowSection = (): JSX.Element | null | undefined => {
         if (data) setBg(data)
         })
       .to(movingBoxRef.current, { opacity: 0, scale: 0.95, duration: 0.5 })
+      .to(background, { opacity: 1, duration: 0.5 })
       .to([span, h1, h2, para], {
         clipPath: "inset(0 0 0% 0)",
         duration: 0.2,
@@ -90,7 +91,6 @@ const SlideShowSection = (): JSX.Element | null | undefined => {
       })
       .to(slider, { xPercent: 0, opacity: 1, duration: 0.5})
       .to([button, arrow], {opacity: 1, duration: 0.5})
-      .to(background, { opacity: 1, duration: 0.5 })
       .to(movingBoxRef.current, {
         opacity: 1,
         scale: 0.95,
@@ -116,7 +116,7 @@ const SlideShowSection = (): JSX.Element | null | undefined => {
       duration: 0.2,
       stagger: 0.1
     })
-    .to(background, { opacity: 0, duration: 0.5})
+    .to(background, { opacity: 0, duration: 0.2}, "<")
     .call(() => {
       !type ? setIncrement(num) : setIncrement(prev => type === 'add' ? prev + 1: prev - 1)
     })
