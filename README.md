@@ -1,16 +1,69 @@
-# React + Vite
+# Luxury Watch Brand Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A polished marketing landing page built with React, Vite, and Tailwind CSS for a luxury watch brand experience. The project showcases animated hero sections, image galleries, product highlights, customer contact flows, and interactive navigation for a premium watch collection.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + Vite app structure for fast development and optimized builds
+- Tailwind CSS for responsive styling
+- Animated interactions using GSAP, Framer Motion, and Lenis smooth scrolling
+- Modular page sections including:
+  - Hero section
+  - Image gallery
+  - Best seller showcase
+  - Slide show presentation
+  - Newest watch highlight
+  - Private list sign-up form
+  - Contact section
+- React Router support for multi-page navigation
+- Accessible, responsive layout suitable for desktop and mobile
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/` - application source code
+- `src/pages/` - page sections and feature modules
+- `src/components/` - reusable UI components and shared logic
+- `src/assets/` - static media and visual content
+- `src/hooks/` - custom hooks for scrolling and layout behavior
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Open the app in your browser at the local Vite URL printed in the terminal.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+## Technologies
+
+- React
+- Vite
+- Tailwind CSS
+- GSAP
+- Framer Motion
+- React Router DOM
+- Lenis smooth scrolling
+
+## Notes
+
+This repository is configured as a private landing page project and focuses on visual presentation and product storytelling for a high-end watch brand.
